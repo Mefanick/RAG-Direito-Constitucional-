@@ -1,0 +1,1226 @@
+{
+  "meta": {
+    "versao": "1.0-seminario",
+    "descricao": "Suite balanceada de 20 perguntas para benchmark controlado multi-modelo (contexto RAG congelado + avaliacao por juiz externo).",
+    "modelos_alvo": [
+      {
+        "id": "qwen3:4b",
+        "usar_think": true
+      },
+      {
+        "id": "qwen2.5:7b",
+        "usar_think": false
+      },
+      {
+        "id": "qwen3:8b",
+        "usar_think": true
+      }
+    ],
+    "rubrica_juiz_externo": {
+      "precisao_juridica": "0 a 10 - Correcao material da resposta frente a CF/88 (ou orientacao correta sem inventar norma nos casos OOD).",
+      "fidelidade_contexto": "0 a 10 - Aderencia estrita aos trechos recuperados, sem alucinar artigos, paragrafos ou excecoes ausentes.",
+      "completude": "0 a 10 - Cobertura de todas as partes, excecoes e prazos perguntados.",
+      "clareza_cidada": "0 a 10 - Objetividade, portugues claro e ausencia de truncamento ou repeticao."
+    }
+  },
+  "perguntas": [
+    {
+      "id": "Q01",
+      "area": "Direitos Individuais",
+      "perfil": "leiga_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "A polícia pode entrar na minha casa à noite sem mandado judicial se achar que tem algo errado lá dentro?",
+      "artigos_esperados": [
+        "Art. 5º, XI"
+      ],
+      "criterios_juiz": "Deve afirmar a inviolabilidade do domicilio e listar as excecoes constitucionais: consentimento do morador, flagrante delito, desastre ou para prestar socorro; deixar claro que determinacao judicial so autoriza entrada durante o dia.",
+      "modo_rag": "MODO_RAG_ZONA_CINZENTA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.1592501252150064,
+      "top1_score_p2": 0.12065490124252043,
+      "query_traduzida": "é vedado à autoridade policial entrar na residência particular sem mandado judicial ou autorização legal",
+      "artigos_recuperados": [
+        "Art. 5º, XI",
+        "Art. 5º, LXIX",
+        "Art. 5º, LXI"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 5º, XI",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | XI - a casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, ou para prestar socorro, ou, durante o dia, por determinação judicial;",
+          "score_reranker": 0.1592501252150064,
+          "score_cosseno": 0.5197346806526184,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 5º, LXIX",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LXIX - conceder-se-á mandado de segurança para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade ou abuso de poder for autoridade pública ou agente de pessoa jurídica no exercício de atribuições do poder público;",
+          "score_reranker": 0.0023661127244178617,
+          "score_cosseno": 0.5268357396125793,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 5º, LXI",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LXI - ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente, salvo nos casos de transgressão militar ou crime propriamente militar, definidos em lei;",
+          "score_reranker": 0.0009456253694725156,
+          "score_cosseno": 0.5191441774368286,
+          "origem": "reranker",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 15.293575900024734,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual trecho sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nOs trechos abaixo são possivelmente relacionados e têm baixa confiança. Se responderem de fato à pergunta, use-os e cite. Se não responderem, ignore-os e converse sem citar artigo.\nSó cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nos trechos. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos. Quando o trecho tratar apenas de um subconjunto (por exemplo, minérios nucleares), não comece com 'Sim' e deixe o limite explícito.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nos trechos.",
+      "user_prompt": "Trechos possivelmente relacionados (baixa confiança):\n[FONTE 1 | Art. 5º, XI | Relevância: 0.159]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | XI - a casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, ou para prestar socorro, ou, durante o dia, por determinação judicial;\n\n[FONTE 2 | Art. 5º, LXIX | Relevância: 0.002]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LXIX - conceder-se-á mandado de segurança para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade ou abuso de poder for autoridade pública ou agente de pessoa jurídica no exercício de atribuições do poder público;\n\n[FONTE 3 | Art. 5º, LXI | Relevância: 0.001]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LXI - ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente, salvo nos casos de transgressão militar ou crime propriamente militar, definidos em lei;\n\nPergunta: A polícia pode entrar na minha casa à noite sem mandado judicial se achar que tem algo errado lá dentro?"
+    },
+    {
+      "id": "Q02",
+      "area": "Direitos Individuais",
+      "perfil": "regra_e_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "Um brasileiro naturalizado pode ser extraditado pelo Brasil para responder a crime cometido no exterior?",
+      "artigos_esperados": [
+        "Art. 5º, LI"
+      ],
+      "criterios_juiz": "Deve responder que sim apenas em duas hipoteses: crime comum praticado antes da naturalizacao ou comprovado envolvimento em trafico ilicito de entorpecentes e drogas afins, na forma da lei (diferenciando do brasileiro nato, que nunca e extraditado).",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.9687349816564775,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 5º, LI",
+        "Art. 5º, LII",
+        "Art. 5º, LIII"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 5º, LI",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LI - nenhum brasileiro será extraditado, salvo o naturalizado, em caso de crime comum, praticado antes da naturalização, ou de comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei;",
+          "score_reranker": 0.9687349816564775,
+          "score_cosseno": 0.6871381998062134,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 5º, LII",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LII - não será concedida extradição de estrangeiro por crime político ou de opinião;",
+          "score_reranker": 0.3946194841871011,
+          "score_cosseno": 0.6067120432853699,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 5º, LIII",
+          "texto": "Art. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LIII - ninguém será processado nem sentenciado senão pela autoridade competente;",
+          "score_reranker": 0.49876004457473755,
+          "score_cosseno": 0.49876004457473755,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 3.176636199990753,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 5º, LI | Relevância: 0.969]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LI - nenhum brasileiro será extraditado, salvo o naturalizado, em caso de crime comum, praticado antes da naturalização, ou de comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei;\n\n[FONTE 2 | Art. 5º, LII | Relevância: 0.395]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LII - não será concedida extradição de estrangeiro por crime político ou de opinião;\n\n[FONTE 3 | Art. 5º, LIII | Relevância: 0.499]\nArt. 5º (Contexto: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:) | LIII - ninguém será processado nem sentenciado senão pela autoridade competente;\n\nPergunta: Um brasileiro naturalizado pode ser extraditado pelo Brasil para responder a crime cometido no exterior?"
+    },
+    {
+      "id": "Q03",
+      "area": "Direitos Sociais e Trabalho",
+      "perfil": "leiga_faixas_etarias",
+      "esperado_na_cf88": true,
+      "pergunta": "A partir de qual idade um adolescente pode trabalhar no Brasil, e existe restrição para trabalho noturno ou perigoso?",
+      "artigos_esperados": [
+        "Art. 7º, XXXIII"
+      ],
+      "criterios_juiz": "Deve distinguir as tres faixas: proibido trabalho noturno, perigoso ou insalubre a menores de 18 anos; proibido qualquer trabalho a menores de 16 anos; excecao na condicao de aprendiz a partir de 14 anos.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.9612431313689498,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 227, § 3º",
+        "Art. 227",
+        "Art. 227, § 3º",
+        "Art. 7º, XXXIII",
+        "Art. 7º, XXIX",
+        "Art. 7º, XXX",
+        "Art. 7º, XXXI",
+        "Art. 7º, XXXII"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 227, § 3º",
+          "texto": "Art. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.\n\nArt. 227 (Contexto: É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e...) | § 3º - O direito a proteção especial abrangerá os seguintes aspectos: I - idade mínima de quatorze anos para admissão ao trabalho, observado o disposto no art. 7º, XXXIII; II - garantia de direitos previdenciários e trabalhistas; III - garantia de acesso do trabalhador adolescente e jovem à escola; IV - garantia de pleno e formal conhecimento da atribuição de ato infracional, igualdade na relação processual e defesa técnica por profissional habilitado, segundo dispuser a legislação tutelar específica; V - obediência aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento, quando da aplicação de qualquer medida privativa da liberdade; VI - estímulo do poder público, através de assistência jurídica, incentivos fiscais e subsídios, nos termos da lei, ao acolhimento, sob a forma de guarda, de criança ou adolescente órfão ou abandonado; VII - programas de prevenção e atendimento especializado à criança, ao adolescente e ao jovem dependente de entorpecentes e drogas afins.",
+          "score_reranker": 0.2662922213549206,
+          "score_cosseno": 0.6528373956680298,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 227",
+            "Art. 227, § 3º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 7º, XXXIII",
+          "texto": "Art. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXIII - proibição de trabalho noturno, perigoso ou insalubre a menores de dezoito e de qualquer trabalho a menores de dezesseis anos, salvo na condição de aprendiz, a partir de quatorze anos;",
+          "score_reranker": 0.9612431313689498,
+          "score_cosseno": 0.8033493757247925,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 7º, XXIX",
+          "texto": "Art. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXIX - ação, quanto aos créditos resultantes das relações de trabalho, com prazo prescricional de cinco anos para os trabalhadores urbanos e rurais, até o limite de dois anos após a extinção do contrato de trabalho; a) (Revogada). b) (Revogada).",
+          "score_reranker": 0.5159689784049988,
+          "score_cosseno": 0.5159689784049988,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 7º, XXX",
+          "texto": "Art. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXX - proibição de diferença de salários, de exercício de funções e de critério de admissão por motivo de sexo, idade, cor ou estado civil;",
+          "score_reranker": 0.6026199460029602,
+          "score_cosseno": 0.6026199460029602,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 7º, XXXI",
+          "texto": "Art. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXI - proibição de qualquer discriminação no tocante a salário e critérios de admissão do trabalhador portador de deficiência;",
+          "score_reranker": 0.5594043731689453,
+          "score_cosseno": 0.5594043731689453,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 7º, XXXII",
+          "texto": "Art. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXII - proibição de distinção entre trabalho manual, técnico e intelectual ou entre os profissionais respectivos;",
+          "score_reranker": 0.6030945181846619,
+          "score_cosseno": 0.6030945181846619,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 55.707671499985736,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 227, § 3º | Relevância: 0.266]\nArt. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.\n\nArt. 227 (Contexto: É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e...) | § 3º - O direito a proteção especial abrangerá os seguintes aspectos: I - idade mínima de quatorze anos para admissão ao trabalho, observado o disposto no art. 7º, XXXIII; II - garantia de direitos previdenciários e trabalhistas; III - garantia de acesso do trabalhador adolescente e jovem à escola; IV - garantia de pleno e formal conhecimento da atribuição de ato infracional, igualdade na relação processual e defesa técnica por profissional habilitado, segundo dispuser a legislação tutelar específica; V - obediência aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento, quando da aplicação de qualquer medida privativa da liberdade; VI - estímulo do poder público, através de assistência jurídica, incentivos fiscais e subsídios, nos termos da lei, ao acolhimento, sob a forma de guarda, de criança ou adolescente órfão ou abandonado; VII - programas de prevenção e atendimento especializado à criança, ao adolescente e ao jovem dependente de entorpecentes e drogas afins.\n\n[FONTE 2 | Art. 7º, XXXIII | Relevância: 0.961]\nArt. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXIII - proibição de trabalho noturno, perigoso ou insalubre a menores de dezoito e de qualquer trabalho a menores de dezesseis anos, salvo na condição de aprendiz, a partir de quatorze anos;\n\n[FONTE 3 | Art. 7º, XXIX | Relevância: 0.516]\nArt. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXIX - ação, quanto aos créditos resultantes das relações de trabalho, com prazo prescricional de cinco anos para os trabalhadores urbanos e rurais, até o limite de dois anos após a extinção do contrato de trabalho; a) (Revogada). b) (Revogada).\n\n[FONTE 4 | Art. 7º, XXX | Relevância: 0.603]\nArt. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXX - proibição de diferença de salários, de exercício de funções e de critério de admissão por motivo de sexo, idade, cor ou estado civil;\n\n[FONTE 5 | Art. 7º, XXXI | Relevância: 0.559]\nArt. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXI - proibição de qualquer discriminação no tocante a salário e critérios de admissão do trabalhador portador de deficiência;\n\n[FONTE 6 | Art. 7º, XXXII | Relevância: 0.603]\nArt. 7º (Contexto: São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:) | XXXII - proibição de distinção entre trabalho manual, técnico e intelectual ou entre os profissionais respectivos;\n\nPergunta: A partir de qual idade um adolescente pode trabalhar no Brasil, e existe restrição para trabalho noturno ou perigoso?"
+    },
+    {
+      "id": "Q04",
+      "area": "Direitos Sociais e Trabalho",
+      "perfil": "leiga_adct",
+      "esperado_na_cf88": true,
+      "pergunta": "Uma funcionária descobriu que está grávida antes de ser avisada da demissão; a empresa pode mandá-la embora sem justa causa?",
+      "artigos_esperados": [
+        "ADCT, Art. 10, II"
+      ],
+      "criterios_juiz": "Deve afirmar que e vedada a dispensa arbitraria ou sem justa causa da empregada gestante desde a confirmacao da gravidez ate cinco meses apos o parto.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.792795445133973,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "ADCT, Art. 10",
+        "ADCT, Art. 10",
+        "ADCT, Art. 10, I",
+        "ADCT, Art. 10, II",
+        "ADCT, Art. 10, § 1º",
+        "ADCT, Art. 10, § 2º",
+        "ADCT, Art. 10, § 3º"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "ADCT, Art. 10",
+          "texto": "Art. 10. Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | I - fica limitada a proteção nele referida ao aumento, para quatro vezes, da porcentagem prevista no art. 6º, caput e § 1º, da Lei nº 5.107, de 13 de setembro de 1966;\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | II - fica vedada a dispensa arbitrária ou sem justa causa: a) do empregado eleito para cargo de direção de comissões internas de prevenção de acidentes, desde o registro de sua candidatura até um ano após o final de seu mandato; b) da empregada gestante, desde a confirmação da gravidez até cinco meses após o parto.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 1º - Até que a lei venha a disciplinar o disposto no art. 7º, XIX, da Constituição, o prazo da licença-paternidade a que se refere o inciso é de cinco dias.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 2º - Até ulterior disposição legal, a cobrança das contribuições para o custeio das atividades dos sindicatos rurais será feita juntamente com a do imposto territorial rural, pelo mesmo órgão arrecadador.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 3º - Na primeira comprovação do cumprimento das obrigações trabalhistas pelo empregador rural, na forma do art. 233, após a promulgação da Constituição, será certificada perante a Justiça do Trabalho a regularidade do contrato e das atualizações das obrigações trabalhistas de todo o período.",
+          "score_reranker": 0.792795445133973,
+          "score_cosseno": 0.5868598818778992,
+          "origem": "parent_document",
+          "child_ids": [
+            "ADCT, Art. 10",
+            "ADCT, Art. 10, I",
+            "ADCT, Art. 10, II",
+            "ADCT, Art. 10, § 1º",
+            "ADCT, Art. 10, § 2º",
+            "ADCT, Art. 10, § 3º"
+          ]
+        }
+      ],
+      "retriever_s": 4.606182300020009,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | ADCT, Art. 10 | Relevância: 0.793]\nArt. 10. Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | I - fica limitada a proteção nele referida ao aumento, para quatro vezes, da porcentagem prevista no art. 6º, caput e § 1º, da Lei nº 5.107, de 13 de setembro de 1966;\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | II - fica vedada a dispensa arbitrária ou sem justa causa: a) do empregado eleito para cargo de direção de comissões internas de prevenção de acidentes, desde o registro de sua candidatura até um ano após o final de seu mandato; b) da empregada gestante, desde a confirmação da gravidez até cinco meses após o parto.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 1º - Até que a lei venha a disciplinar o disposto no art. 7º, XIX, da Constituição, o prazo da licença-paternidade a que se refere o inciso é de cinco dias.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 2º - Até ulterior disposição legal, a cobrança das contribuições para o custeio das atividades dos sindicatos rurais será feita juntamente com a do imposto territorial rural, pelo mesmo órgão arrecadador.\n\nADCT, Art. 10 (Contexto: Até que seja promulgada a lei complementar a que se refere o art. 7º, I, da Constituição:) | § 3º - Na primeira comprovação do cumprimento das obrigações trabalhistas pelo empregador rural, na forma do art. 233, após a promulgação da Constituição, será certificada perante a Justiça do Trabalho a regularidade do contrato e das atualizações das obrigações trabalhistas de todo o período.\n\nPergunta: Uma funcionária descobriu que está grávida antes de ser avisada da demissão; a empresa pode mandá-la embora sem justa causa?"
+    },
+    {
+      "id": "Q05",
+      "area": "Nacionalidade",
+      "perfil": "cargos_privativos",
+      "esperado_na_cf88": true,
+      "pergunta": "Um estrangeiro que se naturalizou brasileiro pode concorrer à Presidência da República ou ser nomeado Ministro do STF?",
+      "artigos_esperados": [
+        "Art. 12, § 3º"
+      ],
+      "criterios_juiz": "Deve responder que nao, pois ambos os cargos (Presidente da Republica e Ministro do STF) sao privativos de brasileiro nato.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.37398008553032774,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 12, § 3º",
+        "Art. 12",
+        "Art. 12, § 3º",
+        "Art. 101",
+        "Art. 101"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 12, § 3º",
+          "texto": "Art. 12. São brasileiros:\n\nArt. 12 (Contexto: São brasileiros:) | § 3º - São privativos de brasileiro nato os cargos: I - de Presidente e Vice-Presidente da República; II - de Presidente da Câmara dos Deputados; III - de Presidente do Senado Federal; IV - de Ministro do Supremo Tribunal Federal; V - da carreira diplomática; VI - de oficial das Forças Armadas; VII - de Ministro de Estado da Defesa.",
+          "score_reranker": 0.37398008553032774,
+          "score_cosseno": 0.5942505598068237,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 12",
+            "Art. 12, § 3º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 101",
+          "texto": "Art. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre cidadãos com mais de trinta e cinco e menos de sessenta e cinco anos de idade, de notável saber jurídico e reputação ilibada. Parágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.",
+          "score_reranker": 0.28237694250953743,
+          "score_cosseno": 0.519340991973877,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 101"
+          ]
+        }
+      ],
+      "retriever_s": 3.960875400021905,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 12, § 3º | Relevância: 0.374]\nArt. 12. São brasileiros:\n\nArt. 12 (Contexto: São brasileiros:) | § 3º - São privativos de brasileiro nato os cargos: I - de Presidente e Vice-Presidente da República; II - de Presidente da Câmara dos Deputados; III - de Presidente do Senado Federal; IV - de Ministro do Supremo Tribunal Federal; V - da carreira diplomática; VI - de oficial das Forças Armadas; VII - de Ministro de Estado da Defesa.\n\n[FONTE 2 | Art. 101 | Relevância: 0.282]\nArt. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre cidadãos com mais de trinta e cinco e menos de sessenta e cinco anos de idade, de notável saber jurídico e reputação ilibada. Parágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.\n\nPergunta: Um estrangeiro que se naturalizou brasileiro pode concorrer à Presidência da República ou ser nomeado Ministro do STF?"
+    },
+    {
+      "id": "Q06",
+      "area": "Direitos Políticos",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "Com quantos anos o voto passa a ser obrigatório no Brasil, e qual é a idade mínima para alguém se candidatar a Senador e a Governador?",
+      "artigos_esperados": [
+        "Art. 14, § 1º",
+        "Art. 14, § 3º"
+      ],
+      "criterios_juiz": "Deve cobrir as duas partes: voto obrigatorio para maiores de 18 anos (facultativo entre 16 e 18, maiores de 70 e analfabetos) e idade minima de 35 anos para Senador e 30 anos para Governador.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.9938652143358233,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 14, § 1º",
+        "Art. 14",
+        "Art. 14, § 1º",
+        "Art. 14, § 3º",
+        "Art. 14",
+        "Art. 14, § 3º",
+        "Art. 14"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 14, § 1º",
+          "texto": "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:\n\nArt. 14 (Contexto: A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:) | § 1º - O alistamento eleitoral e o voto são: I - obrigatórios para os maiores de dezoito anos; II - facultativos para: a) os analfabetos; b) os maiores de setenta anos; c) os maiores de dezesseis e menores de dezoito anos.",
+          "score_reranker": 0.9938652143358233,
+          "score_cosseno": 0.8143305778503418,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 14",
+            "Art. 14, § 1º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 14, § 3º",
+          "texto": "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:\n\nArt. 14 (Contexto: A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:) | § 3º - São condições de elegibilidade, na forma da lei: I - a nacionalidade brasileira; II - o pleno exercício dos direitos políticos; III - o alistamento eleitoral; IV - o domicílio eleitoral na circunscrição; V - a filiação partidária; VI - a idade mínima de: a) trinta e cinco anos para Presidente e Vice-Presidente da República e Senador; b) trinta anos para Governador e Vice-Governador de Estado e do Distrito Federal; c) vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz; d) dezoito anos para Vereador.",
+          "score_reranker": 0.9779569863698399,
+          "score_cosseno": 0.643559455871582,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 14",
+            "Art. 14, § 3º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 14",
+          "texto": "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:",
+          "score_reranker": 0.7556415073533881,
+          "score_cosseno": 0.6146469712257385,
+          "origem": "reranker",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 50.705827400001,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 14, § 1º | Relevância: 0.994]\nArt. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:\n\nArt. 14 (Contexto: A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:) | § 1º - O alistamento eleitoral e o voto são: I - obrigatórios para os maiores de dezoito anos; II - facultativos para: a) os analfabetos; b) os maiores de setenta anos; c) os maiores de dezesseis e menores de dezoito anos.\n\n[FONTE 2 | Art. 14, § 3º | Relevância: 0.978]\nArt. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:\n\nArt. 14 (Contexto: A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:) | § 3º - São condições de elegibilidade, na forma da lei: I - a nacionalidade brasileira; II - o pleno exercício dos direitos políticos; III - o alistamento eleitoral; IV - o domicílio eleitoral na circunscrição; V - a filiação partidária; VI - a idade mínima de: a) trinta e cinco anos para Presidente e Vice-Presidente da República e Senador; b) trinta anos para Governador e Vice-Governador de Estado e do Distrito Federal; c) vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz; d) dezoito anos para Vereador.\n\n[FONTE 3 | Art. 14 | Relevância: 0.756]\nArt. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:\n\nPergunta: Com quantos anos o voto passa a ser obrigatório no Brasil, e qual é a idade mínima para alguém se candidatar a Senador e a Governador?"
+    },
+    {
+      "id": "Q07",
+      "area": "Administração Pública",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "Um servidor público pode acumular dois cargos de professor na rede pública, e qual é o limite máximo que ele pode receber de salário?",
+      "artigos_esperados": [
+        "Art. 37, XVI",
+        "Art. 37, XI"
+      ],
+      "criterios_juiz": "Deve confirmar a possibilidade de acumulacao de dois cargos de professor desde que haja compatibilidade de horarios e apontar como teto remuneratorio o subsidio mensal dos Ministros do STF.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.9553998027572761,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 37, § 13º",
+        "Art. 37",
+        "Art. 37, § 13º",
+        "Art. 39, § 5º",
+        "Art. 39",
+        "Art. 39, § 5º",
+        "ADCT, Art. 17",
+        "ADCT, Art. 17",
+        "Art. 37, XI",
+        "Art. 37, XVI",
+        "Art. 37, X"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 37, § 13º",
+          "texto": "Art. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:\n\nArt. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | § 13º - . O servidor público titular de cargo efetivo poderá ser readaptado para exercício de cargo cujas atribuições e responsabilidades sejam compatíveis com a limitação que tenha sofrido em sua capacidade física ou mental, enquanto permanecer nesta condição, desde que possua a habilitação e o nível de escolaridade exigidos para o cargo de destino, mantida a remuneração do cargo de origem.",
+          "score_reranker": 0.8200510966927549,
+          "score_cosseno": 0.6832273006439209,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 37",
+            "Art. 37, § 13º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 39, § 5º",
+          "texto": "Art. 39. A União, os Estados, o Distrito Federal e os Municípios instituirão conselho de política de administração e remuneração de pessoal, integrado por servidores designados pelos respectivos Poderes.\n\nArt. 39 (Contexto: A União, os Estados, o Distrito Federal e os Municípios instituirão conselho de política de administração e remuneração de pessoal, integrado por servidores designados pelos respectivos Poderes.) | § 5º - Lei da União, dos Estados, do Distrito Federal e dos Municípios poderá estabelecer a relação entre a maior e a menor remuneração dos servidores públicos, obedecido, em qualquer caso, o disposto no art. 37, XI.",
+          "score_reranker": 0.6640244303914143,
+          "score_cosseno": 0.6934633255004883,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 39",
+            "Art. 39, § 5º"
+          ]
+        },
+        {
+          "artigo_id": "ADCT, Art. 17",
+          "texto": "Art. 17. Os vencimentos, a remuneração, as vantagens e os adicionais, bem como os proventos de aposentadoria que estejam sendo percebidos em desacordo com a Constituição serão imediatamente reduzidos aos limites dela decorrentes, não se admitindo, neste caso, invocação de direito adquirido ou percepção de excesso a qualquer título. § 1º É assegurado o exercício cumulativo de dois cargos ou empregos privativos de médico que estejam sendo exercidos por médico militar na administração pública direta ou indireta. § 2º É assegurado o exercício cumulativo de dois cargos ou empregos privativos de profissionais de saúde que estejam sendo exercidos na administração pública direta ou indireta.",
+          "score_reranker": 0.7271027205992268,
+          "score_cosseno": 0.6823598146438599,
+          "origem": "parent_document",
+          "child_ids": [
+            "ADCT, Art. 17"
+          ]
+        },
+        {
+          "artigo_id": "Art. 37, XI",
+          "texto": "Art. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | XI - a remuneração e o subsídio dos ocupantes de cargos, funções e empregos públicos da administração direta, autárquica e fundacional, dos membros de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios, dos detentores de mandato eletivo e dos demais agentes políticos e os proventos, pensões ou outra espécie remuneratória, percebidos cumulativamente ou não, incluídas as vantagens pessoais ou de qualquer outra natureza, não poderão exceder o subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, aplicando-se como limite, nos Municípios, o subsídio do Prefeito, e nos Estados e no Distrito Federal, o subsídio mensal do Governador no âmbito do Poder Executivo, o subsídio dos Deputados Estaduais e Distritais no âmbito do Poder Legislativo e o subsídio dos Desembargadores do Tribunal de Justiça, limitado a noventa inteiros e vinte e cinco centésimos por cento do subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, no âmbito do Poder Judiciário, aplicável este limite aos membros do Ministério Público, aos Procuradores e aos Defensores Públicos;",
+          "score_reranker": 0.8540210835519043,
+          "score_cosseno": 0.7228024005889893,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 37, XVI",
+          "texto": "Art. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | XVI - é vedada a acumulação remunerada de cargos públicos, exceto, quando houver compatibilidade de horários, observado em qualquer caso o disposto no inciso XI: a) a de dois cargos de professor; b) a de um cargo de professor com outro, técnico ou científico; c) a de dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas;",
+          "score_reranker": 0.9553998027572761,
+          "score_cosseno": 0.7321865558624268,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 37, X",
+          "texto": "Art. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | X - a remuneração dos servidores públicos e o subsídio de que trata o § 4º do art. 39 somente poderão ser fixados ou alterados por lei específica, observada a iniciativa privativa em cada caso, assegurada revisão geral anual, sempre na mesma data e sem distinção de índices;",
+          "score_reranker": 0.8367287432733017,
+          "score_cosseno": 0.7207885980606079,
+          "origem": "reranker",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 54.404769499989925,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 37, § 13º | Relevância: 0.820]\nArt. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:\n\nArt. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | § 13º - . O servidor público titular de cargo efetivo poderá ser readaptado para exercício de cargo cujas atribuições e responsabilidades sejam compatíveis com a limitação que tenha sofrido em sua capacidade física ou mental, enquanto permanecer nesta condição, desde que possua a habilitação e o nível de escolaridade exigidos para o cargo de destino, mantida a remuneração do cargo de origem.\n\n[FONTE 2 | Art. 39, § 5º | Relevância: 0.664]\nArt. 39. A União, os Estados, o Distrito Federal e os Municípios instituirão conselho de política de administração e remuneração de pessoal, integrado por servidores designados pelos respectivos Poderes.\n\nArt. 39 (Contexto: A União, os Estados, o Distrito Federal e os Municípios instituirão conselho de política de administração e remuneração de pessoal, integrado por servidores designados pelos respectivos Poderes.) | § 5º - Lei da União, dos Estados, do Distrito Federal e dos Municípios poderá estabelecer a relação entre a maior e a menor remuneração dos servidores públicos, obedecido, em qualquer caso, o disposto no art. 37, XI.\n\n[FONTE 3 | ADCT, Art. 17 | Relevância: 0.727]\nArt. 17. Os vencimentos, a remuneração, as vantagens e os adicionais, bem como os proventos de aposentadoria que estejam sendo percebidos em desacordo com a Constituição serão imediatamente reduzidos aos limites dela decorrentes, não se admitindo, neste caso, invocação de direito adquirido ou percepção de excesso a qualquer título. § 1º É assegurado o exercício cumulativo de dois cargos ou empregos privativos de médico que estejam sendo exercidos por médico militar na administração pública direta ou indireta. § 2º É assegurado o exercício cumulativo de dois cargos ou empregos privativos de profissionais de saúde que estejam sendo exercidos na administração pública direta ou indireta.\n\n[FONTE 4 | Art. 37, XI | Relevância: 0.854]\nArt. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | XI - a remuneração e o subsídio dos ocupantes de cargos, funções e empregos públicos da administração direta, autárquica e fundacional, dos membros de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios, dos detentores de mandato eletivo e dos demais agentes políticos e os proventos, pensões ou outra espécie remuneratória, percebidos cumulativamente ou não, incluídas as vantagens pessoais ou de qualquer outra natureza, não poderão exceder o subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, aplicando-se como limite, nos Municípios, o subsídio do Prefeito, e nos Estados e no Distrito Federal, o subsídio mensal do Governador no âmbito do Poder Executivo, o subsídio dos Deputados Estaduais e Distritais no âmbito do Poder Legislativo e o subsídio dos Desembargadores do Tribunal de Justiça, limitado a noventa inteiros e vinte e cinco centésimos por cento do subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, no âmbito do Poder Judiciário, aplicável este limite aos membros do Ministério Público, aos Procuradores e aos Defensores Públicos;\n\n[FONTE 5 | Art. 37, XVI | Relevância: 0.955]\nArt. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | XVI - é vedada a acumulação remunerada de cargos públicos, exceto, quando houver compatibilidade de horários, observado em qualquer caso o disposto no inciso XI: a) a de dois cargos de professor; b) a de um cargo de professor com outro, técnico ou científico; c) a de dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas;\n\n[FONTE 6 | Art. 37, X | Relevância: 0.837]\nArt. 37 (Contexto: A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:) | X - a remuneração dos servidores públicos e o subsídio de que trata o § 4º do art. 39 somente poderão ser fixados ou alterados por lei específica, observada a iniciativa privativa em cada caso, assegurada revisão geral anual, sempre na mesma data e sem distinção de índices;\n\nPergunta: Um servidor público pode acumular dois cargos de professor na rede pública, e qual é o limite máximo que ele pode receber de salário?"
+    },
+    {
+      "id": "Q08",
+      "area": "Administração Pública",
+      "perfil": "regra_e_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "Depois que um servidor público concursado conquista a estabilidade, ele ainda pode perder o cargo? Em quais situações?",
+      "artigos_esperados": [
+        "Art. 41, § 1º"
+      ],
+      "criterios_juiz": "Deve indicar que sim e listar as hipoteses do Art. 41, § 1º: sentenca judicial transitada em julgado; processo administrativo com ampla defesa; procedimento de avaliacao periodica de desempenho com ampla defesa (mencao ao Art. 169, § 4º conta como bonus apenas se estiver no contexto).",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.7419590858943578,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 41",
+        "Art. 41",
+        "Art. 247",
+        "Art. 247"
+      ],
+      "recuperou_esperado": false,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 41",
+          "texto": "Art. 41. São estáveis após três anos de efetivo exercício os servidores nomeados para cargo de provimento efetivo em virtude de concurso público. § 1º O servidor público estável só perderá o cargo: I - em virtude de sentença judicial transitada em julgado; II - mediante processo administrativo em que lhe seja assegurada ampla defesa; III - mediante procedimento de avaliação periódica de desempenho, na forma de lei complementar, assegurada ampla defesa. § 2º Invalidada por sentença judicial a demissão do servidor estável, será ele reintegrado, e o eventual ocupante da vaga, se estável, reconduzido ao cargo de origem, sem direito a indenização, aproveitado em outro cargo ou posto em disponibilidade com remuneração proporcional ao tempo de serviço. § 3º Extinto o cargo ou declarada a sua desnecessidade, o servidor estável ficará em disponibilidade, com remuneração proporcional ao tempo de serviço, até seu adequado aproveitamento em outro cargo. § 4º Como condição para a aquisição da estabilidade, é obrigatória a avaliação especial de desempenho por comissão instituída para essa finalidade.",
+          "score_reranker": 0.7419590858943578,
+          "score_cosseno": 0.7302346229553223,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 41"
+          ]
+        },
+        {
+          "artigo_id": "Art. 247",
+          "texto": "Art. 247. As leis previstas no inciso III do § 1º do art. 41 e no § 7º do art. 169 estabelecerão critérios e garantias especiais para a perda do cargo pelo servidor público estável que, em decorrência das atribuições de seu cargo efetivo, desenvolva atividades exclusivas de Estado. Parágrafo único. Na hipótese de insuficiência de desempenho, a perda do cargo somente ocorrerá mediante processo administrativo em que lhe sejam assegurados o contraditório e a ampla defesa.",
+          "score_reranker": 0.6138964950632658,
+          "score_cosseno": 0.71237713098526,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 247"
+          ]
+        }
+      ],
+      "retriever_s": 46.92643589997897,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 41 | Relevância: 0.742]\nArt. 41. São estáveis após três anos de efetivo exercício os servidores nomeados para cargo de provimento efetivo em virtude de concurso público. § 1º O servidor público estável só perderá o cargo: I - em virtude de sentença judicial transitada em julgado; II - mediante processo administrativo em que lhe seja assegurada ampla defesa; III - mediante procedimento de avaliação periódica de desempenho, na forma de lei complementar, assegurada ampla defesa. § 2º Invalidada por sentença judicial a demissão do servidor estável, será ele reintegrado, e o eventual ocupante da vaga, se estável, reconduzido ao cargo de origem, sem direito a indenização, aproveitado em outro cargo ou posto em disponibilidade com remuneração proporcional ao tempo de serviço. § 3º Extinto o cargo ou declarada a sua desnecessidade, o servidor estável ficará em disponibilidade, com remuneração proporcional ao tempo de serviço, até seu adequado aproveitamento em outro cargo. § 4º Como condição para a aquisição da estabilidade, é obrigatória a avaliação especial de desempenho por comissão instituída para essa finalidade.\n\n[FONTE 2 | Art. 247 | Relevância: 0.614]\nArt. 247. As leis previstas no inciso III do § 1º do art. 41 e no § 7º do art. 169 estabelecerão critérios e garantias especiais para a perda do cargo pelo servidor público estável que, em decorrência das atribuições de seu cargo efetivo, desenvolva atividades exclusivas de Estado. Parágrafo único. Na hipótese de insuficiência de desempenho, a perda do cargo somente ocorrerá mediante processo administrativo em que lhe sejam assegurados o contraditório e a ampla defesa.\n\nPergunta: Depois que um servidor público concursado conquista a estabilidade, ele ainda pode perder o cargo? Em quais situações?"
+    },
+    {
+      "id": "Q09",
+      "area": "Organização dos Poderes",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "O Presidente da República pode editar Medida Provisória para criar um novo crime penal, e por quanto tempo no máximo uma Medida Provisória vale antes de perder a eficácia?",
+      "artigos_esperados": [
+        "Art. 62, § 1º",
+        "Art. 62, § 3º",
+        "Art. 62, § 7º"
+      ],
+      "criterios_juiz": "Deve afirmar a vedacao expressa de MP sobre direito penal (Art. 62, § 1º, I, b) e informar prazo de 60 dias prorrogavel uma unica vez por igual periodo (total de 120 dias).",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.985765194348973,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 62, § 3º",
+        "Art. 62",
+        "Art. 62, § 3º",
+        "Art. 62, § 11º",
+        "Art. 62",
+        "Art. 62, § 11º",
+        "Art. 62, § 7º",
+        "Art. 62",
+        "Art. 62, § 7º"
+      ],
+      "recuperou_esperado": false,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 62, § 3º",
+          "texto": "Art. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 3º - As medidas provisórias, ressalvado o disposto nos §§ 11 e 12 perderão eficácia, desde a edição, se não forem convertidas em lei no prazo de sessenta dias, prorrogável, nos termos do § 7º, uma vez por igual período, devendo o Congresso Nacional disciplinar, por decreto legislativo, as relações jurídicas delas decorrentes.",
+          "score_reranker": 0.985765194348973,
+          "score_cosseno": 0.6848739385604858,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 62",
+            "Art. 62, § 3º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 62, § 11º",
+          "texto": "Art. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 11º - . Não editado o decreto legislativo a que se refere o § 3º até sessenta dias após a rejeição ou perda de eficácia de medida provisória, as relações jurídicas constituídas e decorrentes de atos praticados durante sua vigência conservar-se-ão por ela regidas.",
+          "score_reranker": 0.9309238450577626,
+          "score_cosseno": 0.6544029712677002,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 62",
+            "Art. 62, § 11º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 62, § 7º",
+          "texto": "Art. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 7º - Prorrogar-se-á uma única vez por igual período a vigência de medida provisória que, no prazo de sessenta dias, contado de sua publicação, não tiver a sua votação encerrada nas duas Casas do Congresso Nacional.",
+          "score_reranker": 0.8975266794580274,
+          "score_cosseno": 0.6617997884750366,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 62",
+            "Art. 62, § 7º"
+          ]
+        }
+      ],
+      "retriever_s": 5.321970199991483,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 62, § 3º | Relevância: 0.986]\nArt. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 3º - As medidas provisórias, ressalvado o disposto nos §§ 11 e 12 perderão eficácia, desde a edição, se não forem convertidas em lei no prazo de sessenta dias, prorrogável, nos termos do § 7º, uma vez por igual período, devendo o Congresso Nacional disciplinar, por decreto legislativo, as relações jurídicas delas decorrentes.\n\n[FONTE 2 | Art. 62, § 11º | Relevância: 0.931]\nArt. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 11º - . Não editado o decreto legislativo a que se refere o § 3º até sessenta dias após a rejeição ou perda de eficácia de medida provisória, as relações jurídicas constituídas e decorrentes de atos praticados durante sua vigência conservar-se-ão por ela regidas.\n\n[FONTE 3 | Art. 62, § 7º | Relevância: 0.898]\nArt. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.\n\nArt. 62 (Contexto: Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional.) | § 7º - Prorrogar-se-á uma única vez por igual período a vigência de medida provisória que, no prazo de sessenta dias, contado de sua publicação, não tiver a sua votação encerrada nas duas Casas do Congresso Nacional.\n\nPergunta: O Presidente da República pode editar Medida Provisória para criar um novo crime penal, e por quanto tempo no máximo uma Medida Provisória vale antes de perder a eficácia?"
+    },
+    {
+      "id": "Q10",
+      "area": "Organização dos Poderes",
+      "perfil": "composta_clausula_petrea",
+      "esperado_na_cf88": true,
+      "pergunta": "O Congresso Nacional pode aprovar uma Emenda à Constituição para extinguir o voto secreto ou adotar a pena de morte para crimes comuns?",
+      "artigos_esperados": [
+        "Art. 60, § 4º",
+        "Art. 5º, XLVII"
+      ],
+      "criterios_juiz": "Deve afirmar que nao, pois nao pode ser objeto de deliberacao proposta de emenda tendente a abolir o voto direto, secreto, universal e periodico nem os direitos e garantias individuais (onde se insere a proibicao de pena de morte, salvo guerra declarada).",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.8833264158042532,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 60",
+        "Art. 60"
+      ],
+      "recuperou_esperado": false,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 60",
+          "texto": "Art. 60. A Constituição poderá ser emendada mediante proposta: I - de um terço, no mínimo, dos membros da Câmara dos Deputados ou do Senado Federal; II - do Presidente da República; III - de mais da metade das Assembléias Legislativas das unidades da Federação, manifestando-se, cada uma delas, pela maioria relativa de seus membros. § 1º A Constituição não poderá ser emendada na vigência de intervenção federal, de estado de defesa ou de estado de sítio. § 2º A proposta será discutida e votada em cada Casa do Congresso Nacional, em dois turnos, considerando-se aprovada se obtiver, em ambos, três quintos dos votos dos respectivos membros. § 3º A emenda à Constituição será promulgada pelas Mesas da Câmara dos Deputados e do Senado Federal, com o respectivo número de ordem. § 4º Não será objeto de deliberação a proposta de emenda tendente a abolir: I - a forma federativa de Estado; II - o voto direto, secreto, universal e periódico; III - a separação dos Poderes; IV - os direitos e garantias individuais. § 5º A matéria constante de proposta de emenda rejeitada ou havida por prejudicada não pode ser objeto de nova proposta na mesma sessão legislativa.",
+          "score_reranker": 0.8833264158042532,
+          "score_cosseno": 0.543747067451477,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 60"
+          ]
+        }
+      ],
+      "retriever_s": 4.5389391999924555,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 60 | Relevância: 0.883]\nArt. 60. A Constituição poderá ser emendada mediante proposta: I - de um terço, no mínimo, dos membros da Câmara dos Deputados ou do Senado Federal; II - do Presidente da República; III - de mais da metade das Assembléias Legislativas das unidades da Federação, manifestando-se, cada uma delas, pela maioria relativa de seus membros. § 1º A Constituição não poderá ser emendada na vigência de intervenção federal, de estado de defesa ou de estado de sítio. § 2º A proposta será discutida e votada em cada Casa do Congresso Nacional, em dois turnos, considerando-se aprovada se obtiver, em ambos, três quintos dos votos dos respectivos membros. § 3º A emenda à Constituição será promulgada pelas Mesas da Câmara dos Deputados e do Senado Federal, com o respectivo número de ordem. § 4º Não será objeto de deliberação a proposta de emenda tendente a abolir: I - a forma federativa de Estado; II - o voto direto, secreto, universal e periódico; III - a separação dos Poderes; IV - os direitos e garantias individuais. § 5º A matéria constante de proposta de emenda rejeitada ou havida por prejudicada não pode ser objeto de nova proposta na mesma sessão legislativa.\n\nPergunta: O Congresso Nacional pode aprovar uma Emenda à Constituição para extinguir o voto secreto ou adotar a pena de morte para crimes comuns?"
+    },
+    {
+      "id": "Q11",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_imunidade",
+      "esperado_na_cf88": true,
+      "pergunta": "A prefeitura pode cobrar IPTU de um templo religioso que realiza cultos no imóvel?",
+      "artigos_esperados": [
+        "Art. 150, VI"
+      ],
+      "criterios_juiz": "Deve responder que e vedado instituir impostos sobre templos de qualquer culto / entidades religiosas (imunidade tributaria do Art. 150, VI, b), observada a vinculacao as finalidades essenciais se constar no contexto.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.22833347854638464,
+      "top1_score_p2": 0.3214774607077918,
+      "query_traduzida": "é vedado cobrar tributo sobre bem imóvel utilizado para culto religioso em exercício da fé",
+      "artigos_recuperados": [
+        "Art. 150, VI"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 150, VI",
+          "texto": "Art. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | VI - instituir impostos sobre: a) patrimônio, renda ou serviços, uns dos outros; b) templos de qualquer culto; c) patrimônio, renda ou serviços dos partidos políticos, inclusive suas fundações, das entidades sindicais dos trabalhadores, das instituições de educação e de assistência social, sem fins lucrativos, atendidos os requisitos da lei; d) livros, jornais, periódicos e o papel destinado a sua impressão. e) fonogramas e videofonogramas musicais produzidos no Brasil contendo obras musicais ou literomusicais de autores brasileiros e/ou obras em geral interpretadas por artistas brasileiros bem como os suportes materiais ou arquivos digitais que os contenham, salvo na etapa de replicação industrial de mídias ópticas de leitura a laser.",
+          "score_reranker": 0.3214774607077918,
+          "score_cosseno": 0.6130296587944031,
+          "origem": "reranker",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 8.038933000003453,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 150, VI | Relevância: 0.321]\nArt. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | VI - instituir impostos sobre: a) patrimônio, renda ou serviços, uns dos outros; b) templos de qualquer culto; c) patrimônio, renda ou serviços dos partidos políticos, inclusive suas fundações, das entidades sindicais dos trabalhadores, das instituições de educação e de assistência social, sem fins lucrativos, atendidos os requisitos da lei; d) livros, jornais, periódicos e o papel destinado a sua impressão. e) fonogramas e videofonogramas musicais produzidos no Brasil contendo obras musicais ou literomusicais de autores brasileiros e/ou obras em geral interpretadas por artistas brasileiros bem como os suportes materiais ou arquivos digitais que os contenham, salvo na etapa de replicação industrial de mídias ópticas de leitura a laser.\n\nPergunta: A prefeitura pode cobrar IPTU de um templo religioso que realiza cultos no imóvel?"
+    },
+    {
+      "id": "Q12",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_anterioridade",
+      "esperado_na_cf88": true,
+      "pergunta": "Se o Congresso aprovar uma lei hoje criando um novo imposto ou aumentando a alíquota, o governo já pode cobrar esse valor na semana que vem?",
+      "artigos_esperados": [
+        "Art. 150, III"
+      ],
+      "criterios_juiz": "Deve explicar a vedacao de cobrar tributos no mesmo exercicio financeiro da publicacao da lei e antes de decorridos noventa dias da publicacao (Art. 150, III, b e c), sem fundir os dois prazos como se fossem a mesma regra.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.16597984440696117,
+      "top1_score_p2": 0.9927080615038519,
+      "query_traduzida": "é vedado cobrar tributo antes da entrada em vigor da lei que o institui",
+      "artigos_recuperados": [
+        "Art. 150, III",
+        "Art. 150, I",
+        "Art. 150",
+        "Art. 150, II"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 150, III",
+          "texto": "Art. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | III - cobrar tributos: a) em relação a fatos geradores ocorridos antes do início da vigência da lei que os houver instituído ou aumentado; b) no mesmo exercício financeiro em que haja sido publicada a lei que os instituiu ou aumentou; c) antes de decorridos noventa dias da data em que haja sido publicada a lei que os instituiu ou aumentou, observado o disposto na alínea b;",
+          "score_reranker": 0.9927080615038519,
+          "score_cosseno": 0.6710883975028992,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 150, I",
+          "texto": "Art. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | I - exigir ou aumentar tributo sem lei que o estabeleça;",
+          "score_reranker": 0.6799210162381164,
+          "score_cosseno": 0.58748459815979,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 150",
+          "texto": "Art. 150. Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:",
+          "score_reranker": 0.4954776167869568,
+          "score_cosseno": 0.4954776167869568,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 150, II",
+          "texto": "Art. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | II - instituir tratamento desigual entre contribuintes que se encontrem em situação equivalente, proibida qualquer distinção em razão de ocupação profissional ou função por eles exercida, independentemente da denominação jurídica dos rendimentos, títulos ou direitos;",
+          "score_reranker": 0.5103634595870972,
+          "score_cosseno": 0.5103634595870972,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 7.742931499960832,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 150, III | Relevância: 0.993]\nArt. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | III - cobrar tributos: a) em relação a fatos geradores ocorridos antes do início da vigência da lei que os houver instituído ou aumentado; b) no mesmo exercício financeiro em que haja sido publicada a lei que os instituiu ou aumentou; c) antes de decorridos noventa dias da data em que haja sido publicada a lei que os instituiu ou aumentou, observado o disposto na alínea b;\n\n[FONTE 2 | Art. 150, I | Relevância: 0.680]\nArt. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | I - exigir ou aumentar tributo sem lei que o estabeleça;\n\n[FONTE 3 | Art. 150 | Relevância: 0.495]\nArt. 150. Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:\n\n[FONTE 4 | Art. 150, II | Relevância: 0.510]\nArt. 150 (Contexto: Sem prejuízo de outras garantias asseguradas ao contribuinte, é vedado à União, aos Estados, ao Distrito Federal e aos Municípios:) | II - instituir tratamento desigual entre contribuintes que se encontrem em situação equivalente, proibida qualquer distinção em razão de ocupação profissional ou função por eles exercida, independentemente da denominação jurídica dos rendimentos, títulos ou direitos;\n\nPergunta: Se o Congresso aprovar uma lei hoje criando um novo imposto ou aumentando a alíquota, o governo já pode cobrar esse valor na semana que vem?"
+    },
+    {
+      "id": "Q13",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_competencia",
+      "esperado_na_cf88": true,
+      "pergunta": "Quando alguém doa um imóvel em vida para um filho, quem tem competência para cobrar o imposto sobre essa doação: a União, o Estado ou o Município?",
+      "artigos_esperados": [
+        "Art. 155, I"
+      ],
+      "criterios_juiz": "Deve atribuir a competencia aos Estados e ao Distrito Federal (imposto sobre transmissao causa mortis e doacao, de quaisquer bens ou direitos), afastando Uniao e Municipio.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.7533593964531962,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 147",
+        "Art. 147",
+        "Art. 155, § 1º",
+        "Art. 155",
+        "Art. 155, § 1º",
+        "Art. 156",
+        "Art. 156",
+        "Art. 156, I",
+        "Art. 156, II",
+        "Art. 156, III",
+        "Art. 156, IV",
+        "Art. 156, § 1º",
+        "Art. 156, § 2º",
+        "Art. 156, § 3º",
+        "Art. 156, § 4º",
+        "Art. 145",
+        "Art. 145",
+        "Art. 155, I",
+        "Art. 155",
+        "Art. 155, II",
+        "Art. 155, III"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 147",
+          "texto": "Art. 147. Competem à União, em Território Federal, os impostos estaduais e, se o Território não for dividido em Municípios, cumulativamente, os impostos municipais; ao Distrito Federal cabem os impostos municipais.",
+          "score_reranker": 0.7533593964531962,
+          "score_cosseno": 0.5730950832366943,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 147"
+          ]
+        },
+        {
+          "artigo_id": "Art. 155, § 1º",
+          "texto": "Art. 155. Compete aos Estados e ao Distrito Federal instituir impostos sobre:\n\nArt. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | § 1º - O imposto previsto no inciso I: I - relativamente a bens imóveis e respectivos direitos, compete ao Estado da situação do bem, ou ao Distrito Federal; II - relativamente a bens móveis, títulos e créditos, compete ao Estado onde se processar o inventário ou arrolamento, ou tiver domicílio o doador, ou ao Distrito Federal; III - terá a competência para sua instituição regulada por lei complementar: a) se o doador tiver domicílio ou residência no exterior; b) se o de cujus possuía bens, era residente ou domiciliado ou teve o seu inventário processado no exterior; IV - terá suas alíquotas máximas fixadas pelo Senado Federal.",
+          "score_reranker": 0.7499557446591248,
+          "score_cosseno": 0.6595048904418945,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 155",
+            "Art. 155, § 1º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 156",
+          "texto": "Art. 156. Compete aos Municípios instituir impostos sobre:\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | I - propriedade predial e territorial urbana;\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | II - transmissão inter vivos, a qualquer título, por ato oneroso, de bens imóveis, por natureza ou acessão física, e de direitos reais sobre imóveis, exceto os de garantia, bem como cessão de direitos a sua aquisição;\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | III - serviços de qualquer natureza, não compreendidos no art. 155, II, definidos em lei complementar.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | IV - (Revogado).\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 1º - Sem prejuízo da progressividade no tempo a que se refere o art. 182, § 4º, inciso II, o imposto previsto no inciso I poderá: I - ser progressivo em razão do valor do imóvel; e II - ter alíquotas diferentes de acordo com a localização e o uso do imóvel.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 2º - O imposto previsto no inciso II: I - não incide sobre a transmissão de bens ou direitos incorporados ao patrimônio de pessoa jurídica em realização de capital, nem sobre a transmissão de bens ou direitos decorrente de fusão, incorporação, cisão ou extinção de pessoa jurídica, salvo se, nesses casos, a atividade preponderante do adquirente for a compra e venda desses bens ou direitos, locação de bens imóveis ou arrendamento mercantil; II - compete ao Município da situação do bem.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 3º - Em relação ao imposto previsto no inciso III do caput deste artigo, cabe à lei complementar: I - fixar as suas alíquotas máximas e mínimas; II - excluir da sua incidência exportações de serviços para o exterior; III - regular a forma e as condições como isenções, incentivos e benefícios fiscais serão concedidos e revogados.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 4º - (Revogado).",
+          "score_reranker": 0.48873033445803726,
+          "score_cosseno": 0.5791559219360352,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 156",
+            "Art. 156, I",
+            "Art. 156, II",
+            "Art. 156, III",
+            "Art. 156, IV",
+            "Art. 156, § 1º",
+            "Art. 156, § 2º",
+            "Art. 156, § 3º",
+            "Art. 156, § 4º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 145",
+          "texto": "Art. 145. A União, os Estados, o Distrito Federal e os Municípios poderão instituir os seguintes tributos: I - impostos; II - taxas, em razão do exercício do poder de polícia ou pela utilização, efetiva ou potencial, de serviços públicos específicos e divisíveis, prestados ao contribuinte ou postos a sua disposição; III - contribuição de melhoria, decorrente de obras públicas. § 1º Sempre que possível, os impostos terão caráter pessoal e serão graduados segundo a capacidade econômica do contribuinte, facultado à administração tributária, especialmente para conferir efetividade a esses objetivos, identificar, respeitados os direitos individuais e nos termos da lei, o patrimônio, os rendimentos e as atividades econômicas do contribuinte. § 2º As taxas não poderão ter base de cálculo própria de impostos.",
+          "score_reranker": 0.2919993016682556,
+          "score_cosseno": 0.5471718311309814,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 145"
+          ]
+        },
+        {
+          "artigo_id": "Art. 155, I",
+          "texto": "Art. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | I - transmissão causa mortis e doação, de quaisquer bens ou direitos;",
+          "score_reranker": 0.504653309229455,
+          "score_cosseno": 0.6365193128585815,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 155",
+          "texto": "Art. 155. Compete aos Estados e ao Distrito Federal instituir impostos sobre:",
+          "score_reranker": 0.5253839492797852,
+          "score_cosseno": 0.5253839492797852,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 155, II",
+          "texto": "Art. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | II - operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de comunicação, ainda que as operações e as prestações se iniciem no exterior;",
+          "score_reranker": 0.51069176197052,
+          "score_cosseno": 0.51069176197052,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 155, III",
+          "texto": "Art. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | III - propriedade de veículos automotores.",
+          "score_reranker": 0.5234834551811218,
+          "score_cosseno": 0.5234834551811218,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 3.707877599983476,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 147 | Relevância: 0.753]\nArt. 147. Competem à União, em Território Federal, os impostos estaduais e, se o Território não for dividido em Municípios, cumulativamente, os impostos municipais; ao Distrito Federal cabem os impostos municipais.\n\n[FONTE 2 | Art. 155, § 1º | Relevância: 0.750]\nArt. 155. Compete aos Estados e ao Distrito Federal instituir impostos sobre:\n\nArt. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | § 1º - O imposto previsto no inciso I: I - relativamente a bens imóveis e respectivos direitos, compete ao Estado da situação do bem, ou ao Distrito Federal; II - relativamente a bens móveis, títulos e créditos, compete ao Estado onde se processar o inventário ou arrolamento, ou tiver domicílio o doador, ou ao Distrito Federal; III - terá a competência para sua instituição regulada por lei complementar: a) se o doador tiver domicílio ou residência no exterior; b) se o de cujus possuía bens, era residente ou domiciliado ou teve o seu inventário processado no exterior; IV - terá suas alíquotas máximas fixadas pelo Senado Federal.\n\n[FONTE 3 | Art. 156 | Relevância: 0.489]\nArt. 156. Compete aos Municípios instituir impostos sobre:\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | I - propriedade predial e territorial urbana;\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | II - transmissão inter vivos, a qualquer título, por ato oneroso, de bens imóveis, por natureza ou acessão física, e de direitos reais sobre imóveis, exceto os de garantia, bem como cessão de direitos a sua aquisição;\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | III - serviços de qualquer natureza, não compreendidos no art. 155, II, definidos em lei complementar.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | IV - (Revogado).\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 1º - Sem prejuízo da progressividade no tempo a que se refere o art. 182, § 4º, inciso II, o imposto previsto no inciso I poderá: I - ser progressivo em razão do valor do imóvel; e II - ter alíquotas diferentes de acordo com a localização e o uso do imóvel.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 2º - O imposto previsto no inciso II: I - não incide sobre a transmissão de bens ou direitos incorporados ao patrimônio de pessoa jurídica em realização de capital, nem sobre a transmissão de bens ou direitos decorrente de fusão, incorporação, cisão ou extinção de pessoa jurídica, salvo se, nesses casos, a atividade preponderante do adquirente for a compra e venda desses bens ou direitos, locação de bens imóveis ou arrendamento mercantil; II - compete ao Município da situação do bem.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 3º - Em relação ao imposto previsto no inciso III do caput deste artigo, cabe à lei complementar: I - fixar as suas alíquotas máximas e mínimas; II - excluir da sua incidência exportações de serviços para o exterior; III - regular a forma e as condições como isenções, incentivos e benefícios fiscais serão concedidos e revogados.\n\nArt. 156 (Contexto: Compete aos Municípios instituir impostos sobre:) | § 4º - (Revogado).\n\n[FONTE 4 | Art. 145 | Relevância: 0.292]\nArt. 145. A União, os Estados, o Distrito Federal e os Municípios poderão instituir os seguintes tributos: I - impostos; II - taxas, em razão do exercício do poder de polícia ou pela utilização, efetiva ou potencial, de serviços públicos específicos e divisíveis, prestados ao contribuinte ou postos a sua disposição; III - contribuição de melhoria, decorrente de obras públicas. § 1º Sempre que possível, os impostos terão caráter pessoal e serão graduados segundo a capacidade econômica do contribuinte, facultado à administração tributária, especialmente para conferir efetividade a esses objetivos, identificar, respeitados os direitos individuais e nos termos da lei, o patrimônio, os rendimentos e as atividades econômicas do contribuinte. § 2º As taxas não poderão ter base de cálculo própria de impostos.\n\n[FONTE 5 | Art. 155, I | Relevância: 0.505]\nArt. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | I - transmissão causa mortis e doação, de quaisquer bens ou direitos;\n\n[FONTE 6 | Art. 155 | Relevância: 0.525]\nArt. 155. Compete aos Estados e ao Distrito Federal instituir impostos sobre:\n\n[FONTE 7 | Art. 155, II | Relevância: 0.511]\nArt. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | II - operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de comunicação, ainda que as operações e as prestações se iniciem no exterior;\n\n[FONTE 8 | Art. 155, III | Relevância: 0.523]\nArt. 155 (Contexto: Compete aos Estados e ao Distrito Federal instituir impostos sobre:) | III - propriedade de veículos automotores.\n\nPergunta: Quando alguém doa um imóvel em vida para um filho, quem tem competência para cobrar o imposto sobre essa doação: a União, o Estado ou o Município?"
+    },
+    {
+      "id": "Q14",
+      "area": "Ordem Econômica",
+      "perfil": "requisitos_objetivos",
+      "esperado_na_cf88": true,
+      "pergunta": "Quem mora há cinco anos sem interrupção em um terreno urbano pequeno para moradia própria pode pedir a propriedade por usucapião constitucional? Quais são os requisitos?",
+      "artigos_esperados": [
+        "Art. 183"
+      ],
+      "criterios_juiz": "Deve listar corretamente: area urbana de ate 250 m2, posse por 5 anos ininterruptamente e sem oposicao, uso para moradia propria ou da familia, nao ser proprietario de outro imovel urbano ou rural, e que imoveis publicos nao sao usucapiveis.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.962360139592476,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 183",
+        "Art. 183"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 183",
+          "texto": "Art. 183. Aquele que possuir como sua área urbana de até duzentos e cinqüenta metros quadrados, por cinco anos, ininterruptamente e sem oposição, utilizando-a para sua moradia ou de sua família, adquirir-lhe-á o domínio, desde que não seja proprietário de outro imóvel urbano ou rural. § 1º O título de domínio e a concessão de uso serão conferidos ao homem ou à mulher, ou a ambos, independentemente do estado civil. § 2º Esse direito não será reconhecido ao mesmo possuidor mais de uma vez. § 3º Os imóveis públicos não serão adquiridos por usucapião.",
+          "score_reranker": 0.962360139592476,
+          "score_cosseno": 0.6881658434867859,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 183"
+          ]
+        }
+      ],
+      "retriever_s": 37.17886829999043,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 183 | Relevância: 0.962]\nArt. 183. Aquele que possuir como sua área urbana de até duzentos e cinqüenta metros quadrados, por cinco anos, ininterruptamente e sem oposição, utilizando-a para sua moradia ou de sua família, adquirir-lhe-á o domínio, desde que não seja proprietário de outro imóvel urbano ou rural. § 1º O título de domínio e a concessão de uso serão conferidos ao homem ou à mulher, ou a ambos, independentemente do estado civil. § 2º Esse direito não será reconhecido ao mesmo possuidor mais de uma vez. § 3º Os imóveis públicos não serão adquiridos por usucapião.\n\nPergunta: Quem mora há cinco anos sem interrupção em um terreno urbano pequeno para moradia própria pode pedir a propriedade por usucapião constitucional? Quais são os requisitos?"
+    },
+    {
+      "id": "Q15",
+      "area": "Ordem Econômica",
+      "perfil": "monopolio_uniao",
+      "esperado_na_cf88": true,
+      "pergunta": "Empresas privadas podem explorar minérios nucleares no Brasil por conta própria ou essa atividade é monopólio da União?",
+      "artigos_esperados": [
+        "Art. 177, V"
+      ],
+      "criterios_juiz": "Deve responder que a pesquisa, lavra, enriquecimento, reprocessamento, industrializacao e comercio de minerios e minerais nucleares e derivados constituem monopolio da Uniao, respeitando exatamente eventuais ressalvas de radioisotopos presentes no trecho.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.982476902533645,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 177, § 1º",
+        "Art. 177",
+        "Art. 177, § 1º",
+        "Art. 21, XXIII",
+        "Art. 177, V",
+        "Art. 177, II",
+        "Art. 177, III",
+        "Art. 177, IV"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 177, § 1º",
+          "texto": "Art. 177. Constituem monopólio da União:\n\nArt. 177 (Contexto: Constituem monopólio da União:) | § 1º - A União poderá contratar com empresas estatais ou privadas a realização das atividades previstas nos incisos I a IV deste artigo, observadas as condições estabelecidas em lei.",
+          "score_reranker": 0.7402711205109455,
+          "score_cosseno": 0.569471538066864,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 177",
+            "Art. 177, § 1º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 21, XXIII",
+          "texto": "Art. 21 (Contexto: Compete à União:) | XXIII - explorar os serviços e instalações nucleares de qualquer natureza e exercer monopólio estatal sobre a pesquisa, a lavra, o enriquecimento e reprocessamento, a industrialização e o comércio de minérios nucleares e seus derivados, atendidos os seguintes princípios e condições: a) toda atividade nuclear em território nacional somente será admitida para fins pacíficos e mediante aprovação do Congresso Nacional; b) sob regime de permissão, são autorizadas a comercialização e a utilização de radioisótopos para a pesquisa e usos médicos, agrícolas e industriais; c) sob regime de permissão, são autorizadas a produção, comercialização e utilização de radioisótopos de meia-vida igual ou inferior a duas horas; d) a responsabilidade civil por danos nucleares independe da existência de culpa;",
+          "score_reranker": 0.982476902533645,
+          "score_cosseno": 0.6547898650169373,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 177, V",
+          "texto": "Art. 177 (Contexto: Constituem monopólio da União:) | V - a pesquisa, a lavra, o enriquecimento, o reprocessamento, a industrialização e o comércio de minérios e minerais nucleares e seus derivados, com exceção dos radioisótopos cuja produção, comercialização e utilização poderão ser autorizadas sob regime de permissão, conforme as alíneas b e c do inciso XXIII do caput do art. 21 desta Constituição Federal.",
+          "score_reranker": 0.946676160138217,
+          "score_cosseno": 0.6533347964286804,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 177, II",
+          "texto": "Art. 177 (Contexto: Constituem monopólio da União:) | II - a refinação do petróleo nacional ou estrangeiro;",
+          "score_reranker": 0.5437284708023071,
+          "score_cosseno": 0.5437284708023071,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 177, III",
+          "texto": "Art. 177 (Contexto: Constituem monopólio da União:) | III - a importação e exportação dos produtos e derivados básicos resultantes das atividades previstas nos incisos anteriores;",
+          "score_reranker": 0.45592647790908813,
+          "score_cosseno": 0.45592647790908813,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 177, IV",
+          "texto": "Art. 177 (Contexto: Constituem monopólio da União:) | IV - o transporte marítimo do petróleo bruto de origem nacional ou de derivados básicos de petróleo produzidos no País, bem assim o transporte, por meio de conduto, de petróleo bruto, seus derivados e gás natural de qualquer origem;",
+          "score_reranker": 0.49964338541030884,
+          "score_cosseno": 0.49964338541030884,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 2.7789015999878757,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 177, § 1º | Relevância: 0.740]\nArt. 177. Constituem monopólio da União:\n\nArt. 177 (Contexto: Constituem monopólio da União:) | § 1º - A União poderá contratar com empresas estatais ou privadas a realização das atividades previstas nos incisos I a IV deste artigo, observadas as condições estabelecidas em lei.\n\n[FONTE 2 | Art. 21, XXIII | Relevância: 0.982]\nArt. 21 (Contexto: Compete à União:) | XXIII - explorar os serviços e instalações nucleares de qualquer natureza e exercer monopólio estatal sobre a pesquisa, a lavra, o enriquecimento e reprocessamento, a industrialização e o comércio de minérios nucleares e seus derivados, atendidos os seguintes princípios e condições: a) toda atividade nuclear em território nacional somente será admitida para fins pacíficos e mediante aprovação do Congresso Nacional; b) sob regime de permissão, são autorizadas a comercialização e a utilização de radioisótopos para a pesquisa e usos médicos, agrícolas e industriais; c) sob regime de permissão, são autorizadas a produção, comercialização e utilização de radioisótopos de meia-vida igual ou inferior a duas horas; d) a responsabilidade civil por danos nucleares independe da existência de culpa;\n\n[FONTE 3 | Art. 177, V | Relevância: 0.947]\nArt. 177 (Contexto: Constituem monopólio da União:) | V - a pesquisa, a lavra, o enriquecimento, o reprocessamento, a industrialização e o comércio de minérios e minerais nucleares e seus derivados, com exceção dos radioisótopos cuja produção, comercialização e utilização poderão ser autorizadas sob regime de permissão, conforme as alíneas b e c do inciso XXIII do caput do art. 21 desta Constituição Federal.\n\n[FONTE 4 | Art. 177, II | Relevância: 0.544]\nArt. 177 (Contexto: Constituem monopólio da União:) | II - a refinação do petróleo nacional ou estrangeiro;\n\n[FONTE 5 | Art. 177, III | Relevância: 0.456]\nArt. 177 (Contexto: Constituem monopólio da União:) | III - a importação e exportação dos produtos e derivados básicos resultantes das atividades previstas nos incisos anteriores;\n\n[FONTE 6 | Art. 177, IV | Relevância: 0.500]\nArt. 177 (Contexto: Constituem monopólio da União:) | IV - o transporte marítimo do petróleo bruto de origem nacional ou de derivados básicos de petróleo produzidos no País, bem assim o transporte, por meio de conduto, de petróleo bruto, seus derivados e gás natural de qualquer origem;\n\nPergunta: Empresas privadas podem explorar minérios nucleares no Brasil por conta própria ou essa atividade é monopólio da União?"
+    },
+    {
+      "id": "Q16",
+      "area": "Ordem Social — Saúde",
+      "perfil": "regra_e_vedacao",
+      "esperado_na_cf88": true,
+      "pergunta": "A iniciativa privada pode participar do SUS e receber recursos públicos ou subvenções do governo para abrir hospitais particulares com fins lucrativos?",
+      "artigos_esperados": [
+        "Art. 199, § 1º",
+        "Art. 199, § 2º"
+      ],
+      "criterios_juiz": "Deve explicar que a iniciativa privada pode participar de forma complementar do SUS (com preferencia para entidades filantropicas e sem fins lucrativos), mas e expressamente vedada a destinacao de recursos publicos para auxilios ou subvencoes a instituicoes privadas com fins lucrativos.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.9711804334737314,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 199",
+        "Art. 199"
+      ],
+      "recuperou_esperado": false,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 199",
+          "texto": "Art. 199. A assistência à saúde é livre à iniciativa privada. § 1º As instituições privadas poderão participar de forma complementar do sistema único de saúde, segundo diretrizes deste, mediante contrato de direito público ou convênio, tendo preferência as entidades filantrópicas e as sem fins lucrativos. § 2º É vedada a destinação de recursos públicos para auxílios ou subvenções às instituições privadas com fins lucrativos. § 3º É vedada a participação direta ou indireta de empresas ou capitais estrangeiros na assistência à saúde no País, salvo nos casos previstos em lei. § 4º A lei disporá sobre as condições e os requisitos que facilitem a remoção de órgãos, tecidos e substâncias humanas para fins de transplante, pesquisa e tratamento, bem como a coleta, processamento e transfusão de sangue e seus derivados, sendo vedado todo tipo de comercialização.",
+          "score_reranker": 0.9711804334737314,
+          "score_cosseno": 0.6318278908729553,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 199"
+          ]
+        }
+      ],
+      "retriever_s": 3.6778010000125505,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 199 | Relevância: 0.971]\nArt. 199. A assistência à saúde é livre à iniciativa privada. § 1º As instituições privadas poderão participar de forma complementar do sistema único de saúde, segundo diretrizes deste, mediante contrato de direito público ou convênio, tendo preferência as entidades filantrópicas e as sem fins lucrativos. § 2º É vedada a destinação de recursos públicos para auxílios ou subvenções às instituições privadas com fins lucrativos. § 3º É vedada a participação direta ou indireta de empresas ou capitais estrangeiros na assistência à saúde no País, salvo nos casos previstos em lei. § 4º A lei disporá sobre as condições e os requisitos que facilitem a remoção de órgãos, tecidos e substâncias humanas para fins de transplante, pesquisa e tratamento, bem como a coleta, processamento e transfusão de sangue e seus derivados, sendo vedado todo tipo de comercialização.\n\nPergunta: A iniciativa privada pode participar do SUS e receber recursos públicos ou subvenções do governo para abrir hospitais particulares com fins lucrativos?"
+    },
+    {
+      "id": "Q17",
+      "area": "Ordem Social — Educação",
+      "perfil": "regra_objetiva",
+      "esperado_na_cf88": true,
+      "pergunta": "A educação básica pública é obrigatória e gratuita a partir de qual idade até qual idade segundo a Constituição?",
+      "artigos_esperados": [
+        "Art. 208, I"
+      ],
+      "criterios_juiz": "Deve responder dos 4 aos 17 anos de idade, assegurada inclusive a oferta gratuita para todos os que a ela nao tiveram acesso na idade propria.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.9505497675432697,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 205",
+        "Art. 205",
+        "Art. 206",
+        "Art. 206",
+        "Art. 227, § 7º",
+        "Art. 227",
+        "Art. 227, § 7º",
+        "Art. 208, § 1º",
+        "Art. 208",
+        "Art. 208, § 1º",
+        "Art. 208, I",
+        "Art. 208",
+        "Art. 208, II",
+        "Art. 208, III",
+        "Art. 208, V",
+        "Art. 208, VI",
+        "Art. 227",
+        "Art. 208, IV",
+        "Art. 208, VII"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 205",
+          "texto": "Art. 205. A educação, direito de todos e dever do Estado e da família, será promovida e incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da pessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.",
+          "score_reranker": 0.9505497675432697,
+          "score_cosseno": 0.8639729022979736,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 205"
+          ]
+        },
+        {
+          "artigo_id": "Art. 206",
+          "texto": "Art. 206. O ensino será ministrado com base nos seguintes princípios: I - igualdade de condições para o acesso e permanência na escola; II - liberdade de aprender, ensinar, pesquisar e divulgar o pensamento, a arte e o saber; III - pluralismo de idéias e de concepções pedagógicas, e coexistência de instituições públicas e privadas de ensino; IV - gratuidade do ensino público em estabelecimentos oficiais; V - valorização dos profissionais da educação escolar, garantidos, na forma da lei, planos de carreira, com ingresso exclusivamente por concurso público de provas e títulos, aos das redes públicas; VI - gestão democrática do ensino público, na forma da lei; VII - garantia de padrão de qualidade; VIII - piso salarial profissional nacional para os profissionais da educação escolar pública, nos termos de lei federal. IX - garantia do direito à educação e à aprendizagem ao longo da vida. Parágrafo único. A lei disporá sobre as categorias de trabalhadores considerados profissionais da educação básica e sobre a fixação de prazo para a elaboração ou adequação de seus planos de carreira, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios.",
+          "score_reranker": 0.8119333460021866,
+          "score_cosseno": 0.67856764793396,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 206"
+          ]
+        },
+        {
+          "artigo_id": "Art. 227, § 7º",
+          "texto": "Art. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.\n\nArt. 227 (Contexto: É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e...) | § 7º - No atendimento dos direitos da criança e do adolescente levar-se-á em consideração o disposto no art. 204.",
+          "score_reranker": 0.8149342825195872,
+          "score_cosseno": 0.7083629965782166,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 227",
+            "Art. 227, § 7º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 208, § 1º",
+          "texto": "Art. 208. O dever do Estado com a educação será efetivado mediante a garantia de:\n\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | § 1º - O acesso ao ensino obrigatório e gratuito é direito público subjetivo.",
+          "score_reranker": 0.5958853916944314,
+          "score_cosseno": 0.7638055086135864,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 208",
+            "Art. 208, § 1º"
+          ]
+        },
+        {
+          "artigo_id": "Art. 208, I",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | I - educação básica obrigatória e gratuita dos 4 (quatro) aos 17 (dezessete) anos de idade, assegurada inclusive sua oferta gratuita para todos os que a ela não tiveram acesso na idade própria;",
+          "score_reranker": 0.9483551178249862,
+          "score_cosseno": 0.7710838317871094,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208",
+          "texto": "Art. 208. O dever do Estado com a educação será efetivado mediante a garantia de:",
+          "score_reranker": 0.5765224099159241,
+          "score_cosseno": 0.5765224099159241,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, II",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | II - progressiva universalização do ensino médio gratuito;",
+          "score_reranker": 0.6486536264419556,
+          "score_cosseno": 0.6486536264419556,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, III",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | III - atendimento educacional especializado aos portadores de deficiência, preferencialmente na rede regular de ensino;",
+          "score_reranker": 0.6424050331115723,
+          "score_cosseno": 0.6424050331115723,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, V",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | V - acesso aos níveis mais elevados do ensino, da pesquisa e da criação artística, segundo a capacidade de cada um;",
+          "score_reranker": 0.6199648380279541,
+          "score_cosseno": 0.6199648380279541,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, VI",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | VI - oferta de ensino noturno regular, adequado às condições do educando;",
+          "score_reranker": 0.6092004179954529,
+          "score_cosseno": 0.6092004179954529,
+          "origem": "irmao_adjacente",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 227",
+          "texto": "Art. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.",
+          "score_reranker": 0.8228473412116047,
+          "score_cosseno": 0.7293421626091003,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, IV",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | IV - educação infantil, em creche e pré-escola, às crianças até 5 (cinco) anos de idade;",
+          "score_reranker": 0.8188498673047004,
+          "score_cosseno": 0.744242787361145,
+          "origem": "reranker",
+          "child_ids": []
+        },
+        {
+          "artigo_id": "Art. 208, VII",
+          "texto": "Art. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | VII - atendimento ao educando, em todas as etapas da educação básica, por meio de programas suplementares de material didático-escolar, transporte, alimentação e assistência à saúde.",
+          "score_reranker": 0.8172762646868252,
+          "score_cosseno": 0.7167574167251587,
+          "origem": "reranker",
+          "child_ids": []
+        }
+      ],
+      "retriever_s": 36.881819000002,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 205 | Relevância: 0.951]\nArt. 205. A educação, direito de todos e dever do Estado e da família, será promovida e incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da pessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.\n\n[FONTE 2 | Art. 206 | Relevância: 0.812]\nArt. 206. O ensino será ministrado com base nos seguintes princípios: I - igualdade de condições para o acesso e permanência na escola; II - liberdade de aprender, ensinar, pesquisar e divulgar o pensamento, a arte e o saber; III - pluralismo de idéias e de concepções pedagógicas, e coexistência de instituições públicas e privadas de ensino; IV - gratuidade do ensino público em estabelecimentos oficiais; V - valorização dos profissionais da educação escolar, garantidos, na forma da lei, planos de carreira, com ingresso exclusivamente por concurso público de provas e títulos, aos das redes públicas; VI - gestão democrática do ensino público, na forma da lei; VII - garantia de padrão de qualidade; VIII - piso salarial profissional nacional para os profissionais da educação escolar pública, nos termos de lei federal. IX - garantia do direito à educação e à aprendizagem ao longo da vida. Parágrafo único. A lei disporá sobre as categorias de trabalhadores considerados profissionais da educação básica e sobre a fixação de prazo para a elaboração ou adequação de seus planos de carreira, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios.\n\n[FONTE 3 | Art. 227, § 7º | Relevância: 0.815]\nArt. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.\n\nArt. 227 (Contexto: É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e...) | § 7º - No atendimento dos direitos da criança e do adolescente levar-se-á em consideração o disposto no art. 204.\n\n[FONTE 4 | Art. 208, § 1º | Relevância: 0.596]\nArt. 208. O dever do Estado com a educação será efetivado mediante a garantia de:\n\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | § 1º - O acesso ao ensino obrigatório e gratuito é direito público subjetivo.\n\n[FONTE 5 | Art. 208, I | Relevância: 0.948]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | I - educação básica obrigatória e gratuita dos 4 (quatro) aos 17 (dezessete) anos de idade, assegurada inclusive sua oferta gratuita para todos os que a ela não tiveram acesso na idade própria;\n\n[FONTE 6 | Art. 208 | Relevância: 0.577]\nArt. 208. O dever do Estado com a educação será efetivado mediante a garantia de:\n\n[FONTE 7 | Art. 208, II | Relevância: 0.649]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | II - progressiva universalização do ensino médio gratuito;\n\n[FONTE 8 | Art. 208, III | Relevância: 0.642]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | III - atendimento educacional especializado aos portadores de deficiência, preferencialmente na rede regular de ensino;\n\n[FONTE 9 | Art. 208, V | Relevância: 0.620]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | V - acesso aos níveis mais elevados do ensino, da pesquisa e da criação artística, segundo a capacidade de cada um;\n\n[FONTE 10 | Art. 208, VI | Relevância: 0.609]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | VI - oferta de ensino noturno regular, adequado às condições do educando;\n\n[FONTE 11 | Art. 227 | Relevância: 0.823]\nArt. 227 É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.\n\n[FONTE 12 | Art. 208, IV | Relevância: 0.819]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | IV - educação infantil, em creche e pré-escola, às crianças até 5 (cinco) anos de idade;\n\n[FONTE 13 | Art. 208, VII | Relevância: 0.817]\nArt. 208 (Contexto: O dever do Estado com a educação será efetivado mediante a garantia de:) | VII - atendimento ao educando, em todas as etapas da educação básica, por meio de programas suplementares de material didático-escolar, transporte, alimentação e assistência à saúde.\n\nPergunta: A educação básica pública é obrigatória e gratuita a partir de qual idade até qual idade segundo a Constituição?"
+    },
+    {
+      "id": "Q18",
+      "area": "Ordem Social — Meio Ambiente",
+      "perfil": "responsabilidade_triplice",
+      "esperado_na_cf88": true,
+      "pergunta": "Uma empresa que causa poluição grave pode sofrer punição na esfera penal além de pagar multa administrativa e indenizar o dano ambiental?",
+      "artigos_esperados": [
+        "Art. 225, § 3º"
+      ],
+      "criterios_juiz": "Deve confirmar que sim: condutas e atividades lesivas ao meio ambiente sujeitam infratores, pessoas fisicas ou juridicas, a sancoes penais e administrativas, independentemente da obrigacao de reparar os danos causados.",
+      "modo_rag": "MODO_RAG_ALTA_CONFIANCA",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.6544523252680522,
+      "top1_score_p2": null,
+      "query_traduzida": null,
+      "artigos_recuperados": [
+        "Art. 225, § 3º",
+        "Art. 225",
+        "Art. 225, § 3º"
+      ],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [
+        {
+          "artigo_id": "Art. 225, § 3º",
+          "texto": "Art. 225. Todos têm direito ao meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial à sadia qualidade de vida, impondo-se ao poder público e à coletividade o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.\n\nArt. 225 (Contexto: Todos têm direito ao meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial à sadia qualidade de vida, impondo-se ao poder público e à coletividade o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.) | § 3º - As condutas e atividades consideradas lesivas ao meio ambiente sujeitarão os infratores, pessoas físicas ou jurídicas, a sanções penais e administrativas, independentemente da obrigação de reparar os danos causados.",
+          "score_reranker": 0.6544523252680522,
+          "score_cosseno": 0.5942805409431458,
+          "origem": "parent_document",
+          "child_ids": [
+            "Art. 225",
+            "Art. 225, § 3º"
+          ]
+        }
+      ],
+      "retriever_s": 2.544594400009373,
+      "system_prompt": "Você conversa em português, de forma natural, sobre a Constituição de 1988. A resposta visível é um texto corrido, sem cabeçalho e sem checklist. O raciocínio fica só no bloco interno.\nAntes de responder, faça no raciocínio interno uma checagem breve e objetiva: (a) liste cada parte da pergunta; (b) mapeie qual fonte recuperada sustenta cada parte, copiando literalmente artigo, parágrafo, inciso e alínea como estão na fonte; (c) descarte de forma explícita os distratores que não respondem ao tema, por exemplo um trecho sobre tratados internacionais numa pergunta sobre cláusula pétrea; (d) revise se a conclusão não contradiz nenhuma frase anterior.\nNa resposta visível, use apenas as fontes. Responda a todas as partes do enunciado e integre a citação no meio da frase. Só cite um parágrafo (§), um inciso romano (I, II, IV, XLVII) ou uma alínea (\"a\") se esse marcador estiver escrito explicitamente nas fontes recuperadas. Preserve negações, exceções (\"vedado\", \"salvo\", \"exceto\") e todos os limites numéricos (hectares, anos, quóruns, idades, valores). Quando a fonte tratar apenas de um subconjunto específico do tema perguntado (por exemplo, minérios nucleares diante de uma pergunta sobre mineração em geral), NUNCA inicie a resposta com 'Sim'. Inicie restringindo o escopo: 'Nas fontes recuperadas, a regra aplica-se apenas a...; não há base para generalizar para...'.\nSe a pergunta exigir um ponto jurídico consolidado que não esteja escrito expressamente no texto da Constituição (por exemplo, mandado de segurança preventivo impetrado por parlamentar no STF para trancar a tramitação de PEC violadora de cláusula pétrea), pode complementar com o entendimento consolidado do STF, desde que a fronteira fique explícita: 'Embora não conste expressamente na letra da Constituição, a jurisprudência consolidada do STF admite...'. Não invente número de artigo nem número de súmula que não esteja nas fontes.",
+      "user_prompt": "Fontes:\n[FONTE 1 | Art. 225, § 3º | Relevância: 0.654]\nArt. 225. Todos têm direito ao meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial à sadia qualidade de vida, impondo-se ao poder público e à coletividade o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.\n\nArt. 225 (Contexto: Todos têm direito ao meio ambiente ecologicamente equilibrado, bem de uso comum do povo e essencial à sadia qualidade de vida, impondo-se ao poder público e à coletividade o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.) | § 3º - As condutas e atividades consideradas lesivas ao meio ambiente sujeitarão os infratores, pessoas físicas ou jurídicas, a sanções penais e administrativas, independentemente da obrigação de reparar os danos causados.\n\nPergunta: Uma empresa que causa poluição grave pode sofrer punição na esfera penal além de pagar multa administrativa e indenizar o dano ambiental?"
+    },
+    {
+      "id": "Q19",
+      "area": "Fora de Escopo (CDC)",
+      "perfil": "ood_consumo",
+      "esperado_na_cf88": false,
+      "pergunta": "Comprei um notebook pela internet há cinco dias e me arrependi; tenho direito de devolver o produto e receber o reembolso integral?",
+      "artigos_esperados": [],
+      "criterios_juiz": "Deve cair em MODO_CONVERSA_LIVRE com aviso deterministico de ausencia na base constitucional, mencionar apenas pelo nome geral o Codigo de Defesa do Consumidor (prazo de 7 dias) e conter ZERO numeros de artigo ou lei.",
+      "modo_rag": "MODO_CONVERSA_LIVRE",
+      "classe": "SIMPLES",
+      "top1_score_p1": 0.0011759530797948495,
+      "top1_score_p2": 0.002710297684554627,
+      "query_traduzida": "é direito do consumidor devolver produto adquirido em loja virtual e obter reembolso integral dentro do prazo legal",
+      "artigos_recuperados": [],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [],
+      "retriever_s": 8.121185900003184,
+      "system_prompt": "Você está respondendo SEM fontes legais recuperadas no contexto. É ESTRITAMENTE PROIBIDO citar qualquer número de artigo, parágrafo, inciso, alínea ou número de lei (como 'Art. 5º', 'Art. 302', 'Lei nº X' ou 'LC nº Y'). Você pode mencionar apenas o nome geral da legislação aplicável (ex.: Código de Defesa do Consumidor, Código de Trânsito Brasileiro, CLT) e explicar o conceito de forma clara e resumida em até 2 parágrafos curtos.",
+      "user_prompt": "Comprei um notebook pela internet há cinco dias e me arrependi; tenho direito de devolver o produto e receber o reembolso integral?"
+    },
+    {
+      "id": "Q20",
+      "area": "Fora de Escopo (CTB)",
+      "perfil": "ood_transito",
+      "esperado_na_cf88": false,
+      "pergunta": "Se eu avançar o sinal vermelho de madrugada, quantos pontos levo na carteira de motorista e qual o valor exato da multa?",
+      "artigos_esperados": [],
+      "criterios_juiz": "Deve cair em MODO_CONVERSA_LIVRE com aviso deterministico de ausencia na base constitucional, apontar o Codigo de Transito Brasileiro sem citar nenhum numero de artigo ou lei e sem forcar conexao com artigos da CF/88.",
+      "modo_rag": "MODO_CONVERSA_LIVRE",
+      "classe": "COMPOSTA",
+      "top1_score_p1": 0.006152146545843753,
+      "top1_score_p2": 0.006394771075165206,
+      "query_traduzida": "A infração por ultrapassar a linha de espera do sinal de trânsito em horário de pico e a penalidade aplicável",
+      "artigos_recuperados": [],
+      "recuperou_esperado": true,
+      "chunks_recuperados": [],
+      "retriever_s": 31.22021549998317,
+      "system_prompt": "Você está respondendo SEM fontes legais recuperadas no contexto. É ESTRITAMENTE PROIBIDO citar qualquer número de artigo, parágrafo, inciso, alínea ou número de lei (como 'Art. 5º', 'Art. 302', 'Lei nº X' ou 'LC nº Y'). Você pode mencionar apenas o nome geral da legislação aplicável (ex.: Código de Defesa do Consumidor, Código de Trânsito Brasileiro, CLT) e explicar o conceito de forma clara e resumida em até 2 parágrafos curtos.",
+      "user_prompt": "Se eu avançar o sinal vermelho de madrugada, quantos pontos levo na carteira de motorista e qual o valor exato da multa?"
+    }
+  ]
+}

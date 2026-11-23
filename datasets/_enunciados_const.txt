@@ -1,0 +1,380 @@
+[001] 2010-01.txt Q13
+Assinale a opção correta a respeito da medida cautelar em sede de ação direta de inconstitucionalidade, de acordo com o que dispõe a Lei n.º 9.868/1999.
+
+[002] 2010-01.txt Q14
+Assinale a opção correta com relação ao sigilo bancário.
+
+[003] 2010-01.txt Q15
+Acerca da distribuição de competências dos entes federativos prevista na CF, assinale a opção correta.
+
+[004] 2010-01.txt Q16
+Com relação à organização do Poder Legislativo e ao regime jurídico constitucional dos congressistas, assinale a opção correta.
+
+[005] 2010-01.txt Q17
+No que diz respeito à ordem social, assinale a opção correta.
+
+[006] 2010-01.txt Q18
+A respeito dos princípios gerais da atividade econômica, assinale a opção correta com base na CF.
+
+[007] 2010-01.txt Q19
+Acerca da edição de súmulas vinculantes pelo STF, assinale a opção correta.
+
+[008] 2010-01.txt Q20
+Assinale a opção correta com relação à garantia constitucional do habeas corpus.
+
+[009] 2010-01.txt Q21
+Considerando as repercussões processuais das garantias constitucionais, assinale a opção correta.
+
+[010] 2010-01.txt Q22
+Assinale a opção correta no que se refere às limitações estabelecidas no texto constitucional ao cargo de presidente da República.
+
+[011] 2010-02.txt Q1
+O Congresso Nacional e suas respectivas Casas se reúnem anualmente para a atividade legislativa. Com relação ao sistema constitucional brasileiro, assinale a alternativa correta.
+
+[012] 2010-02.txt Q2
+A obrigatoriedade ou necessidade de deliberação plenária dos tribunais, no sistema de controle de constitucionalidade brasileiro, significa que:
+
+[013] 2010-02.txt Q3
+A respeito do Conselho Nacional de Justiça é correto afirmar que:
+
+[014] 2010-02.txt Q4
+Em relação aos Ministros de Estado, a Constituição do Brasil estabelece que:
+
+[015] 2010-02.txt Q5
+Considerando que nos termos dispostos no art. 133 da Constituição do Brasil, o advogado é indispensável à administração da justiça, sendo até mesmo inviolável por seus atos e manifestações no exercício da profissão, é correto afirmar que:
+
+[016] 2010-02.txt Q6
+Sabe-se a polêmica ainda existente na doutrina constitucionalista pátria no que se refere à eventual hierarquia da Lei Complementar sobre a Lei Ordinária. Todavia, há diferenças entre essas duas espécies normativas que podem até gerar vícios de inconstitucionalidade caso não respeitadas durante o processo legislativo. A partir do fragmento acima, assinale a afirmativa incorreta.
+
+[017] 2010-02.txt Q7
+Em relação à inovação da ordem constitucional que instituiu a nominada Súmula Vinculante, é correto afirmar que:
+
+[018] 2010-02.txt Q8
+Um determinado Estado-membro editou lei estabelecendo disciplina uniforme para a data de vencimento das mensalidades das instituições de ensino sediadas no seu território. Examinada a questão à luz da parti lha de competência entre os entes federativos, é correto afirmar que:
+
+[019] 2010-02.txt Q9
+Sobre o instrumento jurídico denominado Medida Provisória que não é lei, mas tem força de lei, assinale a afirmativa correta.
+
+[020] 2010-02.txt Q10
+Declarando o Supremo Tribunal Federal, incidentalmente, a inconstitucionalidade de lei ou ato normativo federal em face da Constituição do Brasil, caberá
+
+[021] 2011-03.txt Q21
+O mandado de segurança é um importante instrumento de proteção a direitos líquidos e certos, individuais ou coletivos, que não estejam amparados por habeas corpus ou habeas data, sempre que, ilegalmente ou com abuso de poder, qualquer pessoa física ou jurídica sofrer violação ou tiver justo receio de sofrê-la por parte de autoridade. Acerca do mandado de segurança coletivo, é correto afirmar que
+
+[022] 2011-03.txt Q28
+O Governador de um Estado membro da Federação pretende se insurgir contra lei de seu Estado editada em 1984 que vincula a remuneração de servidores públicos estaduais ao salário mínimo. Os fundamentos de índole material a serem invocados são a ofensa ao princípio federativo e a vedação constitucional de vinculação do salário mínimo para qualquer fim. A ação constitucional a ser ajuizada pelo Governador do Estado perante o Supremo Tribunal Federal, cuja decisão terá eficácia contra todos e efeito vinculante relativamente aos demais órgãos do Poder Público, é a(o)
+
+[023] 2011-03.txt Q29
+O controle externo financeiro da União e das entidades da administração federal direta e indireta é atribuição do Congresso Nacional, que o exerce com o auxílio do Tribunal de Contas da União. É competência do Tribunal de Contas da União
+
+[024] 2011-03.txt Q30
+A respeito da disciplina constitucional da Administração Pública, é correto afirmar que
+
+[025] 2011-03.txt Q31
+A Constituição da República de 1988 reclama lei complementar para dispor sobre
+
+[026] 2011-03.txt Q32
+Assinale a alternativa que contemple matéria para cuja disciplina é vedada a edição de medida provisória.
+
+[027] 2011-03.txt Q33
+Leia com atenção a afirmação a seguir, que apresenta uma INCORREÇÃO. O Conselho Nacional de Justiça (CNJ) tem competência, entre outras, para rever, de ofício ou mediante provocação, os processos disciplinares de juízes e membros de tribunais (se tiverem sido julgados há menos de um ano), zelar pela observância dos princípios que regem a administração pública e julgar os magistrados em caso de crime de abuso de autoridade. Assinale a alternativa em que se indique o ERRO na afirmação acima.
+
+[028] 2011-03.txt Q34
+Projeto de lei estadual de iniciativa parlamentar concede aumento de remuneração a servidores públicos estaduais da área da saúde e vem a ser convertido em lei após a sanção do Governador do Estado. A referida lei é
+
+[029] 2011-03.txt Q35
+A Constituição garante a plena liberdade de associação para fins lícitos, vedada a de caráter paramilitar (art. 5°, XVII). A respeito desse direito fundamental, é correto afirmar que a criação de uma associação
+
+[030] 2011-03.txt Q36
+De acordo com a Constituição da República, são inalistáveis e inelegíveis
+
+[031] 2011-03.txt Q37
+Um juiz federal proferiu uma sentença em processo relativo a crime político e outra sentença em processo movido por Estado estrangeiro contra pessoa residente no Brasil. Os recursos interpostos contra essas duas sentenças serão julgados pelo
+
+[032] 2011-04.txt Q13
+Em 2010, o Congresso Nacional aprovou por Decreto Legislativo a Convenção Internacional sobre os Direitos das Pessoas com Deficiência. Essa convenção já foi aprovada na forma do artigo 5º, § 3º, da Constituição, sendo sua hierarquia normativa de
+
+[033] 2011-04.txt Q14
+Com relação aos chamados “direitos econômicos, sociais e culturais”, é correto afirmar que
+
+[034] 2011-04.txt Q15
+Determinado congressista é flagrado afirmando em entrevista pública que não se relaciona com pessoas de etnia diversa da sua e não permite que, no seu prédio residencial, onde atua como síndico, pessoas de etnia negra frequentem as áreas comuns, os elevadores sociais e a piscina do condomínio. Ciente desses atos, a ONG TudoAfro relaciona as pessoas prejudicadas e concita a representação para fins criminais com o intuito de coibir os atos descritos. À luz das normas constitucionais e dos direitos humanos, é correto afirmar que
+
+[035] 2011-04.txt Q18
+A respeito do regime de responsabilidade do Presidente da República, assinale a alternativa correta.
+
+[036] 2011-04.txt Q19
+A respeito da garantia constitucional do acesso ao Poder Judiciário, assinale a alternativa correta.
+
+[037] 2011-04.txt Q20
+Em relação ao controle de constitucionalidade em face da Constituição Estadual, assinale a alternativa correta.
+
+[038] 2011-04.txt Q21
+As alternativas a seguir apontam diferenças entre a ADI e a ADC, À EXCEÇÃO DE UMA. Assinale-a.
+
+[039] 2011-04.txt Q22
+A respeito da distribuição de competências adotada pela Constituição brasileira, assinale a alternativa correta.
+
+[040] 2011-04.txt Q23
+Os direitos políticos não podem ser cassados. Podem, no entanto, sofrer perda ou suspensão à luz das normas constitucionais pelo seguinte fundamento:
+
+[041] 2011-04.txt Q24
+Considere a hipótese de Deputado Federal que cometeu crime (comum) após a diplomação. Nesse caso, é correto afirmar que
+
+[042] 2011-05.txt Q18
+Se Governador de Estado desejar se insurgir contra súmula vinculante que, a seu juízo, foi formulada com enunciado normativo que extrapolou os limites dos precedentes que a originaram, poderá, dentro dos instrumentos processuais constitucionais existentes,
+
+[043] 2011-05.txt Q19
+Os Estados são autônomos e compõem a Federação com a União, os Municípios e o Distrito Federal. À luz das normas constitucionais, quanto aos Estados, é correto afirmar que
+
+[044] 2011-05.txt Q20
+No processo de impedimento do Presidente da República, ocorre a necessidade de preenchimento de alguns requisitos. Com base nas normas constitucionais, é correto afirmar que
+
+[045] 2011-05.txt Q21
+Lei estadual que regulamenta o serviço de mototáxi é
+
+[046] 2011-05.txt Q22
+No que tange ao direito de nacionalidade, assinale a alternativa correta.
+
+[047] 2011-05.txt Q23
+A iniciativa popular é uma das formas de exercício da soberania previstas na Constituição da República. O projeto de lei resultante de iniciativa popular deve
+
+[048] 2011-05.txt Q24
+O habeas data não pode ser impetrado em favor de terceiro PORQUE visa tutelar direito à informação relativa à pessoa do impetrante. A respeito do enunciado acima é correto afirmar que
+
+[049] 2012-06.txt Q16
+A respeito dos Procuradores-Gerais de Justiça nos Estados e no Distrito Federal, é INCORRETO afirmar que
+
+[050] 2012-06.txt Q17
+NÃO pode ser objeto de ação direta de inconstitucionalidade
+
+[051] 2012-06.txt Q18
+Suponha que o STF, no exame de um caso concreto (controle difuso), tenha reconhecido a incompatibilidade entre uma lei em vigor desde 1987 e a Constituição de 1988. Nesse caso, é correto afirmar que
+
+[052] 2012-06.txt Q19
+João, residente no Brasil há cinco anos, é acusado em outro país de ter cometido crime político. Nesse caso, o Brasil
+
+[053] 2012-06.txt Q20
+A respeito dos direitos políticos, assinale a alternativa correta.
+
+[054] 2012-06.txt Q21
+A Constituição assegura, entre os direitos e garantias individuais, a inviolabilidade do domicílio, afirmando que “a casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem o consentimento do morador” (art. 5º, XI, CRFB). A esse respeito, assinale a alternativa correta.
+
+[055] 2012-06.txt Q22
+Assinale a alternativa que relacione corretamente o cargo político e o sistema eleitoral adotado.
+
+[056] 2012-06.txt Q28
+Durante competição esportiva (campeonato estadual de futebol), o clube “A” foi punido com a perda de um ponto em virtude de episódios de preconceito por parte de sua torcida. Com essa decisão de primeira instância da justiça desportiva, o clube “B” foi declarado campeão naquele ano. O clube “A” apresentou recurso contra a decisão de primeira instância. Antes mesmo do julgamento desse recurso, distribuiu ação ordinária perante a Justiça Estadual com o objetivo de reaver o ponto que lhe fora retirado pela Justiça arbitral. Diante de tal situação, é correto afirmar que
+
+[057] 2012-06.txt Q29
+Joana D'Arc, beneficiária de pensão por morte deixada por ex-fiscal de rendas, falecido em 5/1/1999, ajuizou ação ordinária em face da União, alegando que determinado aumento remuneratório genérico concedido aos fiscais de renda em atividade não lhe teria sido repassado. Assim, isso teria violado a regra constitucional da paridade remuneratória entre ativos, inativos e pensionistas. Acerca de tal alegação, é correto afirmar que é manifestamente
+
+[058] 2012-06a.txt Q16
+Contra a decisão judicial que contrariar súmula vinculante ou que indevidamente a aplicar cabe, perante o Supremo Tribunal Federal,
+
+[059] 2012-06a.txt Q17
+A respeito da Advocacia Pública, assinale a alternativa correta.
+
+[060] 2012-06a.txt Q18
+A imunidade formal e a imunidade material consistem em prerrogativas conferidas aos ocupantes de determinados cargos públicos. Em relação às referidas imunidades, é correto afirmar que
+
+[061] 2012-06a.txt Q19
+Os órgãos legislativos possuem competências definidas no texto constitucional. Sobre o tema, à luz das normas constitucionais, é correto afirmar que
+
+[062] 2012-06a.txt Q20
+Em relação ao processo legislativo, é correto afirmar que
+
+[063] 2012-06a.txt Q21
+O Estado X edita norma que determina a gratuidade de pagamento em estacionamentos privados sob administração de entidades empresariais. Tal lei, à luz das normas constitucionais, está sob a égide das competências do(a)
+
+[064] 2012-06a.txt Q22
+Suponha que a Comissão de Assuntos Econômicos do Senado tenha convocado o Ministro da Fazenda para prestar pessoalmente informações sobre assunto relativo à política econômica adotada pelo governo federal. Nesse caso,
+
+[065] 2012-07.txt Q16
+De acordo com entendimento consolidado do STF e da doutrina, qual, dentre os órgãos e entidades listados abaixo, NÃO precisa demonstrar pertinência temática como condição para ajuizar Ação Direta de Inconstitucionalidade?
+
+[066] 2012-07.txt Q17
+Em caso de vacância dos cargos de Presidente da República e Vice-Presidente da República no penúltimo ano de mandato,
+
+[067] 2012-07.txt Q18
+O mandado de segurança coletivo NÃO pode ser impetrado por
+
+[068] 2012-07.txt Q19
+As Emendas Constitucionais possuem um peculiar sistema de iniciativa. Assim, revela-se correto afirmar que poderá surgir projeto dessa espécie normativa por proposta de:
+
+[069] 2012-07.txt Q20
+A Constituição de 1988 proíbe qualquer discriminação, por lei, entre brasileiros natos e naturalizados, exceto os casos previstos pelo próprio texto constitucional. Nesse sentido, é correto afirmar que somente brasileiro nato pode exercer cargo de
+
+[070] 2012-07.txt Q21
+O Governador do Estado K, preocupado com o resultado da balança comercial do seu Estado, conhecido pelo setor exportador, pretende regular a importação de bens de determinados países, apresentando, nesse sentido, projeto de lei à Assembleia Legislativa. Em termos de competência legislativa, esse tema é, nos termos da Constituição Federal,
+
+[071] 2012-07.txt Q22
+Esculápio da Silva, advogado, candidata-se à vaga destinada ao Quinto Constitucional no Tribunal de Justiça do Estado W, logrando obter aprovação, é nomeado pelo Governador do Estado. Um ano após, candidata-se à vaga surgida pela aposentadoria de Desembargador estadual no Superior Tribunal de Justiça, vindo a ser escolhido. Diante de tal enunciado, revela-se correto afirmar:
+
+[072] 2012-08.txt Q13
+No intuito de garantir o regular exercício da prestação jurisdicional, a Constituição da República conferiu aos magistrados algumas prerrogativas. A respeito dessas prerrogativas, assinale a afirmativa correta.
+
+[073] 2012-08.txt Q14
+A competência para processar e julgar originariamente Governador de Estado por crime comum é do
+
+[074] 2012-08.txt Q15
+Lei estadual de iniciativa do Deputado “X” previu a criação de 300 cargos de fiscal de rendas e determinou o seu preenchimento no mesmo ano, sem indicar a previsão da receita necessária para fazer frente a tal despesa. Realizado o concurso público e depois da posse e exercício dos 100 primeiros aprovados, o Governador ajuíza ação direta de inconstitucionalidade perante o Supremo Tribunal Federal, arguindo a invalidade do diploma legal, por vício de iniciativa e por não indicar a fonte de receita necessária. Considerando as normas existentes a respeito do controle de constitucionalidade, assinale a alternativa que indica o correto posicionamento do STF.
+
+[075] 2012-08.txt Q16
+O Presidente da República encaminhou ao Senado Federal projeto de Lei Ordinária para provimento de cargos de servidores da União. Após os debates, o projeto foi aprovado pelo plenário do Senado Federal e, em seguida, encaminhado para a Câmara dos Deputados que, em apenas um turno de discussão e votação, o aprovou e o enviou ao Presidente da República, que o sancionou. Sobre o fato acima, assinale a afirmativa correta.
+
+[076] 2012-08.txt Q17
+A Assembleia Legislativa do Estado “M”, verificando que o Estado jamais regulamentou a aposentadoria especial dos servidores públicos cujas atividades sejam exercidas sob condições especiais que prejudiquem a saúde ou a integridade física (art. 40, § 4º, III da Constituição da República), edita lei complementar, de iniciativa do deputado “X”, que determina a aplicação dos mesmos critérios aplicados aos trabalhadores da iniciativa privada (previstos na Lei n. 8.213/91). O Governador do Estado sanciona a lei, que é publicada dias depois. Sobre o caso concreto apresentado, assinale a afirmativa correta.
+
+[077] 2012-08.txt Q18
+Pode o Presidente da República editar medida provisória contrária à súmula vinculante editada pelo STF?
+
+[078] 2012-08.txt Q19
+Sabendo-se que o Município integra a Federação, assinale a afirmativa correta, à luz das normas constitucionais.
+
+[079] 2012-09.txt Q13
+A respeito da ação de habeas corpus, assinale a afirmativa incorreta.
+
+[080] 2012-09.txt Q14
+O Estado W, governado por dirigente progressista, pretende realizar uma ampla reforma agrária no seu território para melhor dividir a terra, incluindo diversos desempregados na vida produtiva, apresentando, ainda, amplo programa de financiamento das atividades agrícolas. Com essa proposta política, resolve apresentar projeto de lei, criando formas de desapropriação e inovando nos procedimentos, dando característica sumária e permitindo o ingresso nos imóveis sem pagar indenização. Quanto ao tema em foco, legislação sobre desapropriação, nos termos da Constituição Federal, assinale a afirmativa correta.
+
+[081] 2012-09.txt Q15
+O Congresso Nacional aprova tratados internacionais por meio de:
+
+[082] 2012-09.txt Q16
+João ingressa com ação individual buscando a repetição de indébito tributário, tendo como causa de pedir a inconstitucionalidade da Lei Federal “X”, que criou o tributo. Sobre a demanda, assinale a afirmativa correta.
+
+[083] 2012-09.txt Q17
+José da Silva, prefeito do Município “X”, integrante do Estado “Y”, possui familiares que pretendem concorrer a cargos elegíveis nas próximas eleições. Sobre essa situação, assinale a afirmativa correta.
+
+[084] 2012-09.txt Q18
+O Estado ”X” possui Lei Ordinária, que dispõe sobre regras de trânsito e transporte. Determina essa lei a instalação de cinto de segurança em veículos de transporte coletivo de passageiros, impondo penalidades em caso de descumprimento. Inconformado com este diploma legal, o Governador do Estado deseja propor ação direta de inconstitucionalidade. Neste caso, assinale a afirmativa correta.
+
+[085] 2012-09.txt Q19
+Com relação às diretrizes e normas constitucionais referentes à prestação da saúde, assinale a afirmativa correta.
+
+[086] 2013-10.txt Q13
+A Constituição brasileira não pode ser emendada
+
+[087] 2013-10.txt Q14
+Apesar da existência de vários partidos políticos por força de questões regionais, conjunturais e do vínculo da fidelidade partidária, é comum a cada ano o surgimento de novas agremiações no cenário nacional. Quanto ao funcionamento dos partidos políticos, à luz das normas constitucionais, assinale a afirmativa correta.
+
+[088] 2013-10.txt Q15
+Em relação aos remédios constitucionais, assinale a afirmativa correta.
+
+[089] 2013-10.txt Q16
+Compete ao STF processar e julgar originariamente os litígios listados a seguir, à exceção de um. Assinale-o.
+
+[090] 2013-10.txt Q17
+Preocupado com a concorrência de eletrodomésticos produzidos na China e com o saldo da balança comercial, o Presidente da República, no dia 1º de abril, editou medida provisória determinando o aumento da alíquota do imposto sobre produtos industrializados (IPI) para os produtos provenientes daquele país. Entretanto, passados 30 (trinta) dias, o Congresso Nacional rejeitou a medida provisória, não a convertendo em lei. Com base no caso acima, assinale a afirmativa correta.
+
+[091] 2013-10.txt Q18
+Na ausência de lei federal estabelecendo normas gerais sobre proteção de ecossistemas ameaçados, determinado estado da Federação editou, no passado, a sua própria lei sobre o assunto, estabelecendo desde princípios e valores a serem observados até regras específicas sobre a exploração econômica de tais áreas. Criou, ainda, fiscalização efetiva em seu território e multou empresas e produtores que desrespeitaram a lei. Anos depois, a União edita lei contendo normas gerais sobre o tema e muitas de suas disposições conflitavam com a anterior lei estadual. Com relação a este caso, assinale a afirmativa correta.
+
+[092] 2013-10.txt Q19
+Ajuizada uma Ação Direta de Inconstitucionalidade (ADI) requerendo expressamente que se declare inconstitucional o Art. 2º da Lei X, o Supremo Tribunal Federal (STF), ao apreciar o pedido, apenas declarou inconstitucional uma interpretação possível da norma impugnada, sem declarar sua invalidade, e determinou que sua decisão só acarretasse efeitos a partir do seu trânsito em julgado. Com base na situação acima, assinale a afirmativa correta.
+
+[093] 2013-11.txt Q13
+Acerca da disciplina constitucional do direito à educação, assinale a afirmativa correta.
+
+[094] 2013-11.txt Q14
+Assinale a alternativa que completa corretamente o fragmento a seguir. A desapropriação para fins de reforma agrária ocorre mediante prévia e justa indenização
+
+[095] 2013-11.txt Q15
+Após reiteradas decisões sobre determinada matéria, o Supremo Tribunal Federal (STF) aprovou enunciado de Súmula Vinculante determinando que “é inconstitucional lei ou ato normativo estadual ou distrital que disponha sobre sistemas de consórcios e sorteios, inclusive bingos e loterias”. O Estado X, contudo, não concordando com a posição do Supremo Tribunal Federal (STF), edita lei dispondo exatamente sobre os sistemas de consórcios e sorteios em seu território. A partir da situação apresentada, assinale a afirmativa correta.
+
+[096] 2013-11.txt Q16
+“M” vem desrespeitando o zoneamento estipulado pelo Município X em seu plano diretor, uma vez que mantém, com nítido caráter de especulação, terreno não utilizado em área residencial. Assinale a alternativa que indica medida que o Município X pode tomar para que “M” utilize adequadamente seu terreno.
+
+[097] 2013-11.txt Q17
+No que concerne à reclamação constitucional, assinale a afirmativa correta.
+
+[098] 2013-11.txt Q18
+Em atenção às recentes manifestações populares, fora noticiado na TV que determinados deputados estaduais de dado Estado da Federação estavam utilizando a verba do orçamento destinada à saúde para proveito próprio. Marcos, cidadão brasileiro, insatisfeito com a notícia e de posse de documentação que denota indícios de lesão ao patrimônio de seu Estado, ajuíza Ação Popular no Juízo competente em face dos aludidos deputados e do Estado. Em atenção ao disciplinado na Lei n. 4.717/65, que trata da Ação Popular, assinale a alternativa incorreta.
+
+[099] 2013-11.txt Q19
+A Ação Direta de Inconstitucionalidade, a Ação Declaratória de Constitucionalidade e a Ação Direta de Inconstitucionalidade por Omissão estão regulamentadas no âmbito infraconstitucional pela lei 9.868/99, que dispõe sobre o processo e julgamento destas ações perante o Supremo Tribunal Federal. Tomando por base o constante na referida lei, assinale a alternativa incorreta.
+
+[100] 2013-12.txt Q13
+A Constituição declara que todos podem reunir-se em local aberto ao público. Algumas condições para que as reuniões se realizem são apresentadas nas alternativas a seguir, à exceção de uma. Assinale-a.
+
+[101] 2013-12.txt Q14
+O Deputado Federal “Y” foi objeto de extensa investigação, e diversas reportagens jornalísticas indicaram sua participação em fraudes contra a previdência social. Além disso, inquéritos da polícia chegaram a fortes indícios de diversas práticas criminosas por uma quadrilha por ele liderada. O Ministério Público ofereceu denúncia contra sete acusados, incluindo o parlamentar. Com relação ao caso apresentado, assinale a afirmativa correta.
+
+[102] 2013-12.txt Q15
+A Constituição da República de 1988 adotou elementos de federalismo cooperativo e de federalismo dual na repartição de competências entre os entes federados, distribuindo competências exclusivas, privativas, comuns e concorrentes. Assim sendo, a respeito da organização do Estado estabelecida na Constituição, assinale a afirmativa correta.
+
+[103] 2013-12.txt Q16
+Nos termos da Constituição Federal, assinale a alternativa que apresenta competência(s) do Superior Tribunal de Justiça.
+
+[104] 2013-12.txt Q17
+João, 29 anos de idade, brasileiro naturalizado desde 1992, decidiu se candidatar, nas eleições de 2010, ao cargo de Deputado Federal, em determinado ente federativo. Eleito, e após ter tomado posse, foi escolhido para Presidir a Câmara dos Deputados. Com base na hipótese acima, assinale a afirmativa correta.
+
+[105] 2013-12.txt Q18
+Acerca do controle de constitucionalidade, assinale a alternativa INCORRETA.
+
+[106] 2013-12.txt Q19
+Ana Beatriz procura um escritório de advocacia, informando que a Universidade Pública do Estado XYZ instituiu, mediante decreto do Governador, uma taxa da matrícula no valor de R$ 100,00 (cem) reais, para estudantes que possuam renda familiar superior a 10 (dez) salários mínimos, com a finalidade de utilizar esse recurso para subsidiar a moradia de alunos de baixa renda, procedentes de Municípios distantes. Diante da indagação de Ana Beatriz sobre a constitucionalidade da cobrança, assinale a afirmativa correta.
+
+[107] 2013-12.txt Q20
+Segundo informações do Comitê para a Proteção dos Jornalistas (CPJ), no Brasil, nos últimos 20 anos, 70% dos casos de assassinatos a jornalistas ficaram impunes. O CPJ contabilizou 23 assassinatos entre 1992 e 2012, sendo quatro ocorreram de janeiro a abril de 2012. Desse total, quatorze não foram punidos. Diante desse quadro, sindicatos de jornalistas de vários estados brasileiros propuseram à Secretaria de Direitos Humanos do Governo Federal a federalização da investigação desses crimes, porque, segundo esses sindicatos, tais crimes caracterizam graves violações de Direitos Humanos. Para que a investigação e o julgamento de tais violações sejam federalizados é necessário que fique demonstrado que se trata de grave violação de Direitos Humanos afirmados em Tratados internacionais, dos quais o Brasil seja parte e pode, por isso mesmo, responder diante de instâncias internacionais. Além disso, é preciso que
+
+[108] 2014-13.txt Q13
+José é cidadão do município W, onde está localizado o distrito de B. Após consultas informais, José verifica o desejo da população distrital de obter a emancipação do distrito em relação ao município de origem. De acordo com as normas constitucionais federais, dentre outros requisitos para legitimar a criação de um novo Município, são indispensáveis:
+
+[109] 2014-13.txt Q14
+No que concerne às condições de elegibilidade para o cargo de prefeito previstas na CRFB/88, assinale a opção correta.
+
+[110] 2014-13.txt Q15
+Ângela, segurada da Previdência Social, residente e domiciliada na comarca X, pretende ajuizar uma demanda contra o Instituto Nacional do Seguro Social (INSS), pleiteando uma revisão de seus benefícios previdenciários. A comarca X possui vara única da Justiça estadual, mas não é sede de vara federal. Contudo, a comarca vizinha Y é sede de vara da justiça federal, com competência sobre as comarcas X, Y e Z. Considerando a situação exposta, assinale a afirmativa correta.
+
+[111] 2014-13.txt Q16
+Imagine a hipótese na qual o avião presidencial sofre um acidente, vindo a vitimar o Presidente da República e seu Vice, após a conclusão do terceiro ano de mandato. A partir da hipotese apresentada, assinale a afirmativa correta.
+
+[112] 2014-13.txt Q17
+O Presidente da República possui uma série de competências privativas, que lhe são atribuídas diretamente pela Constituição. Admite-se que algumas delas possam ser delegadas ao Ministro de Estado da pasta relacionada ao tema. Dentre as competências delegáveis, inclui-se
+
+[113] 2014-13.txt Q18
+A arguição de descumprimento de preceito fundamental (ADPF), regulada pela Lei nº 9.882/99, tem por objeto evitar ou reparar lesão a preceito fundamental, resultante de ato do Poder Público. Com base no legalmente disposto sobre a ADPF, assinale a opção correta.
+
+[114] 2014-13.txt Q19
+A ação de habeas data, como instrumento de proteção de dimensão do direito de personalidade, destina-se a garantir o acesso de uma pessoa a informações sobre ela que façam parte de arquivos ou banco de dados de entidades governamentais ou públicas, bem como a garantir a correção de dados incorretos. A partir do fragmento acima, assinale a opção correta.
+
+[115] 2014-13.txt Q23
+Sobre o sistema de regulação de investimentos e fluxo de capital estrangeiro no atual ordenamento jurídico da República Federativa do Brasil, assinale a afirmativa incorreta.
+
+[116] 2014-13.txt Q24
+A respeito da extradição e/ou expulsão de estrangeiro do Brasil, assinale a afirmativa correta.
+
+[117] 2014-14.txt Q13
+A Sra. Maria da Silva é participante ativa da AMA-X (Associação de Moradores e Amigos do bairro X). Todos os dias, no fim da tarde, a Sra. Maria da Silva e um grupo de associados reuniam-se na praça da cidade, distribuindo material sobre os problemas do bairro. A associação convocava os moradores para esses encontros por meio da rádio da cidade e comunicava, previamente, o local e a hora das reuniões às autoridades competentes. Certa tarde, um grupo da Associação de Moradores do bairro Y ocupou o local que os participantes da AMA-X habitualmente utilizavam. O grupo do bairro Y não havia avisado, previamente, a autoridade competente sobre o evento, organizado em espaço público. A Sra. Maria da Silva, indignada com a utilização do mesmo espaço, e tendo sido frustrada a reunião de seu grupo, solicitou aos policiais militares, presentes no local, que tomassem as medidas necessárias para permitir a realização do encontro da AMA-X. Em relação à liberdade de associação e manifestação, assinale a afirmativa correta.
+
+[118] 2014-14.txt Q14
+O instituto da intervenção é de extrema excepcionalidade, razão pela qual restam minuciosamente delineadas as hipóteses na CRFB/88. Assinale a opção que contempla, à luz da CRFB/88, hipótese correta de intervenção.
+
+[119] 2014-14.txt Q15
+O estado de defesa e o estado de sítio são tidos como legalidades extraordinárias, verdadeiras excepcionalidades que possibilitam inclusive a suspensão de determinas garantias constitucionais. As hipóteses de incidência e o procedimento são exaustivamente tratados pela CRFB/88. Com base na previsão constitucional dos referidos institutos, assinale a opção correta.
+
+[120] 2014-14.txt Q16
+Deise pretende ter acesso a informações pertinentes à atividade estatal que estão em poder de específico órgão público, aduzindo que todos os dados de interesse coletivo ou geral devem ser públicos. Nos termos da Constituição Federal, o direito de acesso às informações estatais
+
+[121] 2014-14.txt Q17
+Isabella promove ação popular em face do Município X, por entender que determinados gastos realizados estariam causando graves prejuízos ao patrimônio público. O pedido veio a ser julgado improcedente, por total carência de provas. Inconformada, Isabella apresenta a mesma ação com fundamento em novos elementos, e, mais uma vez, o pedido vem a ser julgado improcedente por carência de provas. Nos termos da Constituição Federal e da legislação de regência, assinale a opção correta.
+
+[122] 2014-14.txt Q18
+Maria da Silva, deputada federal integrante do partido Alfa, vem a ter projeto de sua iniciativa aprovado, com apoio de outros partidos políticos. Para sua surpresa, o texto do seu projeto veio a ser vetado na integralidade por decisão do Presidente da República. Após tomar ciência do veto presidencial, a deputada, com o intuito de derrubá-lo, procura as lideranças dos partidos que apoiaram seu projeto. Nos termos da Constituição Federal, assinale a opção que apresenta o procedimento correto.
+
+[123] 2014-14.txt Q19
+No que tange às disposições legais regulamentadoras da ação direta de inconstitucionalidade, da ação direta de inconstitucionalidade por omissão e da ação declaratória de constitucionalidade, assinale a opção correta.
+
+[124] 2015-18.txt Q13
+A Lei Z, elaborada recentemente pelo Poder Legislativo do Município M, foi promulgada e passou a produzir seus efeitos regulares após a Câmara Municipal ter derrubado o veto aposto pelo Prefeito. A peculiaridade é que o conteúdo da lei é praticamente idêntico ao de outras leis que foram editadas em milhares de outros Municípios, o que lhe atribui inegável relevância. Inconformado com a derrubada do veto, o Prefeito do Município M, partindo da premissa de que a Lei Z possui diversas normas violadoras da ordem constitucional federal, pretende que sua inconstitucionalidade seja submetida à apreciação do Supremo Tribunal Federal. A partir das informações acima, assinale a opção que se encontra em consonância com o sistema de controle de constitucionalidade adotado no Brasil.
+
+[125] 2015-18.txt Q14
+Muitos Estados ocidentais, a partir do processo revolucionário franco-americano do final do século XVIII, atribuíram aos juízes a função de interpretar a Constituição, daí surgindo a denominada jurisdição constitucional. A respeito do controle de constitucionalidade exercido por esse tipo de estrutura orgânica, assinale a afirmativa correta.
+
+[126] 2015-18.txt Q15
+Ao proferir um discurso em sua cidade natal, José, deputado federal pelo Estado E, afirma, de forma contundente, que um país democrático tem por regra inviolável escolher o chefe do Poder Executivo por meio de eleições diretas. Complementa sua fala afirmando que o Brasil poderia ser considerado um país democrático, já que a Constituição Cidadã de 1988 não prevê eleição de Presidente pela via indireta. Segundo a Constituição da República, o deputado está
+
+[127] 2016-21.txt Q13
+Carlos pleiteia determinado direito, que fora regulado de forma mais genérica no corpo principal da CRFB/88 e de forma mais específica no Ato das Disposições Constitucionais Transitórias – o ADCT. O problema é que o corpo principal da Constituição da República e o ADCT estabelecem soluções jurídicas diversas, sendo que ambas as normas poderiam incidir na situação concreta. Carlos, diante do problema, consulta um(a) advogado(a) para saber se a solução do seu caso deve ser regida pela norma genérica oferecida pelo corpo principal da Constituição da República ou pela norma específica oferecida pelo ADCT. Com base na CRFB/88, assinale a opção que apresenta a proposta correta dada pelo(a) advogado(a).

@@ -1,0 +1,57 @@
+[
+    {
+        "areas": [
+            "LABOUR"
+        ],
+        "enum": "Ap\u00f3s sofrer um acidente automobil\u00edstico de grav\u00edssimas propor\u00e7\u00f5es enquanto viajava a lazer, o empregado Pedro foi aposentado por invalidez pelo INSS. Assinale a alternativa que indica o efeito desse fato no seu contrato de trabalho.",
+        "filename": "2012-09.txt",
+        "number": "70",
+        "options": [
+            {
+                "correct": null,
+                "letter": "A",
+                "text": "O contrato de Pedro ser\u00e1 interrompido.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": true,
+                "letter": "B",
+                "text": "O contrato de Pedro ser\u00e1 suspenso.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "C",
+                "text": "O contrato de Pedro ser\u00e1 extinto.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "D",
+                "text": "O contrato de Pedro continuar\u00e1 em vigor e ele ter\u00e1 todos os direitos trabalhistas assegurados.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "valid": true
+    }
+]

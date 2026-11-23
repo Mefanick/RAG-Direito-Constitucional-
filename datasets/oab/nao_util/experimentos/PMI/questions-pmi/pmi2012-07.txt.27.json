@@ -1,0 +1,57 @@
+[
+    {
+        "areas": [
+            "ADMINISTRATIVE"
+        ],
+        "enum": "\u00c9 correto afirmar que o poder de pol\u00edcia, conferindo a possibilidade de o Estado limitar o exerc\u00edcio da liberdade ou das faculdades de propriet\u00e1rio, em prol do interesse p\u00fablico,",
+        "filename": "2012-07.txt",
+        "number": "27",
+        "options": [
+            {
+                "correct": null,
+                "letter": "A",
+                "text": "gera a possibilidade de cobran\u00e7a de pre\u00e7o p\u00fablico.",
+                "pmi": [
+                    0.0794472856923634,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "B",
+                "text": "se instrumentaliza sempre, e apenas, por meio de alvar\u00e1 de autoriza\u00e7\u00e3o.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "C",
+                "text": "para atingir os seus objetivos maiores, afasta a razoabilidade, em prol da predomin\u00e2ncia do interesse p\u00fablico.",
+                "pmi": [
+                    0.044137380940201885,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": true,
+                "letter": "D",
+                "text": "deve ser exercido nos limites da lei, gerando a possibilidade de cobran\u00e7a de taxa.",
+                "pmi": [
+                    -0.011844043848664717,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "valid": true
+    }
+]

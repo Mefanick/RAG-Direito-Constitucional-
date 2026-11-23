@@ -1,0 +1,12 @@
+rank-bm25
+sentence-transformers==6.3.0
+torch
+scikit-learn
+pandas
+joblib
+requests
+onnxruntime
+pywebview
+# optimum==2.1.0 e optimum-onnx==0.1.0 foram instalados com --no-deps.
+# O pin publicado do optimum-onnx pede transformers<4.58 e derrubaria o 5.x
+# exigido pelo sentence-transformers 6.3.

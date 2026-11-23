@@ -1,0 +1,57 @@
+[
+    {
+        "areas": [
+            "TAXES"
+        ],
+        "enum": "Conforme a Constitui\u00e7\u00e3o Federal, o ve\u00edculo legislativo adequado para dispor sobre conflitos de compet\u00eancia entre os entes pol\u00edticos em mat\u00e9ria tribut\u00e1ria \u00e9 a",
+        "filename": "2011-03.txt",
+        "number": "84",
+        "options": [
+            {
+                "correct": null,
+                "letter": "A",
+                "text": "medida provis\u00f3ria.",
+                "pmi": [
+                    0.0,
+                    0.0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "correct": true,
+                "letter": "B",
+                "text": "lei complementar.",
+                "pmi": [
+                    -0.041451372981333584,
+                    0.0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "C",
+                "text": "emenda constitucional.",
+                "pmi": [
+                    0.17861384581497056,
+                    0.0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "D",
+                "text": "lei ordin\u00e1ria.",
+                "pmi": [
+                    -0.041451372981333584,
+                    0.0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "valid": true
+    }
+]

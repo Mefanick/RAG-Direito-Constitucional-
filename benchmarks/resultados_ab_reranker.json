@@ -1,0 +1,143 @@
+[
+  {
+    "cenario": "A PyTorch FP32 top12",
+    "escala": "o grafo devolve logit; o CrossEncoder aplica uma sigmoide",
+    "media_s": 21.421,
+    "p50_s": 21.389,
+    "p90_s": 27.898,
+    "recall_1": 0.9333,
+    "recall_5": 1.0,
+    "recall_1_corte_0_25": 0.9333,
+    "recall_5_corte_0_25": 1.0,
+    "bloqueio": {
+      "0.20": 0.9667,
+      "0.25": 1.0,
+      "0.30": 1.0
+    },
+    "melhor_corte": {
+      "corte": 0.25,
+      "bloqueio": 1.0,
+      "recall_5": 1.0
+    },
+    "controles": [
+      {
+        "nome": "Anonimato",
+        "score": 0.9849,
+        "artigo": "Art. 5º, IV",
+        "segundos": null
+      },
+      {
+        "nome": "Mineração",
+        "score": 0.3671,
+        "artigo": "Art. 177, § 4º",
+        "segundos": null
+      },
+      {
+        "nome": "Templos",
+        "score": 0.9973,
+        "artigo": "Art. 150, VI",
+        "segundos": 22.32
+      },
+      {
+        "nome": "Furto qualificado",
+        "score": 0.0191,
+        "artigo": "Art. 5º, XLVI",
+        "segundos": null
+      }
+    ]
+  },
+  {
+    "cenario": "B ONNX INT8 top8",
+    "escala": "o grafo devolve logit; uma sigmoide é aplicada em Python",
+    "media_s": 5.313,
+    "p50_s": 5.414,
+    "p90_s": 6.804,
+    "recall_1": 0.9333,
+    "recall_5": 1.0,
+    "recall_1_corte_0_25": 0.9333,
+    "recall_5_corte_0_25": 1.0,
+    "bloqueio": {
+      "0.20": 0.9667,
+      "0.25": 1.0,
+      "0.30": 1.0
+    },
+    "melhor_corte": {
+      "corte": 0.25,
+      "bloqueio": 1.0,
+      "recall_5": 1.0
+    },
+    "controles": [
+      {
+        "nome": "Anonimato",
+        "score": 0.9836,
+        "artigo": "Art. 5º, IV",
+        "segundos": null
+      },
+      {
+        "nome": "Mineração",
+        "score": 0.4575,
+        "artigo": "Art. 177, § 4º",
+        "segundos": null
+      },
+      {
+        "nome": "Templos",
+        "score": 0.997,
+        "artigo": "Art. 150, VI",
+        "segundos": 9.42
+      },
+      {
+        "nome": "Furto qualificado",
+        "score": 0.0175,
+        "artigo": "Art. 5º, XLVI",
+        "segundos": null
+      }
+    ]
+  },
+  {
+    "cenario": "C MiniLM top8",
+    "escala": "o grafo devolve logit; uma sigmoide é aplicada em Python",
+    "media_s": 1.182,
+    "p50_s": 1.146,
+    "p90_s": 1.52,
+    "recall_1": 0.8,
+    "recall_5": 1.0,
+    "recall_1_corte_0_25": 0.7333,
+    "recall_5_corte_0_25": 0.8667,
+    "bloqueio": {
+      "0.20": 0.9667,
+      "0.25": 0.9667,
+      "0.30": 1.0
+    },
+    "melhor_corte": {
+      "corte": 0.3,
+      "bloqueio": 1.0,
+      "recall_5": 0.8667
+    },
+    "controles": [
+      {
+        "nome": "Anonimato",
+        "score": 0.9582,
+        "artigo": "Art. 5º, IV",
+        "segundos": null
+      },
+      {
+        "nome": "Mineração",
+        "score": 0.4841,
+        "artigo": "Art. 177, § 4º",
+        "segundos": null
+      },
+      {
+        "nome": "Templos",
+        "score": 0.9989,
+        "artigo": "Art. 150, VI",
+        "segundos": 1.15
+      },
+      {
+        "nome": "Furto qualificado",
+        "score": 0.0654,
+        "artigo": "Art. 5º, XLVIII",
+        "segundos": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "versao": "1.0-seminario",
+    "descricao": "Suite balanceada de 20 perguntas para benchmark controlado multi-modelo (contexto RAG congelado + avaliacao por juiz externo).",
+    "modelos_alvo": [
+      { "id": "qwen3:4b", "usar_think": true },
+      { "id": "qwen2.5:7b", "usar_think": false },
+      { "id": "qwen3:8b", "usar_think": true }
+    ],
+    "rubrica_juiz_externo": {
+      "precisao_juridica": "0 a 10 - Correcao material da resposta frente a CF/88 (ou orientacao correta sem inventar norma nos casos OOD).",
+      "fidelidade_contexto": "0 a 10 - Aderencia estrita aos trechos recuperados, sem alucinar artigos, paragrafos ou excecoes ausentes.",
+      "completude": "0 a 10 - Cobertura de todas as partes, excecoes e prazos perguntados.",
+      "clareza_cidada": "0 a 10 - Objetividade, portugues claro e ausencia de truncamento ou repeticao."
+    }
+  },
+  "perguntas": [
+    {
+      "id": "Q01",
+      "area": "Direitos Individuais",
+      "perfil": "leiga_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "A polícia pode entrar na minha casa à noite sem mandado judicial se achar que tem algo errado lá dentro?",
+      "artigos_esperados": ["Art. 5º, XI"],
+      "criterios_juiz": "Deve afirmar a inviolabilidade do domicilio e listar as excecoes constitucionais: consentimento do morador, flagrante delito, desastre ou para prestar socorro; deixar claro que determinacao judicial so autoriza entrada durante o dia."
+    },
+    {
+      "id": "Q02",
+      "area": "Direitos Individuais",
+      "perfil": "regra_e_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "Um brasileiro naturalizado pode ser extraditado pelo Brasil para responder a crime cometido no exterior?",
+      "artigos_esperados": ["Art. 5º, LI"],
+      "criterios_juiz": "Deve responder que sim apenas em duas hipoteses: crime comum praticado antes da naturalizacao ou comprovado envolvimento em trafico ilicito de entorpecentes e drogas afins, na forma da lei (diferenciando do brasileiro nato, que nunca e extraditado)."
+    },
+    {
+      "id": "Q03",
+      "area": "Direitos Sociais e Trabalho",
+      "perfil": "leiga_faixas_etarias",
+      "esperado_na_cf88": true,
+      "pergunta": "A partir de qual idade um adolescente pode trabalhar no Brasil, e existe restrição para trabalho noturno ou perigoso?",
+      "artigos_esperados": ["Art. 7º, XXXIII"],
+      "criterios_juiz": "Deve distinguir as tres faixas: proibido trabalho noturno, perigoso ou insalubre a menores de 18 anos; proibido qualquer trabalho a menores de 16 anos; excecao na condicao de aprendiz a partir de 14 anos."
+    },
+    {
+      "id": "Q04",
+      "area": "Direitos Sociais e Trabalho",
+      "perfil": "leiga_adct",
+      "esperado_na_cf88": true,
+      "pergunta": "Uma funcionária descobriu que está grávida antes de ser avisada da demissão; a empresa pode mandá-la embora sem justa causa?",
+      "artigos_esperados": ["ADCT, Art. 10, II"],
+      "criterios_juiz": "Deve afirmar que e vedada a dispensa arbitraria ou sem justa causa da empregada gestante desde a confirmacao da gravidez ate cinco meses apos o parto."
+    },
+    {
+      "id": "Q05",
+      "area": "Nacionalidade",
+      "perfil": "cargos_privativos",
+      "esperado_na_cf88": true,
+      "pergunta": "Um estrangeiro que se naturalizou brasileiro pode concorrer à Presidência da República ou ser nomeado Ministro do STF?",
+      "artigos_esperados": ["Art. 12, § 3º"],
+      "criterios_juiz": "Deve responder que nao, pois ambos os cargos (Presidente da Republica e Ministro do STF) sao privativos de brasileiro nato."
+    },
+    {
+      "id": "Q06",
+      "area": "Direitos Políticos",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "Com quantos anos o voto passa a ser obrigatório no Brasil, e qual é a idade mínima para alguém se candidatar a Senador e a Governador?",
+      "artigos_esperados": ["Art. 14, § 1º", "Art. 14, § 3º"],
+      "criterios_juiz": "Deve cobrir as duas partes: voto obrigatorio para maiores de 18 anos (facultativo entre 16 e 18, maiores de 70 e analfabetos) e idade minima de 35 anos para Senador e 30 anos para Governador."
+    },
+    {
+      "id": "Q07",
+      "area": "Administração Pública",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "Um servidor público pode acumular dois cargos de professor na rede pública, e qual é o limite máximo que ele pode receber de salário?",
+      "artigos_esperados": ["Art. 37, XVI", "Art. 37, XI"],
+      "criterios_juiz": "Deve confirmar a possibilidade de acumulacao de dois cargos de professor desde que haja compatibilidade de horarios e apontar como teto remuneratorio o subsidio mensal dos Ministros do STF."
+    },
+    {
+      "id": "Q08",
+      "area": "Administração Pública",
+      "perfil": "regra_e_excecoes",
+      "esperado_na_cf88": true,
+      "pergunta": "Depois que um servidor público concursado conquista a estabilidade, ele ainda pode perder o cargo? Em quais situações?",
+      "artigos_esperados": ["Art. 41, § 1º"],
+      "criterios_juiz": "Deve indicar que sim e listar as hipoteses do Art. 41, § 1º: sentenca judicial transitada em julgado; processo administrativo com ampla defesa; procedimento de avaliacao periodica de desempenho com ampla defesa (mencao ao Art. 169, § 4º conta como bonus apenas se estiver no contexto)."
+    },
+    {
+      "id": "Q09",
+      "area": "Organização dos Poderes",
+      "perfil": "composta",
+      "esperado_na_cf88": true,
+      "pergunta": "O Presidente da República pode editar Medida Provisória para criar um novo crime penal, e por quanto tempo no máximo uma Medida Provisória vale antes de perder a eficácia?",
+      "artigos_esperados": ["Art. 62, § 1º", "Art. 62, § 3º", "Art. 62, § 7º"],
+      "criterios_juiz": "Deve afirmar a vedacao expressa de MP sobre direito penal (Art. 62, § 1º, I, b) e informar prazo de 60 dias prorrogavel uma unica vez por igual periodo (total de 120 dias)."
+    },
+    {
+      "id": "Q10",
+      "area": "Organização dos Poderes",
+      "perfil": "composta_clausula_petrea",
+      "esperado_na_cf88": true,
+      "pergunta": "O Congresso Nacional pode aprovar uma Emenda à Constituição para extinguir o voto secreto ou adotar a pena de morte para crimes comuns?",
+      "artigos_esperados": ["Art. 60, § 4º", "Art. 5º, XLVII"],
+      "criterios_juiz": "Deve afirmar que nao, pois nao pode ser objeto de deliberacao proposta de emenda tendente a abolir o voto direto, secreto, universal e periodico nem os direitos e garantias individuais (onde se insere a proibicao de pena de morte, salvo guerra declarada)."
+    },
+    {
+      "id": "Q11",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_imunidade",
+      "esperado_na_cf88": true,
+      "pergunta": "A prefeitura pode cobrar IPTU de um templo religioso que realiza cultos no imóvel?",
+      "artigos_esperados": ["Art. 150, VI"],
+      "criterios_juiz": "Deve responder que e vedado instituir impostos sobre templos de qualquer culto / entidades religiosas (imunidade tributaria do Art. 150, VI, b), observada a vinculacao as finalidades essenciais se constar no contexto."
+    },
+    {
+      "id": "Q12",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_anterioridade",
+      "esperado_na_cf88": true,
+      "pergunta": "Se o Congresso aprovar uma lei hoje criando um novo imposto ou aumentando a alíquota, o governo já pode cobrar esse valor na semana que vem?",
+      "artigos_esperados": ["Art. 150, III"],
+      "criterios_juiz": "Deve explicar a vedacao de cobrar tributos no mesmo exercicio financeiro da publicacao da lei e antes de decorridos noventa dias da publicacao (Art. 150, III, b e c), sem fundir os dois prazos como se fossem a mesma regra."
+    },
+    {
+      "id": "Q13",
+      "area": "Sistema Tributário Nacional",
+      "perfil": "leiga_competencia",
+      "esperado_na_cf88": true,
+      "pergunta": "Quando alguém doa um imóvel em vida para um filho, quem tem competência para cobrar o imposto sobre essa doação: a União, o Estado ou o Município?",
+      "artigos_esperados": ["Art. 155, I"],
+      "criterios_juiz": "Deve atribuir a competencia aos Estados e ao Distrito Federal (imposto sobre transmissao causa mortis e doacao, de quaisquer bens ou direitos), afastando Uniao e Municipio."
+    },
+    {
+      "id": "Q14",
+      "area": "Ordem Econômica",
+      "perfil": "requisitos_objetivos",
+      "esperado_na_cf88": true,
+      "pergunta": "Quem mora há cinco anos sem interrupção em um terreno urbano pequeno para moradia própria pode pedir a propriedade por usucapião constitucional? Quais são os requisitos?",
+      "artigos_esperados": ["Art. 183"],
+      "criterios_juiz": "Deve listar corretamente: area urbana de ate 250 m2, posse por 5 anos ininterruptamente e sem oposicao, uso para moradia propria ou da familia, nao ser proprietario de outro imovel urbano ou rural, e que imoveis publicos nao sao usucapiveis."
+    },
+    {
+      "id": "Q15",
+      "area": "Ordem Econômica",
+      "perfil": "monopolio_uniao",
+      "esperado_na_cf88": true,
+      "pergunta": "Empresas privadas podem explorar minérios nucleares no Brasil por conta própria ou essa atividade é monopólio da União?",
+      "artigos_esperados": ["Art. 177, V"],
+      "criterios_juiz": "Deve responder que a pesquisa, lavra, enriquecimento, reprocessamento, industrializacao e comercio de minerios e minerais nucleares e derivados constituem monopolio da Uniao, respeitando exatamente eventuais ressalvas de radioisotopos presentes no trecho."
+    },
+    {
+      "id": "Q16",
+      "area": "Ordem Social — Saúde",
+      "perfil": "regra_e_vedacao",
+      "esperado_na_cf88": true,
+      "pergunta": "A iniciativa privada pode participar do SUS e receber recursos públicos ou subvenções do governo para abrir hospitais particulares com fins lucrativos?",
+      "artigos_esperados": ["Art. 199, § 1º", "Art. 199, § 2º"],
+      "criterios_juiz": "Deve explicar que a iniciativa privada pode participar de forma complementar do SUS (com preferencia para entidades filantropicas e sem fins lucrativos), mas e expressamente vedada a destinacao de recursos publicos para auxilios ou subvencoes a instituicoes privadas com fins lucrativos."
+    },
+    {
+      "id": "Q17",
+      "area": "Ordem Social — Educação",
+      "perfil": "regra_objetiva",
+      "esperado_na_cf88": true,
+      "pergunta": "A educação básica pública é obrigatória e gratuita a partir de qual idade até qual idade segundo a Constituição?",
+      "artigos_esperados": ["Art. 208, I"],
+      "criterios_juiz": "Deve responder dos 4 aos 17 anos de idade, assegurada inclusive a oferta gratuita para todos os que a ela nao tiveram acesso na idade propria."
+    },
+    {
+      "id": "Q18",
+      "area": "Ordem Social — Meio Ambiente",
+      "perfil": "responsabilidade_triplice",
+      "esperado_na_cf88": true,
+      "pergunta": "Uma empresa que causa poluição grave pode sofrer punição na esfera penal além de pagar multa administrativa e indenizar o dano ambiental?",
+      "artigos_esperados": ["Art. 225, § 3º"],
+      "criterios_juiz": "Deve confirmar que sim: condutas e atividades lesivas ao meio ambiente sujeitam infratores, pessoas fisicas ou juridicas, a sancoes penais e administrativas, independentemente da obrigacao de reparar os danos causados."
+    },
+    {
+      "id": "Q19",
+      "area": "Fora de Escopo (CDC)",
+      "perfil": "ood_consumo",
+      "esperado_na_cf88": false,
+      "pergunta": "Comprei um notebook pela internet há cinco dias e me arrependi; tenho direito de devolver o produto e receber o reembolso integral?",
+      "artigos_esperados": [],
+      "criterios_juiz": "Deve cair em MODO_CONVERSA_LIVRE com aviso deterministico de ausencia na base constitucional, mencionar apenas pelo nome geral o Codigo de Defesa do Consumidor (prazo de 7 dias) e conter ZERO numeros de artigo ou lei."
+    },
+    {
+      "id": "Q20",
+      "area": "Fora de Escopo (CTB)",
+      "perfil": "ood_transito",
+      "esperado_na_cf88": false,
+      "pergunta": "Se eu avançar o sinal vermelho de madrugada, quantos pontos levo na carteira de motorista e qual o valor exato da multa?",
+      "artigos_esperados": [],
+      "criterios_juiz": "Deve cair em MODO_CONVERSA_LIVRE com aviso deterministico de ausencia na base constitucional, apontar o Codigo de Transito Brasileiro sem citar nenhum numero de artigo ou lei e sem forcar conexao com artigos da CF/88."
+    }
+  ]
+}

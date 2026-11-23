@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.pid
+# Ambientes virtuais e cache do Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Chaves de API (nunca suba isso para o GitHub!)
+.env
+
+# Arquivos pesados / bancos vetoriais locais (opcional, remova se quiser subir)
+*.zip
+*.gguf
+*.bin
+chroma_db/
+faiss_index/
+modelos/bge_reranker_v2_m3_onnx_int8/

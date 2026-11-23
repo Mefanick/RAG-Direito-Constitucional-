@@ -1,0 +1,989 @@
+[19:42:42] suspensão do Windows bloqueada durante o benchmark
+[19:43:16] fase A Q01 recuperando
+[19:43:16] [CP 1/6 | ENTRADA]
+    A polícia pode entrar na minha casa à noite sem mandado judicial se achar que tem algo errado lá dentro?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:43:16] [CP 2/6 | ANALISE + ROTEADOR]  0.40 s
+    classe: SIMPLES
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.427  margem: 0.316
+    modo_busca: densa_com_boost
+[reranker] entradas: input_ids ['batch', 'sequence']; attention_mask ['batch', 'sequence']
+[reranker] max_length efetivo: 512
+[19:43:27] [CP 3/6 | BUSCA PASSAGEM 1]  10.38 s
+    reranker max_length: 512
+    multi-query: não
+    idx    15  Art. 5º, XI            cosseno 0.520  reranker 0.159  sub -                CINZA
+    idx    73  Art. 5º, LXIX          cosseno 0.527  reranker 0.002  sub -                DESCARTADO
+    idx    65  Art. 5º, LXI           cosseno 0.519  reranker 0.001  sub -                DESCARTADO
+    idx    75  Art. 5º, LXXI          cosseno 0.552  reranker 0.001  sub -                DESCARTADO
+    idx    66  Art. 5º, LXII          cosseno 0.509  reranker 0.000  sub -                DESCARTADO
+[19:44:48] [CP 4/6 | TRADUTOR + PASSAGEM 2]  79.48 s
+    motivo: score < 0.25
+    tradutor: é vedado à autoridade policial entrar na residência particular sem mandado judicial ou autorização legal
+    hyde_cosseno: 0.743
+    hyde_reranker: 0.970
+    drift: aceito
+    tempo do tradutor: 74.57 s
+    passagem escolhida: 1
+    idx    15  Art. 5º, XI            cosseno 0.506  reranker 0.121  sub -                CINZA
+    idx    29  Art. 5º, XXV           cosseno 0.485  reranker 0.057  sub -                DESCARTADO
+    idx    65  Art. 5º, LXI           cosseno 0.513  reranker 0.031  sub -                DESCARTADO
+    idx    73  Art. 5º, LXIX          cosseno 0.504  reranker 0.011  sub -                DESCARTADO
+    idx   925  Art. 139               cosseno 0.499  reranker 0.008  sub -                DESCARTADO
+[19:44:48] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ZONA_CINZENTA
+    fusao_p1_p2: não
+    chunks_enviados: 3 (irmãos adjacentes: 0)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3550
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:44:48] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 92.29 s
+[19:44:48] fase A Q01 gravada em 92.3s | MODO_RAG_ZONA_CINZENTA
+[19:44:48] fase A Q02 recuperando
+[19:44:48] [CP 1/6 | ENTRADA]
+    Um brasileiro naturalizado pode ser extraditado pelo Brasil para responder a crime cometido no exterior?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:44:49] [CP 2/6 | ANALISE + ROTEADOR]  0.69 s
+    classe: SIMPLES
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.332  margem: 0.151
+    modo_busca: densa_com_boost
+[19:44:52] [CP 3/6 | BUSCA PASSAGEM 1]  3.18 s
+    reranker max_length: 512
+    multi-query: não
+    idx    55  Art. 5º, LI            cosseno 0.687  reranker 0.969  sub -                APROVADO
+    idx    56  Art. 5º, LII           cosseno 0.607  reranker 0.395  sub -                APROVADO
+    idx    47  Art. 5º, XLIII         cosseno 0.535  reranker 0.056  sub -                DESCARTADO
+    idx   139  Art. 12, II            cosseno 0.549  reranker 0.031  sub -                DESCARTADO
+    idx   143  Art. 12, § 4º          cosseno 0.569  reranker 0.014  sub -                DESCARTADO
+[19:44:52] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:44:52] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 3 (irmãos adjacentes: 1)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3379
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:44:52] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 3.89 s
+[19:44:52] fase A Q02 gravada em 3.9s | MODO_RAG_ALTA_CONFIANCA
+[19:44:52] fase A Q03 recuperando
+[19:44:52] [CP 1/6 | ENTRADA]
+    A partir de qual idade um adolescente pode trabalhar no Brasil, e existe restrição para trabalho noturno ou perigoso?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:44:53] [CP 2/6 | ANALISE + ROTEADOR]  0.63 s
+    classe: COMPOSTA
+    intenção: Ordem Social
+    prob_top1: 0.249  margem: 0.073
+    modo_busca: densa_global
+[19:45:48] [CP 3/6 | BUSCA PASSAGEM 1]  55.71 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: Art. 70 da Constituição Federal estabelece que o trabalho das pessoas com idade inferior a 16 anos é proibido, salvo em casos de aprendizagem.
+    sub 2: Art. 70 também determina que o trabalho noturno e o trabalho em atividades perigosas são proibidos para menores de 18 anos.
+    sub 3: Art. 70 prevê que o trabalho noturno e as atividades perigosas são proibidos para menores de 18 anos, com exceções previstas em lei.
+    melhor: Art. 70 da Constituição Federal estabelece que o trabalho das pessoas com idade inferior a 16 anos é proibido, salvo em casos de aprendizagem. -> Art. 7º, XXXIII 0.913
+    melhor: Art. 70 também determina que o trabalho noturno e o trabalho em atividades perigosas são proibidos para menores de 18 anos. -> Art. 7º, XXXIII 0.961
+    melhor: Art. 70 prevê que o trabalho noturno e as atividades perigosas são proibidos para menores de 18 anos, com exceções previstas em lei. -> Art. 7º, XXXIII 0.952
+    idx   121  Art. 7º, XXXIII        cosseno 0.803  reranker 0.961  sub Art. 70 também d APROVADO
+    idx  1376  Art. 227, § 3º         cosseno 0.653  reranker 0.266  sub Art. 70 da Const APROVADO
+    idx   110  Art. 7º, XXII          cosseno 0.588  reranker 0.180  sub Art. 70 também d CINZA
+    idx   120  Art. 7º, XXXII         cosseno 0.603  reranker 0.079  sub Art. 70 também d DESCARTADO
+    idx   111  Art. 7º, XXIII         cosseno 0.617  reranker 0.064  sub Art. 70 prevê qu DESCARTADO
+[19:45:48] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:45:48] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 6 (irmãos adjacentes: 4)
+    parent_document: 1 documento(s), 2 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 5572
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:45:48] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 56.35 s
+[19:45:48] fase A Q03 gravada em 56.4s | MODO_RAG_ALTA_CONFIANCA
+[19:45:48] fase A Q04 recuperando
+[19:45:48] [CP 1/6 | ENTRADA]
+    Uma funcionária descobriu que está grávida antes de ser avisada da demissão; a empresa pode mandá-la embora sem justa causa?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:45:49] [CP 2/6 | ANALISE + ROTEADOR]  0.71 s
+    classe: SIMPLES
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.196  margem: 0.053
+    modo_busca: densa_global
+[19:45:54] [CP 3/6 | BUSCA PASSAGEM 1]  4.61 s
+    reranker max_length: 512
+    multi-query: não
+    idx  1449  ADCT, Art. 10, II      cosseno 0.587  reranker 0.793  sub -                APROVADO
+    idx    89  Art. 7º, I             cosseno 0.494  reranker 0.062  sub -                DESCARTADO
+    idx   106  Art. 7º, XVIII         cosseno 0.524  reranker 0.003  sub -                DESCARTADO
+    idx   828  Art. 114, IX           cosseno 0.470  reranker 0.001  sub -                DESCARTADO
+    idx  1134  Art. 169, § 1º         cosseno 0.480  reranker 0.001  sub -                DESCARTADO
+[19:45:54] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:45:54] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 1 documento(s), 6 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3946
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:45:54] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 5.36 s
+[19:45:54] fase A Q04 gravada em 5.4s | MODO_RAG_ALTA_CONFIANCA
+[19:45:54] fase A Q05 recuperando
+[19:45:54] [CP 1/6 | ENTRADA]
+    Um estrangeiro que se naturalizou brasileiro pode concorrer à Presidência da República ou ser nomeado Ministro do STF?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:45:54] [CP 2/6 | ANALISE + ROTEADOR]  0.74 s
+    classe: SIMPLES
+    intenção: Princípios Fundamentais
+    prob_top1: 0.223  margem: 0.004
+    modo_busca: densa_global
+[19:45:58] [CP 3/6 | BUSCA PASSAGEM 1]  3.96 s
+    reranker max_length: 512
+    multi-query: não
+    idx   142  Art. 12, § 3º          cosseno 0.594  reranker 0.374  sub -                APROVADO
+    idx   702  Art. 101               cosseno 0.519  reranker 0.282  sub -                APROVADO
+    idx   844  Art. 123               cosseno 0.529  reranker 0.134  sub -                CINZA
+    idx   139  Art. 12, II            cosseno 0.562  reranker 0.086  sub -                DESCARTADO
+    idx   617  Art. 84, XIV           cosseno 0.535  reranker 0.018  sub -                DESCARTADO
+[19:45:58] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:45:58] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 2 (irmãos adjacentes: 0)
+    parent_document: 2 documento(s), 3 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 2926
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:45:58] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 4.73 s
+[19:45:58] fase A Q05 gravada em 4.7s | MODO_RAG_ALTA_CONFIANCA
+[19:45:58] fase A Q06 recuperando
+[19:45:58] [CP 1/6 | ENTRADA]
+    Com quantos anos o voto passa a ser obrigatório no Brasil, e qual é a idade mínima para alguém se candidatar a Senador e a Governador?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:45:59] [CP 2/6 | ANALISE + ROTEADOR]  0.96 s
+    classe: COMPOSTA
+    intenção: Ordem Social
+    prob_top1: 0.194  margem: 0.014
+    modo_busca: densa_global
+[19:46:50] [CP 3/6 | BUSCA PASSAGEM 1]  50.71 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: Art. 14, § 1º da Constituição Federal estabelece que o voto é obrigatório para maiores de 18 anos e menores de 70 anos.
+    sub 2: Art. 14, § 2º determina que a idade mínima para candidatura a Senador é de 35 anos.
+    sub 3: Art. 14, § 3º estabelece que a idade mínima para candidatura a Governador é de 30 anos.
+    melhor: Art. 14, § 1º da Constituição Federal estabelece que o voto é obrigatório para maiores de 18 anos e menores de 70 anos. -> Art. 14, § 1º 0.994
+    melhor: Art. 14, § 2º determina que a idade mínima para candidatura a Senador é de 35 anos. -> Art. 14, § 3º 0.877
+    melhor: Art. 14, § 3º estabelece que a idade mínima para candidatura a Governador é de 30 anos. -> Art. 14, § 3º 0.978
+    idx   149  Art. 14, § 1º          cosseno 0.814  reranker 0.994  sub Art. 14, § 1º da APROVADO
+    idx   151  Art. 14, § 3º          cosseno 0.644  reranker 0.978  sub Art. 14, § 3º es APROVADO
+    idx   145  Art. 14                cosseno 0.615  reranker 0.756  sub Art. 14, § 1º da APROVADO
+    idx   147  Art. 14, II            cosseno 0.614  reranker 0.650  sub Art. 14, § 1º da APROVADO
+    idx   150  Art. 14, § 2º          cosseno 0.620  reranker 0.473  sub Art. 14, § 1º da APROVADO
+[19:46:50] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:46:50] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 3 (irmãos adjacentes: 0)
+    parent_document: 2 documento(s), 4 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3809
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:46:50] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 51.70 s
+[19:46:50] fase A Q06 gravada em 51.7s | MODO_RAG_ALTA_CONFIANCA
+[19:46:50] fase A Q07 recuperando
+[19:46:50] [CP 1/6 | ENTRADA]
+    Um servidor público pode acumular dois cargos de professor na rede pública, e qual é o limite máximo que ele pode receber de salário?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:46:51] [CP 2/6 | ANALISE + ROTEADOR]  0.72 s
+    classe: COMPOSTA
+    intenção: Tributação e Orçamento
+    prob_top1: 0.194  margem: 0.030
+    modo_busca: densa_global
+[19:47:45] [CP 3/6 | BUSCA PASSAGEM 1]  54.40 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: Art. 37, X da Constituição Federal estabelece que a remuneração do servidor público não pode ultrapassar o limite máximo estabelecido em lei.
+    sub 2: Art. 37, II da Constituição Federal permite que o servidor público acumule cargos, funções ou empregos, desde que respeitado o limite máximo de remuneração.
+    sub 3: Art. 37, III da Constituição Federal determina que o servidor público não poderá receber mais de um salário mínimo por mês.
+    melhor: Art. 37, X da Constituição Federal estabelece que a remuneração do servidor público não pode ultrapassar o limite máximo estabelecido em lei. -> Art. 37, XI 0.854
+    melhor: Art. 37, II da Constituição Federal permite que o servidor público acumule cargos, funções ou empregos, desde que respeitado o limite máximo de remuneração. -> Art. 37, XVI 0.955
+    melhor: Art. 37, III da Constituição Federal determina que o servidor público não poderá receber mais de um salário mínimo por mês. -> Art. 37, X 0.220
+    idx   370  Art. 37, XVI           cosseno 0.732  reranker 0.955  sub Art. 37, II da C APROVADO
+    idx   365  Art. 37, XI            cosseno 0.723  reranker 0.854  sub Art. 37, X da Co APROVADO
+    idx   364  Art. 37, X             cosseno 0.721  reranker 0.837  sub Art. 37, X da Co APROVADO
+    idx   389  Art. 37, § 13º         cosseno 0.683  reranker 0.820  sub Art. 37, II da C APROVADO
+    idx  1471  ADCT, Art. 17          cosseno 0.682  reranker 0.727  sub Art. 37, II da C APROVADO
+[19:47:45] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:47:45] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 6 (irmãos adjacentes: 0)
+    parent_document: 3 documento(s), 5 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 7140
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:47:45] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 55.15 s
+[19:47:45] fase A Q07 gravada em 55.2s | MODO_RAG_ALTA_CONFIANCA
+[19:47:45] fase A Q08 recuperando
+[19:47:45] [CP 1/6 | ENTRADA]
+    Depois que um servidor público concursado conquista a estabilidade, ele ainda pode perder o cargo? Em quais situações?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:47:46] [CP 2/6 | ANALISE + ROTEADOR]  0.50 s
+    classe: COMPOSTA
+    intenção: Disposições Gerais / ADCT
+    prob_top1: 0.243  margem: 0.111
+    modo_busca: densa_global
+[19:48:33] [CP 3/6 | BUSCA PASSAGEM 1]  46.93 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: Art. 113, § 3º, da Constituição Federal estabelece que o servidor estável só pode ser demitido por motivo de interesse público.
+    sub 2: Art. 113, § 4º, prevê que a demissão do servidor estável só pode ocorrer por motivo de interesse público e mediante processo administrativo.
+    sub 3: Art. 113, § 5º, determina que a demissão do servidor estável só pode ser efetivada após o cumprimento de prévia comunicação ao órgão ou
+    melhor: Art. 113, § 3º, da Constituição Federal estabelece que o servidor estável só pode ser demitido por motivo de interesse público. -> Art. 41 0.399
+    melhor: Art. 113, § 4º, prevê que a demissão do servidor estável só pode ocorrer por motivo de interesse público e mediante processo administrativo. -> Art. 41 0.742
+    melhor: Art. 113, § 5º, determina que a demissão do servidor estável só pode ser efetivada após o cumprimento de prévia comunicação ao órgão ou -> Art. 169, § 4º 0.133
+    idx   439  Art. 41                cosseno 0.730  reranker 0.742  sub Art. 113, § 4º,  APROVADO
+    idx  1424  Art. 247               cosseno 0.712  reranker 0.614  sub Art. 113, § 4º,  APROVADO
+    idx  1473  ADCT, Art. 19          cosseno 0.645  reranker 0.205  sub Art. 113, § 3º,  CINZA
+    idx  1137  Art. 169, § 4º         cosseno 0.704  reranker 0.183  sub Art. 113, § 4º,  CINZA
+    idx  1134  Art. 169, § 1º         cosseno 0.595  reranker 0.019  sub Art. 113, § 3º,  DESCARTADO
+[19:48:33] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:48:33] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 2 (irmãos adjacentes: 0)
+    parent_document: 2 documento(s), 2 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3714
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:48:33] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 47.45 s
+[19:48:33] fase A Q08 gravada em 47.5s | MODO_RAG_ALTA_CONFIANCA
+[19:48:33] fase A Q09 recuperando
+[19:48:33] [CP 1/6 | ENTRADA]
+    O Presidente da República pode editar Medida Provisória para criar um novo crime penal, e por quanto tempo no máximo uma Medida Provisória vale antes de perder a eficácia?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:48:33] [CP 2/6 | ANALISE + ROTEADOR]  0.71 s
+    classe: SIMPLES
+    intenção: Organização dos Poderes
+    prob_top1: 0.261  margem: 0.093
+    modo_busca: densa_global
+[19:48:39] [CP 3/6 | BUSCA PASSAGEM 1]  5.32 s
+    reranker max_length: 512
+    multi-query: não
+    idx   546  Art. 62, § 3º          cosseno 0.685  reranker 0.986  sub -                APROVADO
+    idx   554  Art. 62, § 11º         cosseno 0.654  reranker 0.931  sub -                APROVADO
+    idx   550  Art. 62, § 7º          cosseno 0.662  reranker 0.898  sub -                APROVADO
+    idx   553  Art. 62, § 10º         cosseno 0.659  reranker 0.893  sub -                APROVADO
+    idx   544  Art. 62, § 1º          cosseno 0.659  reranker 0.681  sub -                APROVADO
+[19:48:39] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:48:39] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 3 (irmãos adjacentes: 0)
+    parent_document: 3 documento(s), 6 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 4165
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:48:39] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 6.05 s
+[19:48:39] fase A Q09 gravada em 6.1s | MODO_RAG_ALTA_CONFIANCA
+[19:48:39] fase A Q10 recuperando
+[19:48:39] [CP 1/6 | ENTRADA]
+    O Congresso Nacional pode aprovar uma Emenda à Constituição para extinguir o voto secreto ou adotar a pena de morte para crimes comuns?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:48:40] [CP 2/6 | ANALISE + ROTEADOR]  0.89 s
+    classe: SIMPLES
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.221  margem: 0.023
+    modo_busca: densa_global
+[19:48:44] [CP 3/6 | BUSCA PASSAGEM 1]  4.54 s
+    reranker max_length: 512
+    multi-query: não
+    idx   539  Art. 60                cosseno 0.544  reranker 0.883  sub -                APROVADO
+    idx   469  Art. 49, IV            cosseno 0.518  reranker 0.160  sub -                CINZA
+    idx   496  Art. 52, XI            cosseno 0.511  reranker 0.059  sub -                DESCARTADO
+    idx   159  Art. 14, § 11º         cosseno 0.535  reranker 0.059  sub -                DESCARTADO
+    idx   147  Art. 14, II            cosseno 0.512  reranker 0.052  sub -                DESCARTADO
+[19:48:44] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:48:44] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 1 documento(s), 1 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3275
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:48:44] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 5.45 s
+[19:48:44] fase A Q10 gravada em 5.5s | MODO_RAG_ALTA_CONFIANCA
+[19:48:44] fase A Q11 recuperando
+[19:48:44] [CP 1/6 | ENTRADA]
+    A prefeitura pode cobrar IPTU de um templo religioso que realiza cultos no imóvel?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:48:45] [CP 2/6 | ANALISE + ROTEADOR]  0.62 s
+    classe: SIMPLES
+    intenção: Tributação e Orçamento
+    prob_top1: 0.516  margem: 0.421
+    modo_busca: densa_com_boost
+[19:48:48] [CP 3/6 | BUSCA PASSAGEM 1]  3.16 s
+    reranker max_length: 512
+    multi-query: não
+    idx   985  Art. 150, VI           cosseno 0.568  reranker 0.228  sub -                CINZA
+    idx   982  Art. 150, III          cosseno 0.473  reranker 0.005  sub -                DESCARTADO
+    idx   961  Art. 145               cosseno 0.489  reranker 0.002  sub -                DESCARTADO
+    idx  1036  Art. 156, I            cosseno 0.481  reranker 0.001  sub -                DESCARTADO
+    idx  1013  Art. 155, § 1º         cosseno 0.491  reranker 0.001  sub -                DESCARTADO
+[19:49:04] [CP 4/6 | TRADUTOR + PASSAGEM 2]  14.92 s
+    motivo: score < 0.25
+    tradutor: é vedado cobrar tributo sobre bem imóvel utilizado para culto religioso em exercício da fé
+    hyde_cosseno: 0.730
+    hyde_reranker: 0.962
+    drift: aceito
+    tempo do tradutor: 10.04 s
+    passagem escolhida: 2
+    idx   985  Art. 150, VI           cosseno 0.613  reranker 0.321  sub -                APROVADO
+    idx   173  Art. 19                cosseno 0.588  reranker 0.166  sub -                CINZA
+    idx   988  Art. 150, § 3º         cosseno 0.543  reranker 0.041  sub -                DESCARTADO
+    idx   994  Art. 152               cosseno 0.543  reranker 0.018  sub -                DESCARTADO
+    idx   983  Art. 150, IV           cosseno 0.530  reranker 0.015  sub -                DESCARTADO
+[19:49:04] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 2963
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:49:04] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 19.45 s
+[19:49:04] fase A Q11 gravada em 19.5s | MODO_RAG_ALTA_CONFIANCA
+[19:49:04] fase A Q12 recuperando
+[19:49:04] [CP 1/6 | ENTRADA]
+    Se o Congresso aprovar uma lei hoje criando um novo imposto ou aumentando a alíquota, o governo já pode cobrar esse valor na semana que vem?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:49:05] [CP 2/6 | ANALISE + ROTEADOR]  0.93 s
+    classe: SIMPLES
+    intenção: Tributação e Orçamento
+    prob_top1: 0.404  margem: 0.279
+    modo_busca: densa_com_boost
+[19:49:09] [CP 3/6 | BUSCA PASSAGEM 1]  3.91 s
+    reranker max_length: 512
+    multi-query: não
+    idx   982  Art. 150, III          cosseno 0.610  reranker 0.166  sub -                CINZA
+    idx  1003  Art. 153, § 1º         cosseno 0.543  reranker 0.013  sub -                DESCARTADO
+    idx  1032  Art. 155, IV           cosseno 0.551  reranker 0.008  sub -                DESCARTADO
+    idx   961  Art. 145               cosseno 0.553  reranker 0.006  sub -                DESCARTADO
+    idx  1018  Art. 155, IV           cosseno 0.574  reranker 0.003  sub -                DESCARTADO
+[19:49:22] [CP 4/6 | TRADUTOR + PASSAGEM 2]  12.92 s
+    motivo: score < 0.25
+    tradutor: é vedado cobrar tributo antes da entrada em vigor da lei que o institui
+    hyde_cosseno: 0.623
+    hyde_reranker: 0.229
+    drift: aceito
+    tempo do tradutor: 9.09 s
+    passagem escolhida: 2
+    idx   982  Art. 150, III          cosseno 0.671  reranker 0.993  sub -                APROVADO
+    idx   980  Art. 150, I            cosseno 0.587  reranker 0.680  sub -                APROVADO
+    idx   993  Art. 151               cosseno 0.589  reranker 0.137  sub -                CINZA
+    idx   994  Art. 152               cosseno 0.561  reranker 0.041  sub -                DESCARTADO
+    idx   985  Art. 150, VI           cosseno 0.555  reranker 0.033  sub -                DESCARTADO
+[19:49:22] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 4 (irmãos adjacentes: 2)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 3559
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:49:22] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 18.29 s
+[19:49:22] fase A Q12 gravada em 18.3s | MODO_RAG_ALTA_CONFIANCA
+[19:49:22] fase A Q13 recuperando
+[19:49:22] [CP 1/6 | ENTRADA]
+    Quando alguém doa um imóvel em vida para um filho, quem tem competência para cobrar o imposto sobre essa doação: a União, o Estado ou o Município?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:49:23] [CP 2/6 | ANALISE + ROTEADOR]  0.65 s
+    classe: SIMPLES
+    intenção: Tributação e Orçamento
+    prob_top1: 0.397  margem: 0.197
+    modo_busca: densa_com_boost
+[19:49:26] [CP 3/6 | BUSCA PASSAGEM 1]  3.71 s
+    reranker max_length: 512
+    multi-query: não
+    idx   968  Art. 147               cosseno 0.573  reranker 0.753  sub -                APROVADO
+    idx  1013  Art. 155, § 1º         cosseno 0.660  reranker 0.750  sub -                APROVADO
+    idx  1010  Art. 155, I            cosseno 0.637  reranker 0.505  sub -                APROVADO
+    idx  1037  Art. 156, II           cosseno 0.579  reranker 0.489  sub -                APROVADO
+    idx   961  Art. 145               cosseno 0.547  reranker 0.292  sub -                APROVADO
+[19:49:26] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:49:26] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 8 (irmãos adjacentes: 3)
+    parent_document: 4 documento(s), 13 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 7073
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:49:26] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 4.38 s
+[19:49:26] fase A Q13 gravada em 4.4s | MODO_RAG_ALTA_CONFIANCA
+[19:49:26] fase A Q14 recuperando
+[19:49:26] [CP 1/6 | ENTRADA]
+    Quem mora há cinco anos sem interrupção em um terreno urbano pequeno para moradia própria pode pedir a propriedade por usucapião constitucional? Quais são os requisitos?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:49:27] [CP 2/6 | ANALISE + ROTEADOR]  0.61 s
+    classe: COMPOSTA
+    intenção: Ordem Econômica e Financeira
+    prob_top1: 0.183  margem: 0.058
+    modo_busca: densa_global
+[19:50:04] [CP 3/6 | BUSCA PASSAGEM 1]  37.18 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: A Constituição Federal de 1988 prevê a usucapião como meio de obtenção da propriedade.
+    sub 2: O artigo 182 da Constituição estabelece que a usucapião é admitida.
+    sub 3: O artigo 183 prevê que a usucapião é admitida para terrenos urbanos pequenos para moradia própria.
+    melhor: A Constituição Federal de 1988 prevê a usucapião como meio de obtenção da propriedade. -> Art. 191 0.218
+    melhor: O artigo 182 da Constituição estabelece que a usucapião é admitida. -> Art. 183 0.108
+    melhor: O artigo 183 prevê que a usucapião é admitida para terrenos urbanos pequenos para moradia própria. -> Art. 183 0.962
+    idx  1176  Art. 183               cosseno 0.688  reranker 0.962  sub O artigo 183 pre APROVADO
+    idx  1184  Art. 191               cosseno 0.654  reranker 0.218  sub A Constituição F CINZA
+    idx  1174  Art. 182, § 3º         cosseno 0.594  reranker 0.068  sub O artigo 182 da  DESCARTADO
+    idx    28  Art. 5º, XXIV          cosseno 0.574  reranker 0.025  sub A Constituição F DESCARTADO
+    idx  1420  Art. 243               cosseno 0.540  reranker 0.008  sub A Constituição F DESCARTADO
+[19:50:04] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:50:04] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 1 documento(s), 1 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 2700
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:50:04] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 37.81 s
+[19:50:04] fase A Q14 gravada em 37.8s | MODO_RAG_ALTA_CONFIANCA
+[19:50:04] fase A Q15 recuperando
+[19:50:04] [CP 1/6 | ENTRADA]
+    Empresas privadas podem explorar minérios nucleares no Brasil por conta própria ou essa atividade é monopólio da União?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:50:05] [CP 2/6 | ANALISE + ROTEADOR]  0.63 s
+    classe: SIMPLES
+    intenção: Ordem Econômica e Financeira
+    prob_top1: 0.527  margem: 0.396
+    modo_busca: densa_com_boost
+[19:50:08] [CP 3/6 | BUSCA PASSAGEM 1]  2.78 s
+    reranker max_length: 512
+    multi-query: não
+    idx   211  Art. 21, XXIII         cosseno 0.655  reranker 0.982  sub -                APROVADO
+    idx  1162  Art. 177, V            cosseno 0.653  reranker 0.947  sub -                APROVADO
+    idx  1163  Art. 177, § 1º         cosseno 0.569  reranker 0.740  sub -                APROVADO
+    idx  1153  Art. 176, § 1º         cosseno 0.566  reranker 0.511  sub -                APROVADO
+    idx   240  Art. 22, XXVI          cosseno 0.563  reranker 0.381  sub -                APROVADO
+[19:50:08] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:50:08] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 6 (irmãos adjacentes: 3)
+    parent_document: 1 documento(s), 2 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 4438
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:50:08] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 3.43 s
+[19:50:08] fase A Q15 gravada em 3.4s | MODO_RAG_ALTA_CONFIANCA
+[19:50:08] fase A Q16 recuperando
+[19:50:08] [CP 1/6 | ENTRADA]
+    A iniciativa privada pode participar do SUS e receber recursos públicos ou subvenções do governo para abrir hospitais particulares com fins lucrativos?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:50:08] [CP 2/6 | ANALISE + ROTEADOR]  0.59 s
+    classe: SIMPLES
+    intenção: Ordem Social
+    prob_top1: 0.201  margem: 0.031
+    modo_busca: densa_global
+[19:50:12] [CP 3/6 | BUSCA PASSAGEM 1]  3.68 s
+    reranker max_length: 512
+    multi-query: não
+    idx  1219  Art. 199               cosseno 0.632  reranker 0.971  sub -                APROVADO
+    idx  1247  Art. 202, § 3º         cosseno 0.520  reranker 0.022  sub -                DESCARTADO
+    idx  1202  Art. 195, § 10º        cosseno 0.497  reranker 0.011  sub -                DESCARTADO
+    idx   374  Art. 37, XX            cosseno 0.511  reranker 0.008  sub -                DESCARTADO
+    idx  1618  ADCT, Art. 77, § 3º    cosseno 0.502  reranker 0.006  sub -                DESCARTADO
+[19:50:12] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:50:12] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 1 documento(s), 1 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 2993
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:50:12] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 4.30 s
+[19:50:12] fase A Q16 gravada em 4.3s | MODO_RAG_ALTA_CONFIANCA
+[19:50:12] fase A Q17 recuperando
+[19:50:12] [CP 1/6 | ENTRADA]
+    A educação básica pública é obrigatória e gratuita a partir de qual idade até qual idade segundo a Constituição?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:50:13] [CP 2/6 | ANALISE + ROTEADOR]  0.59 s
+    classe: COMPOSTA
+    intenção: Ordem Social
+    prob_top1: 0.558  margem: 0.481
+    modo_busca: densa_com_boost
+[19:50:49] [CP 3/6 | BUSCA PASSAGEM 1]  36.88 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: Art. 206. A educação é direito de todos e dever do Estado e da família.
+    sub 2: Parágrafo único. A educação básica garante acesso universal e gratuito à escola pública.
+    sub 3: Art. 208. A educação básica compreende a educação infantil, o ensino fundamental e o ensino médio, com duração mínima de oito anos para o ensino fundamental e de três anos para o ensino médio.
+    melhor: Art. 206. A educação é direito de todos e dever do Estado e da família. -> Art. 205 0.951
+    melhor: Parágrafo único. A educação básica garante acesso universal e gratuito à escola pública. -> Art. 206 0.812
+    melhor: Art. 208. A educação básica compreende a educação infantil, o ensino fundamental e o ensino médio, com duração mínima de oito anos para o ensino fundamental e de três anos para o ensino médio. -> Art. 208, I 0.948
+    idx  1253  Art. 205               cosseno 0.864  reranker 0.951  sub Art. 206. A educ APROVADO
+    idx  1257  Art. 208, I            cosseno 0.771  reranker 0.948  sub Art. 208. A educ APROVADO
+    idx  1373  Art. 227               cosseno 0.729  reranker 0.823  sub Art. 206. A educ APROVADO
+    idx  1260  Art. 208, IV           cosseno 0.744  reranker 0.819  sub Art. 208. A educ APROVADO
+    idx  1263  Art. 208, VII          cosseno 0.717  reranker 0.817  sub Art. 208. A educ APROVADO
+[19:50:49] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:50:49] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 13 (irmãos adjacentes: 5)
+    parent_document: 4 documento(s), 6 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 7156
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:50:49] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 37.49 s
+[19:50:49] fase A Q17 gravada em 37.5s | MODO_RAG_ALTA_CONFIANCA
+[19:50:49] fase A Q18 recuperando
+[19:50:49] [CP 1/6 | ENTRADA]
+    Uma empresa que causa poluição grave pode sofrer punição na esfera penal além de pagar multa administrativa e indenizar o dano ambiental?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:50:50] [CP 2/6 | ANALISE + ROTEADOR]  0.51 s
+    classe: SIMPLES
+    intenção: Ordem Econômica e Financeira
+    prob_top1: 0.276  margem: 0.142
+    modo_busca: densa_global
+[19:50:53] [CP 3/6 | BUSCA PASSAGEM 1]  2.54 s
+    reranker max_length: 512
+    multi-query: não
+    idx  1367  Art. 225, § 3º         cosseno 0.594  reranker 0.654  sub -                APROVADO
+    idx   251  Art. 23, VI            cosseno 0.493  reranker 0.015  sub -                DESCARTADO
+    idx  1362  Art. 225, IV           cosseno 0.519  reranker 0.006  sub -                DESCARTADO
+    idx   267  Art. 24, VIII          cosseno 0.519  reranker 0.005  sub -                DESCARTADO
+    idx  1366  Art. 225, § 2º         cosseno 0.480  reranker 0.004  sub -                DESCARTADO
+[19:50:53] [CP 4/6 | TRADUTOR + PASSAGEM 2]
+    PULADO (score inicial suficiente)
+[19:50:53] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_RAG_ALTA_CONFIANCA
+    fusao_p1_p2: não
+    chunks_enviados: 1 (irmãos adjacentes: 0)
+    parent_document: 1 documento(s), 2 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 2869
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.2
+    num_ctx: 3072
+    num_predict: 450
+    think: False
+    modo_raciocinio: desligado
+[19:50:53] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 3.09 s
+[19:50:53] fase A Q18 gravada em 3.1s | MODO_RAG_ALTA_CONFIANCA
+[19:50:53] fase A Q19 recuperando
+[19:50:53] [CP 1/6 | ENTRADA]
+    Comprei um notebook pela internet há cinco dias e me arrependi; tenho direito de devolver o produto e receber o reembolso integral?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:50:53] [CP 2/6 | ANALISE + ROTEADOR]  0.63 s
+    classe: SIMPLES
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.235  margem: 0.083
+    modo_busca: densa_global
+[19:50:56] [CP 3/6 | BUSCA PASSAGEM 1]  2.81 s
+    reranker max_length: 512
+    multi-query: não
+    idx     9  Art. 5º, V             cosseno 0.500  reranker 0.001  sub -                DESCARTADO
+    idx    36  Art. 5º, XXXII         cosseno 0.468  reranker 0.001  sub -                DESCARTADO
+    idx    76  Art. 5º, LXXII         cosseno 0.468  reranker 0.000  sub -                DESCARTADO
+    idx    49  Art. 5º, XLV           cosseno 0.481  reranker 0.000  sub -                DESCARTADO
+    idx  1545  ADCT, Art. 48          cosseno 0.476  reranker 0.000  sub -                DESCARTADO
+[19:51:14] [CP 4/6 | TRADUTOR + PASSAGEM 2]  17.27 s
+    motivo: score < 0.25
+    tradutor: é direito do consumidor devolver produto adquirido em loja virtual e obter reembolso integral dentro do prazo legal
+    hyde_cosseno: 0.760
+    hyde_reranker: 0.967
+    drift: aceito
+    tempo do tradutor: 11.96 s
+    passagem escolhida: 2
+    idx    36  Art. 5º, XXXII         cosseno 0.493  reranker 0.003  sub -                DESCARTADO
+    idx  1545  ADCT, Art. 48          cosseno 0.500  reranker 0.002  sub -                DESCARTADO
+    idx     9  Art. 5º, V             cosseno 0.478  reranker 0.001  sub -                DESCARTADO
+    idx   990  Art. 150, § 5º         cosseno 0.488  reranker 0.001  sub -                DESCARTADO
+    idx    77  Art. 5º, LXXIII        cosseno 0.465  reranker 0.000  sub -                DESCARTADO
+[19:51:14] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_CONVERSA_LIVRE
+    fusao_p1_p2: não
+    chunks_enviados: 0 (irmãos adjacentes: 0)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 564
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.5
+    num_ctx: 2048
+    num_predict: 360
+    think: False
+    modo_raciocinio: desligado
+[19:51:14] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 21.42 s
+[19:51:14] fase A Q19 gravada em 21.4s | MODO_CONVERSA_LIVRE
+[19:51:14] fase A Q20 recuperando
+[19:51:14] [CP 1/6 | ENTRADA]
+    Se eu avançar o sinal vermelho de madrugada, quantos pontos levo na carteira de motorista e qual o valor exato da multa?
+    histórico: ignorado (stateless)
+    modelo: qwen3:8b
+    usar_rag: True
+    usar_think: False
+    cache: DESLIGADO
+[19:51:15] [CP 2/6 | ANALISE + ROTEADOR]  0.71 s
+    classe: COMPOSTA
+    intenção: Direitos e Garantias Fundamentais
+    prob_top1: 0.177  margem: 0.007
+    modo_busca: densa_global
+[19:51:42] [CP 3/6 | BUSCA PASSAGEM 1]  27.28 s
+    reranker max_length: 512
+    multi-query: sim
+    sub 1: A infração é considerada gravíssima e resulta em 7 pontos na carteira.
+    sub 2: A multa é de R$ 1.900,00.
+    sub 3: A infração também pode resultar em suspensão do direito de dirigir.
+    melhor: A infração é considerada gravíssima e resulta em 7 pontos na carteira. -> Art. 85 0.001
+    melhor: A multa é de R$ 1.900,00. -> ADCT, Art. 54-A 0.003
+    melhor: A infração também pode resultar em suspensão do direito de dirigir. -> Art. 37, § 4º 0.006
+    idx   380  Art. 37, § 4º          cosseno 0.546  reranker 0.006  sub A infração també DESCARTADO
+    idx   160  Art. 15                cosseno 0.587  reranker 0.004  sub A infração també DESCARTADO
+    idx  1552  ADCT, Art. 54-A        cosseno 0.542  reranker 0.003  sub A multa é de R$  DESCARTADO
+    idx    50  Art. 5º, XLVI          cosseno 0.477  reranker 0.001  sub A multa é de R$  DESCARTADO
+    idx   257  Art. 23, XII           cosseno 0.563  reranker 0.001  sub A infração també DESCARTADO
+[19:52:11] [CP 4/6 | TRADUTOR + PASSAGEM 2]  28.78 s
+    motivo: score < 0.25
+    tradutor: A infração por ultrapassar a linha de espera do sinal de trânsito em horário de pico e a penalidade aplicável
+    hyde_cosseno: 0.653
+    hyde_reranker: 0.048
+    drift: aceito
+    tempo do tradutor: 24.84 s
+    passagem escolhida: 2
+    idx   984  Art. 150, V            cosseno 0.492  reranker 0.006  sub -                DESCARTADO
+    idx  1552  ADCT, Art. 54-A        cosseno 0.480  reranker 0.006  sub -                DESCARTADO
+    idx   381  Art. 37, § 5º          cosseno 0.496  reranker 0.005  sub -                DESCARTADO
+    idx    79  Art. 5º, LXXV          cosseno 0.484  reranker 0.004  sub -                DESCARTADO
+    idx  1764  ADCT, Art. 109, § 2º   cosseno 0.487  reranker 0.002  sub -                DESCARTADO
+[19:52:11] [CP 5/6 | DECISAO + CONTEXTO]
+    modo: MODO_CONVERSA_LIVRE
+    fusao_p1_p2: não
+    chunks_enviados: 0 (irmãos adjacentes: 0)
+    parent_document: 0 documento(s), 0 filho(s) consolidado(s)
+    duplicatas_removidas: 0
+    prompt_chars: 553
+    LLM_MODEL: qwen3:8b
+    LLM_URL: http://127.0.0.1:11434/api/chat
+    temperature: 0.5
+    num_ctx: 2048
+    num_predict: 360
+    think: False
+    modo_raciocinio: desligado
+[19:52:11] [CP 6/6 | GERADOR LLM]  0.00 s
+    pulado pelo modo so-retriever
+    total_s: 57.48 s
+[19:52:11] fase A Q20 gravada em 57.5s | MODO_CONVERSA_LIVRE
+[19:52:16] BGE-M3 e ONNX liberados
+[19:52:16] fase B carregando qwen3:4b
+[19:58:37] [qwen3:4b] Q01/20 | total=380.3s (prefill=55.7s think=316.7s decode=316.7s) | 3.8 tok/s | SEM_CITACAO
+[20:03:20] [qwen3:4b] Q02/20 | total=283.7s (prefill=51.3s think=232.1s decode=232.1s) | 5.2 tok/s | SEM_CITACAO
+[20:08:44] [qwen3:4b] Q03/20 | total=323.6s (prefill=63.0s think=260.3s decode=260.3s) | 4.6 tok/s | SEM_CITACAO
+[20:13:18] [qwen3:4b] Q04/20 | total=274.2s (prefill=33.7s think=240.4s decode=240.4s) | 5.0 tok/s | SEM_CITACAO
+[20:17:17] [qwen3:4b] Q05/20 | total=239.1s (prefill=14.5s think=224.2s decode=224.2s) | 5.4 tok/s | SEM_CITACAO
+[20:21:48] [qwen3:4b] Q06/20 | total=270.9s (prefill=29.6s think=233.5s decode=241.2s) | 5.0 tok/s | SEM_CITACAO
+[20:27:56] [qwen3:4b] Q07/20 | total=367.7s (prefill=96.3s think=271.2s decode=271.2s) | 4.4 tok/s | SEM_CITACAO
+[20:32:24] [qwen3:4b] Q08/20 | total=268.0s (prefill=25.1s think=242.6s decode=242.6s) | 4.9 tok/s | SEM_CITACAO
+[20:37:16] [qwen3:4b] Q09/20 | total=292.0s (prefill=35.8s think=256.0s decode=256.0s) | 4.7 tok/s | SEM_CITACAO
+[20:41:25] [qwen3:4b] Q10/20 | total=249.5s (prefill=18.8s think=230.5s decode=230.5s) | 5.2 tok/s | SEM_CITACAO
+[20:45:34] [qwen3:4b] Q11/20 | total=249.0s (prefill=14.1s think=234.7s decode=234.7s) | 5.1 tok/s | SEM_CITACAO
+[20:50:06] [qwen3:4b] Q12/20 | total=272.2s (prefill=25.9s think=246.1s decode=246.1s) | 4.9 tok/s | SEM_CITACAO
+[20:55:36] [qwen3:4b] Q13/20 | total=329.4s (prefill=102.8s think=193.7s decode=226.3s) | 4.3 tok/s | FIEL
+[20:59:33] [qwen3:4b] Q14/20 | total=236.8s (prefill=10.7s think=225.9s decode=225.9s) | 5.3 tok/s | SEM_CITACAO
+[21:04:25] [qwen3:4b] Q15/20 | total=292.8s (prefill=41.7s think=250.9s decode=250.9s) | 4.8 tok/s | SEM_CITACAO
+[21:08:32] [qwen3:4b] Q16/20 | total=246.4s (prefill=14.1s think=232.1s decode=232.1s) | 5.2 tok/s | SEM_CITACAO
+[21:14:13] [qwen3:4b] Q17/20 | total=340.8s (prefill=105.8s think=225.1s decode=234.7s) | 4.4 tok/s | FIEL
+[21:18:14] [qwen3:4b] Q18/20 | total=241.5s (prefill=13.0s think=228.3s decode=228.3s) | 5.3 tok/s | SEM_CITACAO
+[21:21:10] [qwen3:4b] Q19/20 | total=175.6s (prefill=6.8s think=129.7s decode=163.5s) | 6.2 tok/s | SEM_CITACAO
+[21:24:11] [qwen3:4b] Q20/20 | total=181.4s (prefill=1.9s think=156.0s decode=179.4s) | 6.1 tok/s | SEM_CITACAO
+[21:24:11] fase B qwen3:4b descarregado
+[21:24:11] fase B carregando qwen2.5:7b
+[21:25:52] [qwen2.5:7b] Q01/20 | total=101.0s (prefill=65.8s think=0.0s decode=26.5s) | 4.1 tok/s | SEM_CITACAO
+[21:27:12] [qwen2.5:7b] Q02/20 | total=79.9s (prefill=60.6s think=0.0s decode=19.1s) | 4.0 tok/s | SEM_CITACAO
+[21:29:11] [qwen2.5:7b] Q03/20 | total=118.9s (prefill=82.5s think=0.0s decode=36.4s) | 3.5 tok/s | FIEL
+[21:30:28] [qwen2.5:7b] Q04/20 | total=77.0s (prefill=45.5s think=0.0s decode=31.2s) | 4.0 tok/s | FIEL
+[21:31:05] [qwen2.5:7b] Q05/20 | total=37.2s (prefill=20.3s think=0.0s decode=16.8s) | 4.1 tok/s | FIEL
+[21:32:04] [qwen2.5:7b] Q06/20 | total=58.4s (prefill=40.7s think=0.0s decode=17.6s) | 4.1 tok/s | SEM_CITACAO
+[21:34:31] [qwen2.5:7b] Q07/20 | total=146.9s (prefill=115.7s think=0.0s decode=31.1s) | 3.9 tok/s | FIEL
+[21:35:44] [qwen2.5:7b] Q08/20 | total=73.4s (prefill=34.5s think=0.0s decode=38.8s) | 4.2 tok/s | ALERTA_SUBDISPOSITIVO
+[21:37:11] [qwen2.5:7b] Q09/20 | total=87.3s (prefill=48.2s think=0.0s decode=39.0s) | 4.1 tok/s | FIEL
+[21:38:19] [qwen2.5:7b] Q10/20 | total=67.9s (prefill=25.5s think=0.0s decode=42.2s) | 4.1 tok/s | FIEL
+[21:39:03] [qwen2.5:7b] Q11/20 | total=43.7s (prefill=20.3s think=0.0s decode=23.3s) | 4.0 tok/s | ALERTA_SUBDISPOSITIVO
+[21:40:24] [qwen2.5:7b] Q12/20 | total=81.3s (prefill=34.9s think=0.0s decode=46.3s) | 4.1 tok/s | SEM_CITACAO
+[21:42:53] [qwen2.5:7b] Q13/20 | total=149.0s (prefill=120.8s think=0.0s decode=28.0s) | 3.9 tok/s | FIEL
+[21:43:42] [qwen2.5:7b] Q14/20 | total=48.6s (prefill=15.4s think=0.0s decode=33.1s) | 4.1 tok/s | FIEL
+[21:45:08] [qwen2.5:7b] Q15/20 | total=85.8s (prefill=56.8s think=0.0s decode=29.0s) | 3.8 tok/s | FIEL
+[21:45:57] [qwen2.5:7b] Q16/20 | total=49.1s (prefill=19.6s think=0.0s decode=29.4s) | 4.3 tok/s | SEM_CITACAO
+[21:48:18] [qwen2.5:7b] Q17/20 | total=141.0s (prefill=123.8s think=0.0s decode=17.1s) | 3.9 tok/s | FIEL
+[21:49:03] [qwen2.5:7b] Q18/20 | total=45.1s (prefill=18.0s think=0.0s decode=26.9s) | 4.0 tok/s | SEM_CITACAO
+[21:50:14] [qwen2.5:7b] Q19/20 | total=70.6s (prefill=11.4s think=0.0s decode=49.1s) | 4.5 tok/s | SEM_CITACAO
+[21:50:53] [qwen2.5:7b] Q20/20 | total=39.2s (prefill=2.9s think=0.0s decode=36.2s) | 4.2 tok/s | SEM_CITACAO
+[21:50:53] fase B qwen2.5:7b descarregado
+[21:50:53] fase B carregando qwen3:8b
+[21:55:35] [qwen3:8b] Q01/20 | total=282.0s (prefill=76.5s think=143.9s decode=195.8s) | 3.3 tok/s | FIEL
+[21:59:11] [qwen3:8b] Q02/20 | total=215.7s (prefill=69.0s think=91.7s decode=146.6s) | 3.4 tok/s | FIEL
+[22:03:19] [qwen3:8b] Q03/20 | total=248.2s (prefill=97.2s think=84.3s decode=150.8s) | 3.1 tok/s | FIEL
+[22:07:44] [qwen3:8b] Q04/20 | total=265.0s (prefill=52.8s think=155.3s decode=212.0s) | 3.3 tok/s | FIEL
+[22:10:58] [qwen3:8b] Q05/20 | total=194.2s (prefill=23.9s think=104.3s decode=170.2s) | 3.4 tok/s | ALERTA_SUBDISPOSITIVO
+[22:14:06] [qwen3:8b] Q06/20 | total=187.5s (prefill=47.2s think=101.5s decode=140.2s) | 3.3 tok/s | ALERTA_SUBDISPOSITIVO
+[22:19:10] [qwen3:8b] Q07/20 | total=304.5s (prefill=142.2s think=98.4s decode=162.1s) | 3.0 tok/s | FIEL
+[22:21:55] [qwen3:8b] Q08/20 | total=164.7s (prefill=40.9s think=67.8s decode=123.6s) | 3.4 tok/s | FIEL
+[22:25:45] [qwen3:8b] Q09/20 | total=230.1s (prefill=57.2s think=91.1s decode=172.7s) | 3.1 tok/s | FIEL
+[22:29:29] [qwen3:8b] Q10/20 | total=223.6s (prefill=32.7s think=125.5s decode=190.7s) | 3.1 tok/s | ALUCINACAO_ARTIGO
+[22:31:18] [qwen3:8b] Q11/20 | total=109.0s (prefill=23.8s think=47.6s decode=84.9s) | 3.5 tok/s | FIEL
+[22:34:53] [qwen3:8b] Q12/20 | total=215.0s (prefill=41.9s think=87.4s decode=173.0s) | 3.2 tok/s | FIEL
+[22:41:30] [qwen3:8b] Q13/20 | total=397.3s (prefill=151.7s think=143.9s decode=245.3s) | 2.9 tok/s | FIEL
+[22:45:09] [qwen3:8b] Q14/20 | total=218.9s (prefill=17.9s think=125.6s decode=200.8s) | 3.3 tok/s | FIEL
+[22:48:43] [qwen3:8b] Q15/20 | total=213.6s (prefill=65.8s think=59.3s decode=147.7s) | 3.2 tok/s | FIEL
+[22:51:57] [qwen3:8b] Q16/20 | total=194.7s (prefill=24.0s think=105.6s decode=170.5s) | 3.3 tok/s | FIEL
+[22:58:20] [qwen3:8b] Q17/20 | total=382.0s (prefill=160.2s think=133.4s decode=221.6s) | 2.3 tok/s | FIEL
+[23:01:08] [qwen3:8b] Q18/20 | total=168.4s (prefill=25.6s think=85.8s decode=139.3s) | 2.8 tok/s | FIEL
+[23:04:34] [qwen3:8b] Q19/20 | total=206.2s (prefill=13.6s think=109.4s decode=174.3s) | 3.1 tok/s | SEM_CITACAO
+[23:07:41] [qwen3:8b] Q20/20 | total=186.6s (prefill=3.6s think=110.9s decode=182.9s) | 3.0 tok/s | SEM_CITACAO
+[23:07:41] fase B qwen3:8b descarregado
+[23:07:41] benchmark concluído: 60 resultados
+[23:07:41] suspensão do Windows restaurada

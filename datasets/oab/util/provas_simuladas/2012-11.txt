@@ -1,0 +1,1331 @@
+---
+ENUM Questão 1
+
+AREA  
+
+(FGV - 2007) O art. 39, § 3°, da Constituição da República autoriza a
+lei a estabelecer requisitos diferenciados de admissão a cargo
+público, quando a natureza do cargo o exigir. A pertinência desses
+requisitos, em relação a determinado cargo a ser provido, é aferida
+mediante a aplicação do princípio da:
+
+OPTIONS 
+
+A:CORRECT) razoabilidade
+
+B) publicidade 
+
+C) igualdade 
+
+D) eficiência 
+
+---
+ENUM Questão 2
+
+AREA  
+
+(FGV - 2008) A avocação é própria do Poder: 
+
+OPTIONS 
+
+A) Disciplinar. 
+
+B) Discricionário. 
+
+C) Regulamentar. 
+
+D:CORRECT) Hierárquico. 
+
+---
+ENUM Questão 3
+
+AREA  
+
+(FGV - 2010) Os atos administrativos possuem presunção de
+legitimidade. Essa presunção decorre do princípio da:
+
+OPTIONS 
+
+A) impessoabilidade. 
+
+B) moralidade. 
+
+C) publicidade. 
+
+D:CORRECT) legalidade. 
+
+---
+ENUM Questão 4
+
+AREA  
+
+(FGV - 2010) As pessoas jurídicas de direito público de natureza
+meramente administrativa, criadas por lei específica, para a
+realização de atividades descentralizadas da entidade que as criou,
+são denominadas:
+
+OPTIONS 
+
+A) fundações. 
+
+B:CORRECT) autarquias. 
+
+C) entidades estatais. 
+
+D) entidades paraestatais. 
+
+---
+ENUM Questão 5
+
+AREA  
+
+(FGV - 2008) No que tange ao processo administrativo disciplinar,
+analise as assertivas a seguir:
+
+I. O processo administrativo disciplinar é composto de
+fases. Sindicância é a fase do processo administrativo preliminar que
+determina se o funcionário público sofrerá sanção ou não pelo
+cometimento de falta funcional.
+
+II. A falta de defesa técnica por advogado no processo
+administrativo disciplinar não ofende a Constituição.
+
+III. No processo administrativo disciplinar, as provas são produzidas
+durante a fase denominada de inquérito administrativo; tal fase
+compreende instrução, defesa e relatório.
+
+Assinale: 
+
+OPTIONS 
+
+A) se todas as assertivas estiverem corretas. 
+
+B) se somente as assertivas I e II estiverem corretas. 
+
+C) se somente as assertivas I e III estiverem corretas. 
+
+D:CORRECT) se somente as assertivas II e III estiverem corretas. 
+
+---
+ENUM Questão 6
+
+AREA  
+
+(FGV - 2007) Sobre intervenção do Poder Público na Propriedade, é
+correto afirmar que:
+
+OPTIONS 
+
+A) tombamento é a forma de intervenção na propriedade pela qual o
+Poder Público procura proteger o patrimônio cultural, com a finalidade
+de proteger a memória nacional. Pela grande relevância desse
+instituto, e com base no princípio da supremacia do interesse
+público, não há a necessidade de informar ao proprietário do bem, por
+meio de notificação, sobre a existência do procedimento de tombamento,
+principalmente porque o bem continuará na propriedade do particular.
+
+B) é possível a desapropriação de bens públicos na direção vertical
+das entidades federativas. No entanto, com base no princípio
+federativo e no princípio da preponderância dos interesses, é possível
+Município desapropriar bem do Estado, se provado o interesse local.
+
+C:CORRECT) Os institutos do tombamento e da limitação administrativa
+são instrumentos diversos de intervenção do Estado na
+propriedade. Quanto aos destinatários dos institutos, pode-se afirmar
+que o tombamento é ato de restrição individual, e isso porque depende
+da análise de cada bem a ser tombado, e as limitações urbanísticas
+administrativas são atos gerais e impessoais, e, por conseguinte,
+incidem sobre coletividades indeterminadas.
+
+D) Conforme jurisprudência dos Tribunais Superiores, Estado e
+Município podem desapropriar bens de empresa pública federal, sem a
+necessidade de autorização do Presidente da República, pois se trata
+de entidade de Administração Indireta.
+
+---
+ENUM Questão 7
+
+AREA  
+
+(FGV - 2007) Assinale a afirmativa incorreta. 
+
+OPTIONS 
+
+A) Os institutos de autorização de uso de bem público e o de permissão
+de uso de bem público são muito semelhantes. A diferença entre eles é
+que, no primeiro, predomina o interesse privado, enquanto, no segundo,
+prepondera o interesse público.
+
+B:CORRECT) Domínio patrimonial é o poder político que permite ao
+Estado submeter à sua vontade todos os bens situados em seu
+território.
+
+C) Segundo jurisprudência dos tribunais superiores, os bens de
+sociedade de economia mista são considerados bens públicos se afetados
+a um serviço público.
+
+D) A concessão de bem público é contrato administrativo, ao passo que
+a autorização de uso de bem público e a permissão de uso de bem
+público são atos administrativos.
+
+---
+ENUM Questão 8
+
+AREA  
+
+(FGV - 2008) O Poder Público é condenado em ação de responsabilidade
+civil pelos danos causados por seu servidor a terceiro. É correto
+afirmar que:
+
+OPTIONS 
+
+A:CORRECT) cabe ação regressiva do Estado em face do servidor, cujo
+prazo prescricional é imprescritível, e nesta se verificará se a
+conduta do servidor foi culposa (lato sensu).
+
+B) cabe ação de regresso do Estado em face do servidor, e seu prazo
+prescricional é de 20 anos.
+
+C) cabe ação regressiva do Estado em face do servidor, e nela não se
+perquirirá sobre culpa do servidor, uma vez que se aplica a teoria da
+Responsabilidade Objetiva quando a ação envolve o Poder Público.
+
+D) basta o procedimento administrativo disciplinar com a aplicação da
+ampla defesa e do contraditório, não cabendo o ajuizamento de ação
+regressiva.
+
+---
+ENUM Questão 9
+
+AREA  
+
+(FGV - 2010) A licitação entre interessados, cadastrados ou não, do
+ramo pertinente ao seu objeto e aquela entre interessados devidamente
+cadastrados, observando-se a qualificação necessária, dizem respeito,
+respectivamente, as modalidades de licitação:
+
+OPTIONS 
+
+A) convite e leilão. 
+
+B) convite e tomada de preços. 
+
+C) concorrência e convite.  
+
+D:CORRECT) concorrência e tomada de preços. 
+
+---
+ENUM Questão 10
+
+AREA  
+
+(FGV - 2008) Os contratos regidos pela Lei de Licitações poderão ser
+alterados, com as devidas justificativas, ficando o contratado
+obrigado a aceitar os acréscimos que se fizerem na reforma de edifício
+até o limite de:
+
+OPTIONS 
+
+A) 10%. 
+
+B) 40%. 
+
+C) 30%. 
+
+D:CORRECT) 50% 
+
+---
+ENUM Questão 11
+
+AREA CONSTITUTIONAL  
+
+As Emendas Constitucionais possuem um peculiar sistema de iniciativa e
+processo legislativo de elaboração. Assim, revela‐se correto afirmar
+que:
+
+OPTIONS 
+
+A) Há iniciativa popular para apresentação de proposta de emenda à
+Constituição.
+
+B) A proposta poderá ser apresentada por mais de um terço das
+Assembléias Legislativas das unidades da Federação, sendo que, em cada
+uma delas, deve ocorrer a maioria simples de votos.
+
+C) Para ser aprovada a proposta deverá passar por dois turnos em
+sessão conjunta do Congresso Nacional.
+
+D:CORRECT) Não há sanção ou veto do Presidente da República no
+processo de elaboração da emenda.
+
+---
+ENUM Questão 12
+
+AREA  
+
+A Constituição de 1988 proíbe qualquer discriminação, por lei, entre brasileiros natos e naturalizados, exceto os casos previstos pelo próprio texto constitucional. Nesse sentido, é correto afirmar que somente brasileiro nato pode exercer cargo de:
+
+OPTIONS 
+
+A) Ministro da Educação
+
+B) Delegado da Polícia Federal
+
+C:CORRECT) Oficial das Forças Armadas
+
+D) Deputado Federal
+
+---
+ENUM Questão 13
+
+AREA  
+
+De acordo com a jurisprudência do STF e da doutrina, qual, dentre os órgãos, autoridades e entidades listados abaixo, precisa demonstrar pertinência temática como condição para ajuizar as ações do controle concentrado de constitucionalidade?
+
+OPTIONS 
+
+A) Mesa da Câmara dos Deputados
+
+B) Partido Político com representação no Congresso Nacional
+
+C:CORRECT) Governador de Estado
+
+D) Procurador Geral da república
+
+---
+ENUM Questão 14
+
+AREA  
+
+Em caso de vacância dos cargos de Presidente da República e Vice‐Presidente da República nos dois primeiros anos de mandato,
+
+OPTIONS 
+
+A:CORRECT) far‐se‐á nova eleição direta.
+
+B) o Presidente do Senado Federal assume definitivamente o cargo.
+
+C) far‐se‐á nova eleição indireta
+
+D) não serão realizadas novas eleições.
+
+---
+ENUM Questão 15
+
+AREA  
+
+A ação popular só pode ser ajuizada por/pelo:
+
+OPTIONS 
+
+A) analfabeto inalistável.
+
+B) entidade de classe de âmbito nacional.
+
+C) Ministério Público.
+
+D:CORRECT) cidadão em gozo dos seus direitos políticos.
+
+---
+ENUM Questão 16
+
+AREA  
+
+Ao disciplinar o controle de constitucionalidade de leis e atos normativos, a Constituição da República e a jurisprudência estabelecem que: 
+
+OPTIONS 
+
+A:CORRECT) pelo voto de dois terços dos Ministros do STF é possível que se adote a modulação temporal dos efeitos da decisão.
+
+B) o controle de constitucionalidade não pode ser exercido por juízes em estágio probatório.
+
+C) não há controle concentrado abstrato em face de lei municipal.
+
+D) as decisões proferidas pela maioria absoluta dos membros dos Tribunais, no exercício do controle incidental de constitucionalidade, produzem efeitos contra todos e vinculantes relativamente aos demais órgãos do Poder Judiciário.
+
+---
+ENUM Questão 17
+
+AREA  
+
+A Constituição Federal prevê certas vedações aos juízes, dentre outras, a de: 
+
+I. Receber, a qualquer título ou pretexto, auxílios ou contribuições de pessoas físicas, entidades públicas ou privadas, não existindo qualquer tipo de exceção prevista em lei.
+
+II. Exercer a advocacia no juízo ou tribunal do qual se afastou, antes de decorridos três anos do afastamento do cargo por aposentadoria ou exoneração. 
+
+III. Exercer, ainda que em disponibilidade, qualquer outro  cargo ou função, ainda que de ensino.
+
+IV. Dedicar-se à atividade político-partidária, salvo os casos previstos em lei.
+
+É correto o que se afirma APENAS:
+
+OPTIONS 
+
+A) I e II.
+
+B) I e III.
+
+C:CORRECT) II.
+
+D) II, III e IV.
+
+---
+ENUM Questão 18
+
+AREA  
+
+Com relação aos direitos políticos, NÃO é hipótese de suspensão ou perda de direitos políticos:
+
+OPTIONS 
+
+A) condenação criminal transitada em julgado.
+
+B:CORRECT) sentença em processo de improbidade administrativa ainda pendente de recurso.
+
+C) incapacidade civil absoluta
+
+D) perda de nacionalidade por decisão judicial transitada em julgado.
+
+---
+ENUM Questão 19
+
+AREA  
+
+No que se refere às imunidades materiais e formais dos parlamentares, é certo dizer:
+
+OPTIONS 
+
+A) que Deputados estaduais só possuem imunidade material no âmbito do próprio Estado.
+
+B) que suplentes gozam de imunidades formais.
+
+C:CORRECT) que Vereadores não gozam de imunidades formais.
+
+D) que podem ser objeto de renúncia.
+
+---
+ENUM Questão 20
+
+AREA  
+
+Legislar sobre bingos se encontra na esfera de competência:
+
+OPTIONS 
+
+A) da União e dos Estados.
+
+B) dos Estados
+
+C) dos Municípios.
+
+D:CORRECT) da União.
+
+---
+ENUM Questão 21
+
+AREA ETHICS
+
+Assinale a opção correta acerca da situação do advogado como empregado, de acordo com as disposições do Estatuto da Advocacia e da OAB. 
+
+OPTIONS 
+
+A) Considera-se jornada de trabalho o período em que o advogado esteja à disposição do empregador, aguardando ou executando ordens no âmbito do escritório, não sendo consideradas as horas trabalhadas em atividades externas. 
+
+B) A relação de emprego, no que se refere ao advogado, não retira a isenção técnica inerente à advocacia, mas reduz a independência profissional, visto que o advogado deve atuar de acordo com as orientações de seus superiores hierárquicos. 
+
+C:CORRECT) O advogado empregado não está obrigado à prestação de serviços profissionais de interesse pessoal, fora da relação de emprego. 
+
+D) Nas causas em que for parte empregador de direito privado, os honorários de sucumbência serão devidos a ele, empregador, e não, aos advogados empregados. 
+
+---
+ENUM Questão 22
+
+AREA  
+
+Assinale a alternativa correta.
+
+Considerando-se o sigilo profissional do advogado, a quebra do mesmo poderá ocorrer quando:
+
+OPTIONS 
+
+A) houver intimação da autoridade pública para depoimentos judiciais ou não;
+
+B) o próprio cliente fizer por escrito citações nesse sentido ao advogado;
+
+C) o advogado tiver que depor como testemunha, apenas em causa onde tenha atendido;
+
+D:CORRECT) nenhuma das hipóteses anteriores autoriza a quebra do sigilo profissional.
+
+---
+ENUM Questão 23
+
+AREA  
+
+Observando que dispõe o Regulamento Geral do Estatuto da Advocacia e da OAB acerca do desagravo público, assinale a opção correta.
+
+OPTIONS 
+
+A) O desagravo público pode ser dispensado pelo ofendido, por se tratar de direito pessoal do advogado.
+
+B) Compete ao Conselho Seccional promover o desagravo público de seu presidente quando este for ofendido no exercício das atribuições legais de seu cargo.
+
+C:CORRECT) O inscrito na OAB, quando ofendido comprovadamente em razão do exercício profissional, tem direito ao desagravo público promovido pelo conselho competente.
+
+D) A diretoria ou conselho da Subseção não pode promover a sessão de desagravo, mesmo quando a ofensa ocorra no território a que se vincula o inscrito.
+
+---
+ENUM Questão 24
+
+AREA  
+
+Marcos da Silva é advogado empregado de uma Sociedade de Advogados- que tem sua sede no Rio de Janeiro. Marcos exerce a advocacia na área cível para todo o Estado do Rio de Janeiro, mas o advogado sócio o enviou para a filial em Minas Gerais para cuidar de duas ações criminais. Pergunta-se: Quais providências Marcos deverá tomar?
+
+OPTIONS 
+
+A) Deverá realizar uma Inscrição suplementar na OAB/MG;
+
+B) Deverá transferir sua inscrição para a OAB/MG;
+
+C:CORRECT) Poderá cuidar das ações criminais sem tomar nenhuma providência;
+
+D) Comunicar à OAB/MG que estará atuando fora do Estado da sua inscrição Principal;
+
+---
+ENUM Questão 25
+
+AREA  
+
+Joel é experiente advogado, inscrito há muitos anos nos quadros da OAB. Em atividade profissional, comparece à sessão de tribunal com o fito de sustentar, oralmente, recurso apresentado em prol de determinado cliente. Iniciada a sessão de julgamento, após a leitura do relatório, pelo magistrado designado para tal função no processo, dirige-se à tribuna e, regularmente, apresenta sua defesa oral. No curso do julgamento há menção, pelo Relator de data e folhas constantes dos autos processuais que se revelam incorretas. No concernente ao tema, à luz das normas estatutárias, o advogado:
+
+OPTIONS 
+
+A) deve aguardar o final do julgamento, com a proclamação do resultado, para apresentar questão de ordem.
+
+B:CORRECT) poderá usar a palavra, pela ordem, para esclarecer questão de fato, que influencie o julgamento.
+
+C)  não possui instrumento hábil para interromper o julgamento.
+
+D) após o final do julgamento deverá, mediante nova sustentação oral, indicar os erros cometidos.
+
+---
+ENUM Questão 26
+
+AREA  
+
+O fato do advogado passar a exercer, em caráter temporário, atividade incompatível com a advocacia, é motivo para:
+
+OPTIONS 
+
+A:CORRECT) Ser declarado licenciado da OAB;
+
+B) Ter a sua inscrição declarada nula;
+
+C) Ter a sua inscrição cancelada;
+
+D) Ter a sua inscrição considerada insubsistente.;
+
+---
+ENUM NULL Questão 27
+
+AREA  
+
+Um Advogado, regularmente inscrito na OAB-RJ, foi nomeado e empossado no cargo de Secretário de Estado de Educação do Estado do Rio de Janeiro.
+
+Pergunta-se: Como fica a situação daquele Advogado?
+
+OPTIONS 
+
+A) Continuará inscrito na OAB-RJ e exercendo a advocacia;
+
+B) Continuará inscrito na OAB-RJ, ficando, porém proibido de advogar apenas contra a Fazenda Pública que o remunera;
+
+C) Terá sua inscrição na OAB - RJ cancelada;
+
+D:CORRECT) Ficará licenciado da advocacia durante o tempo em que exercer a atividade de Secretário de Estado de Educação.
+
+---
+ENUM Questão 28
+
+AREA  
+
+Após concluir seu trabalho profissional (patrocínio de uma Reclamação Trabalhista na 42ª J.C.J. do Rio de Janeiro), o Advogado chama o Reclamante, seu Cliente, para a prestação de contas e cobrança dos honorários que com ele contratou, por escrito. O Cliente esquiva-se do pagamento dos honorários devidos, mas exige do Advogado a devolução de documentos que entregou a este para a propositura da Reclamação. Pergunta-se: O que pode fazer aquele Advogado para receber os honorários que lhe são devidos, no caso presente?
+
+OPTIONS 
+
+A:CORRECT) Promover a execução dos honorários contratados, nos mesmos autos da ação em que atuou representando aquele cliente;
+
+B) Promover a execução dos honorários contratados, em processo autônomo;
+
+C) Propor Ação de Prestação de Contas, em face daquele cliente;
+
+D)  Propor Ação de Cobrança de Honorários, pelo Rito Sumário, em face daquele cliente.
+
+---
+ENUM Questão 29
+
+AREA  
+
+Em que consiste o chamado pacto  quota litis?
+
+OPTIONS 
+
+A:CORRECT) É a contratação dos honorários advocatícios pela qual, só em caráter excepcional, se admite que o Advogado receba bens particulares do Cliente em pagamento de seus honorários;
+
+B) É a contratação dos honorários advocatícios que só pode ser feita pelas sociedades de Advogados;
+
+C) É a contratação dos honorários advocatícios pela qual o Advogado receberá, em pagamento de seus honorários, uma parte dos bens que forem objeto da lide;
+
+D)  É a contratação dos honorários advocatícios pela tabela estabelecida pela OAB.
+
+---
+ENUM Questão 30
+
+AREA  
+
+Um Advogado, que já sofreu uma punição da OAB-RJ (censura), foi destituído pelo Cliente no curso do processo que patrocinava. Alegando que o Cliente não quer pagar os seus honorários, retém valores e documentos do mesmo Cliente, recusando-se a prestar-lhe contas do mandato. Pergunta-se: Por tal atitude, que punição disciplinar pode ser aplicada àquele Advogado?
+
+OPTIONS 
+
+A) Suspensão, pelo prazo de 30 dias a doze meses;
+
+B:CORRECT) Suspensão, pelo prazo de mínimo de 30 dias e perdurando até que preste as contas devidas, podendo ser cumulada com multa de uma a dez anuidades;
+
+C) Exclusão do Quadro da OAB-RJ;
+
+D) Nova pena de censura, porém cumulada com a multa de uma a dez anuidades.
+
+---
+ENUM Questão 31
+
+AREA CRIMINAL  
+
+ASTOLFO, médico, foi contratado por ADÉLIA, gestante, para interromper sua gravidez. Durante as manobras e práticas abortivas ASTOLFO constatou que ADÉLIA não estava grávida. Contudo, as manobras abortivas manejadas por ASTOLFO causaram lesões corporais em ADÉLIA que a levaram à óbito três dias depois. Pergunta-se: qual o crime praticado por ASTOLFO?
+
+OPTIONS 
+
+A) Tentativa de aborto qualificado pelo resultado morte
+
+B)  Lesões corporais seguidas de morte
+
+C:CORRECT)  Homicídio culposo
+
+D)  Homicídio doloso
+
+---
+ENUM Questão 32
+
+AREA  
+
+Assinale a opção correta:
+
+OPTIONS 
+
+A)  A ultra atividade da lei penal significa a capacidade da lei penal se movimentar no tempo.
+
+B:CORRECT)  A lei posterior mais gravosa se aplica ao crime permanente e ao crime continuado, desde que não tenha cessado a permanência ou a continuidade delitiva.
+
+C)  A abolitio criminis é causa extintiva da punibilidade, extinguindo, igualmente, os efeitos penais e extrapenais da condenação.
+
+D)  A novatio legis in mellius é irretroativa, vez que a Constituição da República apenas admite a retroatividade da lei em benefício do réu.
+
+---
+ENUM Questão 33
+
+AREA  
+
+De acordo com a Lei de Execuções Penais (Lei 7.210/84), julgue os itens abaixo:
+
+I) A pena privativa de liberdade, não superior a dois anos, poderá ser convertida em restritiva de direitos, desde que o condenado esteja cumprindo regime aberto, tenha sido cumprido pelo menos um terço da pena e os antecedentes e a personalidade do condenado indique ser a conversão recomendável.
+
+II) A prática de fato prevista como crime culposo constitui falta grave e, quando ocasione a subversão da ordem ou da disciplina internas, sujeita o preso provisório, ou condenado, sem prejuízo da sanção penal, ao regime disciplinar diferenciado.
+
+III) Os condenados que cumprem pena em regime fechado ou semi aberto e os presos provisórios poderão obter permissão do diretor do estabelecimento que se encontram presos, para saída nas hipóteses de falecimento ou doença  grave do cônjuge, companheira, ascendente, descendente ou irmão ou necessidade de tratamento médico.
+
+IV) O trabalho externo será admissível para os presos do regime semi aberto somente em serviços ou obras realizadas por órgãos da administração direta  ou indireta, ou entidades privadas, desde que adotadas as cautelas contra fuga e em favor da disciplina.
+
+OPTIONS 
+
+A) Os itens I e III estão certos
+
+B)  Os itens I, II e IV estão certos
+
+C:CORRECT)  Os itens I, II e IV estão errados
+
+D)  Os itens II e IV estão errados
+
+---
+ENUM Questão 34
+
+AREA  
+
+Segundo os princípios penais constitucionais, é INCORRETO afirmar:
+
+OPTIONS 
+
+A)  O princípio da subsidiariedade impõe que o Direito Penal é sempre a ultima ratio do Estado.
+
+B:CORRECT)  De acordo com o princípio da culpabilidade, para o agente ser punido, deve ser imputável e possuir consciência da ilicitude.
+
+C)  O princípio da legalidade ou reserva legal exige uma lei prévia, escrita, estrita e certa.
+
+D)  O princípio da pessoalidade ou intranscedencia da pena possui como exceções o perdimento de bens e obrigação de indenizar.
+
+---
+ENUM Questão 35
+
+AREA  
+
+Julgue os itens abaixo, assinalando a opção CORRETA.
+
+OPTIONS 
+
+A)  O agente age com culpa consciente quando não desejando diretamente o resultado, assume o risco de produzir o resultado.
+
+B)  O crime culposo para sua caracterização exige a inobservância do dever objetivo de cuidado, a previsibilidade objetiva e a finalidade de um resultado lícito 
+
+C:CORRECT)  Salvo os casos expressos em lei, ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente.
+
+D)  O erro de proibição quando vencível exclui apenas o dolo, permitindo a punição do agente por culpa.
+
+---
+ENUM Questão 36
+
+AREA  
+
+Como se sabe, a prisão processual (provisória ou cautelar) é a decretada antes do trânsito em julgado de sentença penal condenatória, nas hipóteses previstas em lei. A respeito de tal modalidade de prisão, é correto afirmar que:
+
+OPTIONS 
+
+A)  Em nosso ordenamento jurídico, a prisão processual contempla as seguintes modalidades: prisão em flagrante, preventiva, temporária, por pronúncia e em virtude de sentença condenatória recorrível. 
+
+B)  A prisão temporária tem como pressupostos a existência de indícios de autoria e prova da materialidade, e como fundamentos a necessidade de garantia da ordem pública, a conveniência da instrução criminal, a necessidade de garantir a futura aplicação da lei penal e a garantia da ordem pública. 
+
+C:CORRECT)  O prazo de duração da prisão temporária é de cinco dias, prorrogável por mais cinco em caso de extrema e comprovada necessidade. Em se tratando, todavia, de crime hediondo, a prisão temporária poderá ser decretada pelo prazo de trinta dias, prorrogável por igual período. 
+
+D)  São requisitos da prisão preventiva a sua imprescindibilidade para as investigações do inquérito policial e o fato de o indiciado não ter residência fixa ou não fornecer elementos necessários ao esclarecimento de sua identidade.
+
+---
+ENUM Questão 37
+
+AREA  
+
+Levando em consideração as modificações trazidas pela Lei 11.719/08, assinale a alternativa correta. 
+
+OPTIONS 
+
+A:CORRECT)  O Código de Processo Penal admite a figura da citação com hora certa, tal como ocorre no Código de Processo Civil.
+
+B)  O rito comum ordinário é o reservado aos crimes apenados com reclusão, independentemente do montante da pena para eles prevista.
+
+C)  Na mutatio libelli (em que a denúncia descreve determinado fato, mas as provas apontam que o fato delituoso é diverso), o Ministério Público deverá, após encerrada a instrução probatória, aditar a denúncia no prazo de 5 (cinco) dias sob pena de se operar a preclusão temporal.
+
+D)  O rito sumário é o reservado para as infrações penais de menor potencial ofensivo.
+
+---
+ENUM Questão 38
+
+AREA 
+
+À luz da lei que dispõe sobre os Juizados Especiais Criminais (Lei 9.099/95), assinale a alternativa correta. 
+
+OPTIONS 
+
+A)  A competência do juizado será determinada pelo lugar em que se consumar a infração penal. 
+
+B)  A citação será pessoal e se fará no próprio juizado, sempre que possível, ou por edital.
+
+C)  O instituto da transação penal pode ser concedido pelo juiz sem a anuência do Ministério Público.
+
+D:CORRECT)  Tratando-se de crime de ação penal pública incondicionada, não sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena restritiva de direitos ou multas, a ser especificada na proposta.
+
+---
+ENUM Questão 39
+
+AREA  
+
+A Lei 7.492/86 define os Crimes contra o Sistema Financeiro Nacional. Acerca do procedimento previsto para tais crimes, é correto afirmar que:
+
+OPTIONS 
+
+A:CORRECT)  Quando a denúncia não for intentada no prazo legal, o ofendido poderá representar ao Procurador-Geral da República, para que este a ofereça designe outro órgão do Ministério Público para oferecê-la ou determine o arquivamento das peças de informações recebidas.
+
+B)  Nos crimes previstos nessa lei, cometidos em quadrilha ou co-autoria, o co-autor ou partícipe que, por meio de confissão espontânea, revelar à autoridade policial ou judicial toda a trama delituosa terá sua pena reduzida de 1 (um) a 2/5 (dois quintos).
+
+C)  A ação penal será promovida perante a Justiça Federal quando a infração for praticada em detrimento de bens e serviços de entes federais. Nos demais casos, será proposta perante a Justiça Estadual. 
+
+D)  Os órgãos dos Ministérios Públicos Federais e Estaduais, sempre que julgarem necessário poderá requisitar, a qualquer autoridade, informação, documento ou diligência relativa à prova dos crimes previstos na Lei 7.492/86.
+
+---
+ENUM Questão 40
+
+AREA  
+
+Em relação ao incidente de falsidade, é correto afirmar que:
+
+OPTIONS 
+
+A:CORRECT)  Se reconhecida a falsidade por decisão irrecorrível, mandará desentranhar o documento e remetê-lo, com os autos do processo incidente, ao Ministério Público. 
+
+B)  Arguida, por escrito, a falsidade de documento constante dos autos, o juiz observará o seguinte processo: mandará autuar em apartado a impugnação e em seguida ouvirá a parte contrária, que, num prazo de 24 (vinte a quatro) horas, oferecerá resposta. 
+
+C)  A arguição de falsidade, feita por procurador, não exige poderes especiais.
+
+D)  O juiz não poderá de ofício, proceder à arguição de falsidade, feita por procurador, não exige poderes especiais.
+
+---
+ENUM Questão 41
+
+AREA BUSINESS 
+
+Sobre os direitos dos acionistas, é correto afirmar que:
+
+OPTIONS 
+
+A) o direito de voto é garantido a todo acionista, independente da espécie ou classe de ações de que seja titular.
+
+B) os acionistas deverão receber dividendos obrigatórios em todos os exercícios sociais.
+
+C) o acionista terá direito de se retirar da companhia caso cláusula compromissória venha a ser introduzida no estatuto social.
+
+D:CORRECT) o acionista tem o direito de fiscalizar as atividades sociais e sendo titular de mais de 5% do capital poderá requerer judicialmente a exibição dos livros da companhia, caso haja suspeita de irregularidades dos administradores.
+
+---
+ENUM Questão 42
+
+AREA  
+
+Dentre as alternativas abaixo, indique aquela que corresponde a um crédito que deve ser classificado como extraconcursal:
+
+OPTIONS 
+
+A) Multas por infração do Código de Postura Municipal.
+
+B:CORRECT) Custas judiciais relativas às ações e execuções em que a massa tenha sido vencida.
+
+C) Créditos quirografários sujeitos à recuperação judicial pertencentes a fornecedores de bens ou serviços que continuaram a provê‐lo normalmente após o pedido de recuperação judicial.
+
+D) Os saldos dos créditos não cobertos pelo produto da alienação dos bens vinculados ao seu pagamento.
+
+---
+ENUM Questão 43
+
+AREA  
+
+Em relação à Sociedade em Conta de Participação NÃO é correto afirmar que
+
+OPTIONS 
+
+A:CORRECT) é uma sociedade empresária personificada e de pessoas.
+
+B) a atividade constitutiva do objeto social deve ser exercida unicamente pelo sócio ostensivo.
+
+C) o contrato social produz efeito somente entre os sócios.
+
+D) as contribuições dos sócios participantes e ostensivos constituem patrimônio especial.
+
+---
+ENUM Questão 44
+
+AREA  
+
+Com relação ao instituto do aval, é correto afirmar que
+
+OPTIONS 
+
+A) é necessário o protesto para a cobrança dos avalistas do emitente e dos endossantes de notas promissórias.
+
+B) o avalista, quando executado, pode exigir que o credor execute primeiro o avalizado.
+
+C) o aval pode ser lançado em documento separado do título de crédito.
+
+D:CORRECT) a obrigação do avalista se mantém, mesmo no caso de a obrigação que ele garantiu ser nula, exceto se essa nulidade for decorrente de vício de forma.
+
+---
+ENUM Questão 45
+
+AREA  
+
+Sobre as marcas, é correto afirmar que:
+
+OPTIONS 
+
+A) a marca de alto renome é sinônimo de marca notoriamente conhecida.
+
+B) a vigência do registro da marca é de 5 (cinco) anos, sendo prorrogável por períodos iguais e sucessivos.
+
+C:CORRECT) é permitida a cessão do pedido de registro de marca, caso o cessionário atenda aos requisitos legais.
+
+D) a marca de produto ou serviço é aquela usada para identificar produtos ou serviços.
+
+---
+ENUM Questão 46
+
+AREA CIVIL
+
+Tendo em vista o que dispõe o Código Civil a respeito de posse, julgue os itens seguintes.
+
+I - Dá-se o constituto possessório quando o possuidor transfere a posse a outrem, mas mantém-se como detentor direto da coisa.
+
+II - Constitui efeito da posse a autodefesa do possuidor no caso de turbação ou esbulho.
+
+III - O possuidor de má-fé deve indenizar o reivindicante pelos prejuízos decorrentes de perda ou deterioração do bem, ainda que acidentais, salvo se provar que a perda ou deterioração ocorreria de qualquer modo, mesmo que estivesse o bem em poder do reivindicante.
+
+IV - É admissível a oposição de embargos de terceiro fundados em alegação de posse advinda do compromisso de compra e venda de imóvel, ainda que desprovido do registro.
+
+Assinale a opção correta.
+
+OPTIONS 
+
+A) Apenas os itens I e II estão certos.
+
+B) Apenas os itens I e III estão certos.
+
+C) Apenas os itens II e IV estão certos.
+
+D:CORRECT) Todos os itens estão certos.
+
+---
+ENUM Questão 47
+
+AREA  
+
+Em relação à sucessão legítima e testamentária, assinale a opção correta.
+
+OPTIONS 
+
+A:CORRECT) A renúncia à herança é um ato irrevogável, por isso, se todos os herdeiros, de qualquer classe, renunciarem à herança, esta será, desde logo, declarada vacante.
+
+B) O herdeiro necessário é deserdado por seu ascendente quando o testador deixa de contemplá-lo em seu testamento.
+
+C) No inventário e partilha, a omissão involuntária dos bens da herança pelo inventariante configura sonegação de bens e o sujeita a apresentar os bens que omitiu, e a pagar perdas e danos aos demais herdeiros.
+
+D) Ocorre a sucessão por cabeça, ou substituição hereditária, quando outra pessoa é chamada a suceder em lugar do herdeiro, em virtude de pré-morte, deserdação ou indignidade.
+
+---
+ENUM Questão 48
+
+AREA  
+
+Assinale a opção correta acerca do direito das obrigações e do direito das coisas.
+
+OPTIONS 
+
+A) Mora accipiendi é a mora do devedor de obrigação líquida, certa e exigível.
+
+B) Nas obrigações provenientes de ato ilícito, em sede de ação reparatória ou indenizatória, contam-se os juros moratórios a partir da citação.
+
+C) Juros remuneratórios ou compensatórios são devidos pelo atraso no cumprimento da prestação por parte do devedor.
+
+D:CORRECT) A aluvião é forma de aquisição da propriedade por acessão decorrente de fenômenos naturais. Será própria quando os acréscimos se formarem pelos depósitos ou aterros naturais nos terrenos marginais do rio. De outra parte, será imprópria se o acréscimo se formar pelo afastamento das águas que descobrem parte do álveo. Aquele que se beneficia pela aluvião não tem de pagar indenização.
+
+---
+ENUM Questão 49
+
+AREA  
+
+Relativamente ao direito de família, assinale a opção correta.
+
+OPTIONS 
+
+A) É nulo o casamento celebrado com a inobservância de qualquer dos impedimentos apontados na legislação que rege a matéria, em razão do interesse público e social envolvido. A declaração da nulidade acarreta a invalidade do casamento a partir da data da sentença que o invalidou.
+
+B:CORRECT) Sendo os alimentos concedidos, com fundamento na lei de alimentos, como provisórios ou como provisionais em caráter cautelar, eles são devidos desde a data em que sejam fixados até a data em que seja proferida a sentença que os reduziu.
+
+C) Consideram-se parentes em linha reta as pessoas que são provenientes de um só tronco e estão umas para com as outras na relação de ascendentes, descendentes, colaterais ou transversais, até o quarto grau de parentesco.
+
+D) O casamento se dissolve pela morte de um dos cônjuges, pela anulação, pela separação judicial ou pelo divórcio.
+
+---
+ENUM Questão 50
+
+AREA  
+
+Assinale a opção correta quanto ao direito de família.
+
+OPTIONS 
+
+A) Será nulo o casamento se, logo depois de celebrado, não for lavrado o assento no livro de registro.
+
+B) O divórcio litigioso direto não pode ser concedido sem prévia partilha de bens.
+
+C:CORRECT) A mulher que tenha renunciado aos alimentos na separação judicial tem direito à pensão previdenciária por morte do ex-marido, comprovada a necessidade econômica superveniente.
+
+D) A bigamia constitui impedimento matrimonial impediente.
+
+---
+ENUM Questão 51
+
+AREA  
+
+Considere que Raimundo, citado para tomar conhecimento de ação ajuizada contra si, tenha deixado de apresentar contestação, restando caracterizada a revelia. Em face dessa situação hipotética, assinale a opção correta.
+
+OPTIONS 
+
+A) Como a defesa é ato privativo do réu, reputar-se-ão verdadeiros os fatos afirmados pelo autor, ainda que, havendo pluralidade de réus e sendo litisconsórcio unitário, um deles conteste a ação.
+
+B:CORRECT) Os prazos contra Raimundo correrão independentemente de intimação, salvo se ele tiver patrono nos autos.
+
+C) O autor da ação poderá alterar o pedido sem necessidade de citar Raimundo novamente.
+
+D) Raimundo poderá intervir no processo apenas até o encerramento da fase de instrução.
+
+---
+ENUM Questão 52
+
+AREA  
+
+Carla e Renata eram fiadoras de André em contrato de locação de um apartamento residencial, em caráter solidário e mediante renúncia ao benefício de ordem. Como André não pagou os últimos três meses de aluguel, o locador ajuizou ação de cobrança contra o locatário e Carla.
+
+Considerando a situação hipotética apresentada, é correto afirmar que Carla agirá corretamente se
+
+OPTIONS 
+
+A) requerer a suspensão do processo até que André conteste a ação, a fim de obter elementos para apresentar a sua defesa.
+
+B:CORRECT) promover o chamamento ao processo de Renata, haja vista que as duas são fiadoras.
+
+C) denunciar Renata à lide, visto que ela também está obrigada pelo contrato.
+
+D) nomear Renata à autoria, pois se trata de fiança dada pelas duas conjuntamente.
+
+---
+ENUM Questão 53
+
+AREA  
+
+Paulo, em ação que ajuizou em face de José, arrolou como testemunha Fábio, que contraiu enfermidade que impossibilitou seu comparecimento à audiência.
+
+Considerando a situação hipotética apresentada, assinale a opção correta.
+
+OPTIONS 
+
+A) Não será possível substituir Fábio caso já tenha sido recebida a intimação para a audiência de instrução.
+
+B) Paulo não poderá substituir Fábio por outra testemunha dado a preclusão.
+
+C) Se Paulo não tiver arrolado o máximo de testemunhas permitidas, será possível substituir Fábio.
+
+D:CORRECT) Fábio poderá ser substituído por outra testemunha, pois, provada a enfermidade, a lei processual lhe garante tal possibilidade.
+
+---
+ENUM Questão 54
+
+AREA 
+
+A respeito da coisa julgada, assinale a opção correta.
+
+OPTIONS 
+
+A) Apreciação de questão prejudicial fará coisa julgada se decidida incidentemente no processo, mesmo que as partes não o requeiram.
+
+B) Para ter força de lei nos limites da lide e das questões decididas, a sentença deve conter julgamento total da lide.
+
+C) Os motivos da sentença fazem coisa julgada se forem importantes para determinar o alcance da parte dispositiva.
+
+D:CORRECT) A verdade dos fatos, estabelecida como fundamento da sentença, não faz coisa julgada
+
+---
+ENUM Questão 55
+
+AREA  
+
+Eduardo ajuizou ação em face de Márcia, pedindo sua condenação em danos morais e materiais. O juiz de primeiro grau julgou improcedente o pedido, condenando Eduardo por litigância de má-fé. Não satisfeito, Eduardo apelou. No entanto, o tribunal manteve a sentença, havendo trânsito em julgado da decisão.
+
+Na situação hipotética apresentada, caso Eduardo queira ajuizar ação rescisória, esta caberá: 
+
+OPTIONS 
+
+A) caso o julgamento da apelação interposta tenha resultado de acórdão não-unânime.
+
+B) se a sentença de mérito transitada em julgado tiver sido proferida por juiz relativamente incompetente.
+
+C:CORRECT) caso haja prova de que a decisão de mérito transitada em julgado tenha sido proferida por prevaricação, concussão ou corrupção do prolator.
+
+D) se a sentença de mérito transitada em julgado se fundar em prova cuja falsidade tenha sido apurada em processo administrativo.
+
+---
+ENUM Questão 56
+
+AREA LABOUR
+
+A respeito dos sujeitos da relação de emprego assinale a opção correta. 
+
+OPTIONS 
+
+A) Qualifica-se como empregado o trabalhador contratado para executar a ampliação da residência de um servidor público, mediante preço certo e prazo previamente ajustados, sem ingerência do proprietário da obra na forma de sua execução. 
+
+B) Deve ser considerado empregado o trabalhador associado a cooperativa de mão-de-obra que preste serviços pessoais e onerosos, na condição de médico, em caráter ocasional, a determinado hospital. 
+
+C:CORRECT) O advogado contratado para a execução de pareceres jurídicos em caráter pessoal, oneroso e habitual, que labore 4 horas diárias, deve ser considerado empregado. 
+
+D) O trabalhador voluntário que presta serviços com ânimo e causa benevolente deve ser considerado empregado, se perceber valores habituais da instituição privada acolhedora. 
+
+---
+ENUM Questão 57
+
+AREA  
+
+Acerca do instituto da negociação coletiva de trabalho, assinale a opção incorreta. 
+
+OPTIONS 
+
+A) É obrigatória a participação dos sindicatos nas negociações coletivas de trabalho. 
+
+B) É assegurada a irredutibilidade de salários, salvo negociação coletiva. 
+
+C:CORRECT) Mediante a negociação coletiva, é possível a flexibilização das regras legais aplicáveis à medicina do trabalho. 
+
+D) O acordo ou a convenção coletiva de trabalho firmados com o sindicato representativo da categoria profissional podem estabelecer banco de horas. 
+
+---
+ENUM Questão 58
+
+AREA  
+
+A respeito do contrato de prestação de serviços julgue os itens que se seguem, de acordo com a jurisprudência do TST. 
+
+I- A contratação de trabalhadores por empresa interposta é ilegal, formando-se o vínculo diretamente com o tomador dos serviços, salvo no caso de trabalho temporário. 
+
+II- A União pode ser condenada subsidiariamente nas verbas trabalhistas de empregado de empresa particular prestadora de serviços, desde que tenha participado da relação processual e conste do título executivo judicial. 
+
+III- A contratação irregular de trabalhador, mediante empresa interposta, não gera vínculo de emprego com os órgãos da administração pública direta, indireta ou fundacional. 
+
+Assinale a opção correta: 
+
+OPTIONS 
+
+A) Apenas o item I está certo.
+
+B) Apenas o item II está certo.
+
+C) Apenas o item III está certo.
+
+D:CORRECT) Todos os itens estão certos. 
+
+---
+ENUM Questão 59
+
+AREA  
+
+Com base na legislação vigente, é admissível a alteração do contrato de trabalho somente na seguinte hipótese: 
+
+OPTIONS 
+
+A) feita de comum acordo entre o empregado e o empregador.
+
+B:CORRECT) feita de comum acordo entre as partes e que não seja prejudicial ao empregado.
+
+C) com autorização do sindicato da categoria.
+
+D) autorizada pela Justiça do Trabalho e mediante homologação do ajuste acordado.
+
+---
+ENUM Questão 60
+
+AREA  
+
+Vanderlei França, empregado na loja de material esportivo Boa Forma Ltda é surpreendido vasculhando uma caixa registradora da loja, em condições comprometedoras. Nada furtou, pois nada existia no interior da referida caixa. Foi demitido por justa causa ante a configuração do ato por várias testemunhas (empregados e clientes) que constataram o fato. Foi absolvido do processo criminal pelo reconhecimento de "crime impossível" (não havia o que ser furtado). Na reclamação trabalhista movida por Vanderlei França o ex-empregado pretende a transformação da demissão por justa causa para dispensa sem justa causa com o recebimento das verbas daí decorrentes. Assinale, à vista do que foi dito, a alternativa correta:
+
+OPTIONS 
+
+A)  A absolvição terá obrigatória e necessariamente influência no julgamento da ação trabalhista, pois sem a condenação criminal não pode ocorrer a demissão por justa causa; 
+
+B)  É evidente a insubordinação do empregado capaz de justificar a extinção contratual por justa causa por iniciativa do empregador; 
+
+C:CORRECT)  A improbidade para fins trabalhistas não depende de condenação penal desde que configurada a falta grave do empregado; 
+
+D)  Só com a condenação criminal do empregado, passada em julgado, ainda que tenha havido suspensão da execução da pena, é que seria configurada a falta grave que justificaria a extinção do contrato de trabalho por iniciativa do empregador por justa causa. 
+
+---
+ENUM Questão 61
+
+AREA  
+
+Nos termos do art. 114 da Constituição da República de 1988, com as alterações introduzidas pela Emenda Constitucional n. 45/04, compete à Justiça do Trabalho processar e julgar, EXCETO: 
+
+OPTIONS 
+
+A) as ações de indenização por dano moral ou patrimonial, decorrentes da relação de trabalho.
+
+B) as ações que envolvam exercício do direito de greve.
+
+C) as ações relativas às penalidades administrativas impostas aos empregadores pelos órgãos de fiscalização das relações de trabalho.
+
+D:CORRECT) a ação penal relativa ao crime de homicídio doloso praticado pelo empregador contra seu empregado, durante o movimento de greve, mediante denúncia a ser apresentada pelo Ministério Público do Trabalho. 
+
+---
+ENUM Questão 62
+
+AREA  
+
+A incompetência territorial deve ser argüida:
+
+OPTIONS 
+
+A) Na própria contestação, como preliminar; 
+
+B:CORRECT) Através de exceção de incompetência, na mesma ocasião em que  for apresentada a contestação; 
+
+C) A qualquer tempo; 
+
+D) Antes da sentença, verbalmente, ou através de simples petição. 
+
+---
+ENUM Questão 63
+
+AREA  
+
+Acerca das Comissões de Conciliação Prévia é correto afirmar, EXCETO: 
+
+OPTIONS 
+
+A) O termo de conciliação é título executivo extrajudicial e terá eficácia liberatória geral, exceto quanto às parcelas expressamente ressalvadas.
+
+B) Aceita a conciliação, será lavrado termo assinado pelo empregado, pelo empregador ou seu preposto e pelos membros da Comissão, fornecendo-se cópia às partes.
+
+C) O prazo prescricional será suspenso a partir da provocação da Comissão de Conciliação Prévia, recomeçando a fluir, pelo que lhe resta, a partir da tentativa frustrada de conciliação ou do esgotamento do prazo de 10 dias previsto para a realização da sessão de tentativa de conciliação.
+
+D:CORRECT) Após a promulgação da EC nº. 45/04 foi ampliada a competência jurisdicional das CCP, a quem compete conciliar e julgar as lides individuais e coletivas decorrentes da relação de trabalho. 
+
+---
+ENUM Questão 64
+
+AREA  
+
+Em relação ao procedimento sumaríssimo não é correto afirmar que:
+
+OPTIONS 
+
+A) Estão excluídas as demandas em que é parte a Administração Pública direta, autárquica e fundacional.
+
+B) Não se fará, em hipótese alguma, citação por edital.
+
+C:CORRECT) São requisitos da sentença o relatório, a fundamentação e a conclusão.
+
+D) O pedido deve ser certo ou determinado. 
+
+---
+ENUM Questão 65. 
+
+AREA  
+
+Em reclamação trabalhista na qual se postulava o vínculo de emprego, a empresa apresenta defesa em que reconhece a prestação de serviços do reclamante, sustentando a natureza autônoma da relação. Na ausência total de provas no processo, a sentença acolheu o pedido e condenou a reclamada a reconhecer o vínculo de emprego entre as partes. Em relação à decisão, assinale a alternativa correta.
+
+OPTIONS 
+
+A:CORRECT) É correta ao acolher o pedido, com o fundamento de que a reclamada não se desincumbiu do ônus de comprovar o alegado fato impeditivo do direito postulado.
+
+B) É correta ao acolher o pedido sob o argumento de que a relação de emprego precede a relação de trabalho e se presume em processos trabalhistas.
+
+C) É incorreta porque a Vara do Trabalho é incompetente em razão da matéria para apreciar pedido de diferenças remuneratórias decorrentes de prestação de serviços autônoma.
+
+D) É incorreta, tendo que a Vara do Trabalho afrontou os artigos 333, II, do CPC e 818 da CLT, que estabelecem a distribuição do ônus da prova no processo do trabalho.
+
+---
+ENUM Questão 66
+
+AREA TAXES
+
+A imunidade recíproca:
+
+OPTIONS 
+
+A) refere-se a todos os tributos.
+
+B) abrange os impostos sobre o patrimônio, renda, serviço, circulação de mercadorias, produtos industrializados e operações financeiras.
+
+C) refere-se a todos os entes políticos e entidades da Administração indireta, inclusive empresas públicas e sociedades de economia mista.
+
+D:CORRECT) refere-se à União, aos Estados, ao Distrito Federal, aos Municípios, às autarquias e às fundações instituídas e mantidas pelo Poder Público.
+
+---
+ENUM Questão 67
+
+AREA  
+
+Marque a opção correta:
+
+I - Tendo em vista situação de relevância e urgência, qual seja uma inundação causada por chuvas intensas, o Presidente da República edita medida provisória criando empréstimo compulsório na forma do art. 148, I da CRFB e cobra imediatamente dos contribuintes;
+
+II  -  Majorada alíquota de IPI em 01 de março de 2007 ele poderá ser cobrado 90 dias depois, no mesmo exercício financeiro;
+
+III  -  O IPTU não se submete a noventena quando for alterada sua alíquota.
+
+Estão corretas:
+
+OPTIONS 
+
+A) somente a assertiva I;
+
+B) as assertivas I e II
+
+C) as assertivas I e III
+
+D:CORRECT) somente a assertiva II
+
+---
+ENUM Questão 68
+
+AREA  
+
+A contribuição de intervenção no domínio econômico − CIDE − relativa às atividades de importação ou comercialização de petróleo e seus derivados, gás natural e seus derivados, e álcool combustível:
+
+OPTIONS 
+
+A) incide sobre as receitas decorrentes de exportação.
+
+B) poderá ter sua alíquota diferenciada por produto ou uso.
+
+C:CORRECT) não poderá ter vinculação de receita.
+
+D) não poderá ter sua alíquota reduzida por ato do Poder Executivo.
+
+---
+ENUM Questão 69
+
+AREA  
+
+Marque a alternativa correta:
+
+OPTIONS 
+
+A) Impostos são espécies tributárias que podem ter suas receitas
+destinadas a uma atuação estatal específica;
+
+B:CORRECT) as contribuições sociais gerais são de competência
+exclusiva da União;
+
+C) As taxas previstas no art. 178 do CTN tem como fato gerador o
+exercício efetivo ou potencial do poder de polícia;
+
+D) O empréstimo compulsório em caso de guerra externa ou sua iminência
+somente se submete à noventena
+
+---
+ENUM Questão 70
+
+AREA  
+
+Sobre exclusão do crédito tributário, considere:
+
+I. A lei não pode, a qualquer tempo, revogar ou modificar a isenção
+concedida por prazo certo e em função de determinadas condições.
+
+II. A anistia não se aplica aos atos qualificados em lei como crimes
+ou contravenções.
+
+III. O despacho da autoridade competente que concede isenção ou
+anistia em caráter individual gera direito adquirido ao beneficiado.
+
+Está correto o que se afirma APENAS em:
+
+OPTIONS 
+
+A) III.
+
+B) II e III.
+
+C) II.
+
+D:CORRECT) I e II.

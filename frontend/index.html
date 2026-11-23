@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constituição 1988</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">CF</span>
+      <span><small>IA Aplicada</small><strong>Constituição de 1988</strong></span>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="card">
+      <p class="kicker">Painel</p>
+      <h2>Servidor</h2>
+      <p class="estado"><span id="ponto" class="ponto"></span><span id="estado">A verificar...</span></p>
+      <p class="motor" id="motor">BGE-M3 · ONNX INT8 · Corte 0,25</p>
+      <button class="secundario" id="reverificar" type="button">Reverificar</button>
+      <label class="motor" for="modelo">Modelo</label>
+      <select id="modelo" class="modelo"></select>
+      <label class="motor" for="modo-resposta">Modo</label>
+      <select id="modo-resposta" class="modelo">
+        <option value="rag" selected>RAG (base constitucional)</option>
+        <option value="puro">LLM puro (sem RAG)</option>
+      </select>
+      <label class="motor"><input id="cache" type="checkbox"> Usar cache</label>
+      <label class="motor"><input id="usar-think" type="checkbox"> Raciocínio profundo (mais lento)</label>
+      <h2>Demonstração</h2>
+      <div class="atalhos" id="atalhos"></div>
+      <button class="secundario" id="limpar" type="button">Limpar histórico</button>
+    </aside>
+    <main>
+      <section class="card">
+        <p class="kicker">Conversa</p>
+        <h1>Pergunte à Constituição</h1>
+        <div class="conversa" id="conversa"></div>
+        <form class="formulario" id="formulario">
+          <textarea id="campo" rows="3" placeholder="Escreva a pergunta. Enter envia, Shift+Enter quebra a linha."></textarea>
+          <button class="enviar" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="/js/app.js"></script>
+</body>
+</html>

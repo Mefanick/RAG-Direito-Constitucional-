@@ -1,0 +1,57 @@
+[
+    {
+        "areas": [
+            "ETHICS"
+        ],
+        "enum": "A multiplicidade de op\u00e7\u00f5es para atua\u00e7\u00e3o do advogado desenvolveu o ramo da Advocacia P\u00fablica.  Assim, \u00e0 luz das normas do Regulamento Geral do Estatuto da Advocacia e da OAB, nela podem ser integrados o(a), exceto:",
+        "filename": "2012-07.txt",
+        "number": "9",
+        "options": [
+            {
+                "correct": null,
+                "letter": "A",
+                "text": "Advogado-Geral da Uni\u00e3o.",
+                "pmi": [
+                    0.6172599757043382,
+                    0.0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "B",
+                "text": "Defensor P\u00fablico",
+                "pmi": [
+                    0.4725769422331376,
+                    0.0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "correct": null,
+                "letter": "C",
+                "text": "Advogado (Procurador) de Autarquia.",
+                "pmi": [
+                    0.0677014563703425,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "correct": true,
+                "letter": "D",
+                "text": "Advogado de Sociedade de Economia Mista.",
+                "pmi": [
+                    0.11754428516213637,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "valid": true
+    }
+]

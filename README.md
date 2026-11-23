@@ -1,8 +1,108 @@
-# Linha do tempo do chat constitucional
+<div align="center">
 
-Este arquivo reúne os relatórios visuais gerados ao longo do projeto. Cada um é um canvas em `C:\Users\nicol\.cursor\projects\c-Users-nicol-Desktop-seminario-projeto-PNl\canvases`. Os relatórios de bateria em Markdown ficam em `relatorios/` e os JSONL em `benchmarks/`.
+# Chat constitucional
 
-A origem é a prova de conceito `historico/amostra_chatbot_legal.py`: 15 frases, TF-IDF e Naive Bayes em três rótulos (trabalho, imposto, penal). O arquivo já dizia que a intenção não seria a resposta, e sim o roteamento de uma busca na Constituição. O sistema atual cumpre esse desenho com BGE-M3, reranker ONNX e um modelo local no Ollama. A janela sobe com `python interface.py`.
+Perguntas em linguagem comum, respostas com artigo da Constituição de 1988.
+
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-8000-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-local-000000?logo=ollama&logoColor=white)](https://ollama.com/download)
+[![BGE-M3](https://img.shields.io/badge/Hugging%20Face-BGE--M3-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/BAAI/bge-m3)
+
+`python interface.py`
+
+</div>
+
+Chat de recuperação sobre a Carta vigente. A busca usa 1.772 trechos vetorizados com BGE-M3, um roteador de 9 classes e um reranker ONNX INT8. Quem escreve é um Qwen local, no Ollama. Um auditor em Python confere se o artigo citado estava nas fontes.
+
+| | |
+|---|---|
+| Entrada | `python interface.py` abre a janela, o Ollama na porta 11434 e a API em `http://127.0.0.1:8000` |
+| Índice | Já está em `modelos/`. Não baixar de novo |
+| Relatórios | `relatorios/` e `benchmarks/` |
+| Origem | [`historico/amostra_chatbot_legal.py`](historico/amostra_chatbot_legal.py): 15 frases, TF-IDF e Naive Bayes |
+
+## Índice
+
+- [Subir o chat](#subir-o-chat)
+- [Baixar dependências](#baixar-dependências)
+- [Arquitetura](#arquitetura-que-se-firmou)
+- [Resultado final](#resultado-final)
+- [Onde está cada número](#onde-está-cada-número)
+- [Linha do tempo](#linha-do-tempo)
+
+## Subir o chat
+
+Na pasta deste arquivo, com Python 3.12, Ollama e o BGE-M3 já no disco:
+
+```powershell
+python interface.py
+```
+
+## Baixar dependências
+
+| Peça | Para que serve | Onde |
+|---|---|---|
+| Python 3.12 | API e janela | [python.org](https://www.python.org/downloads/) |
+| `requirements.txt` | Torch, sentence-transformers, scikit-learn, ONNX Runtime, pywebview | [PyPI](https://pypi.org) |
+| FastAPI e Uvicorn | Servidor em `127.0.0.1:8000`. Ainda não estão no `requirements.txt` | [FastAPI](https://pypi.org/project/fastapi/) · [Uvicorn](https://pypi.org/project/uvicorn/) |
+| Ollama | Servidor dos modelos que escrevem | [ollama.com/download](https://ollama.com/download) |
+| `qwen3:8b` | Padrão, com think | [ollama.com/library/qwen3](https://ollama.com/library/qwen3:8b) |
+| `qwen2.5:7b` | Equilibrado, sem think | [ollama.com/library/qwen2.5](https://ollama.com/library/qwen2.5:7b) |
+| `qwen3:4b` | Rápido, com think | [ollama.com/library/qwen3](https://ollama.com/library/qwen3:4b) |
+| `BAAI/bge-m3` | Vetor da pergunta. Cai no cache do Hugging Face | [huggingface.co/BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) |
+
+O índice, o roteador e o ONNX INT8 já viajam em `modelos/`.
+
+Cole isto no PowerShell, na pasta do projeto. O Python 3.12 precisa estar no PATH.
+
+```powershell
+python -m pip install -r requirements.txt fastapi uvicorn
+winget install --id Ollama.Ollama -e --accept-package-agreements --accept-source-agreements
+ollama pull qwen3:8b
+ollama pull qwen2.5:7b
+ollama pull qwen3:4b
+python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-m3')"
+```
+
+> [!TIP]
+> Se o `winget` disser que o Ollama já está instalado, pule essa linha. Se `ollama` não for reconhecido, feche o terminal e abra de novo.
+
+<details>
+<summary>Comandos separados, se o bloco parar no meio</summary>
+
+```powershell
+python -m pip install -r requirements.txt fastapi uvicorn
+```
+
+```powershell
+winget install --id Ollama.Ollama -e --accept-package-agreements --accept-source-agreements
+```
+
+```powershell
+ollama pull qwen3:8b
+```
+
+```powershell
+ollama pull qwen2.5:7b
+```
+
+```powershell
+ollama pull qwen3:4b
+```
+
+```powershell
+python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-m3')"
+```
+
+O peso `BAAI/bge-reranker-v2-m3` só é necessário para **regerar** o ONNX. A pasta `modelos/bge_reranker_v2_m3_onnx_int8/` já contém o arquivo de produção.
+
+```powershell
+python -m pip install transformers
+python -m src.rag.otimizar_reranker_onnx
+```
+
+</details>
 
 ## Arquitetura que se firmou
 
@@ -14,6 +114,34 @@ A origem é a prova de conceito `historico/amostra_chatbot_legal.py`: 15 frases,
 | Geração | Ollama local. Três modos: alta confiança, zona cinzenta e conversa livre. Auditor confere artigo e, quando a resposta desce ao inciso, o marcador. |
 | Ponte leiga | Ensaio negativo. 448 chunks enriquecidos ficaram só no arquivo de ablação. O índice ativo voltou a não ter `textos_busca`. |
 | HyDE | Segunda passagem só quando o topo da primeira fica abaixo de 0,25. Drift Guard recalibrado para cosseno 0,52 e reranker 0,002. `FORA_CF88` deixou de ser veto. |
+
+## Resultado final
+
+Suíte cega de 20 perguntas, o mesmo contexto para os três modelos. Relatório em [`relatorios/relatorio_benchmark_modelos.md`](relatorios/relatorio_benchmark_modelos.md).
+
+| Modelo | Total médio | FIEL | Alerta | Alucinação | Sem citação | Estouro |
+|---|---:|---:|---:|---:|---:|---:|
+| qwen3:4b, think ligado | 276 s | 2 | 0 | 0 | 18 | 15 |
+| qwen2.5:7b, direto | 80 s | 10 | 2 | 0 | 8 | 0 |
+| qwen3:8b, think ligado | 230 s | 15 | 2 | 1 | 2 | 0 |
+
+## Onde está cada número
+
+| O que procurar | Onde |
+|---|---|
+| Baterias de 17 casos e a parcial de latência | [`relatorios/`](relatorios) e [`benchmarks/`](benchmarks) |
+| Contexto congelado das 20 | [`benchmarks/benchmark_contexto_congelado_20.json`](benchmarks/benchmark_contexto_congelado_20.json) |
+| 60 respostas | [`benchmarks/benchmark_modelos_seminario.json`](benchmarks/benchmark_modelos_seminario.json) |
+| Comparativo escrito | [`relatorios/relatorio_benchmark_modelos.md`](relatorios/relatorio_benchmark_modelos.md) |
+| Log da rodada das 23:07 | [`benchmarks/benchmark_modelos.log`](benchmarks/benchmark_modelos.log) |
+| Ablação da ponte | [`relatorios/ablacao_ponte_leiga_fase33.md`](relatorios/ablacao_ponte_leiga_fase33.md) |
+| Figuras | [`visualizacoes/graficos_seminario/`](visualizacoes/graficos_seminario) e [`visualizacoes/graficos_comparativos_modelos/`](visualizacoes/graficos_comparativos_modelos) |
+| Prova de conceito | [`historico/amostra_chatbot_legal.py`](historico/amostra_chatbot_legal.py) |
+
+## Linha do tempo
+
+<details>
+<summary>18 a 21 de novembro de 2026</summary>
 
 ## 18 de novembro de 2026
 
@@ -241,6 +369,8 @@ Três casos medidos com geração, contra a rodada `fase33_fixes_parcial` em que
 
 O `think_s` dos três ficou em 0. A velocidade de decode continuou entre 2,5 e 2,8 tok/s. O ganho é o raciocínio que deixou de ser escrito. O prefill segue caro: 95 s, 197 s e 165 s. No caso 09 o prompt tinha 6.892 caracteres e 2.070 tokens, dentro dos 3.072. O caso 09 recuperou Art. 37, XI e XVI, com alerta de subdispositivo. O caso 10 ficou FIEL no Art. 62. O caso 01 ficou FIEL no Art. 5º, XI.
 
+</details>
+
 ## O que veio depois do último canvas
 
 Estes passos estão nesta conversa e ainda não têm canvas próprio.
@@ -273,5 +403,6 @@ Relatório: `relatorios/relatorio_benchmark_modelos.md`. Dados: `benchmarks/benc
 | Ablação da ponte | `relatorios/ablacao_ponte_leiga_fase33.md` e o pkl de ablação, fora do índice ativo |
 | Figuras do seminário e comparativos | `visualizacoes/graficos_seminario/` e `visualizacoes/graficos_comparativos_modelos/` |
 | Prova de conceito inicial | `historico/amostra_chatbot_legal.py` |
-#   R A G - D i r e i t o - C o n s t i t u c i o n a l -  
+#   R A G - D i r e i t o - C o n s t i t u c i o n a l - 
+ 
  
